@@ -337,6 +337,9 @@ textarea.msg{width:100%;min-height:200px;font:400 12.5px/1.5 ui-monospace,Menlo,
 .gbtn svg{width:20px;height:20px}
 .fld .hint{margin:0;font-size:12px;color:var(--muted)}
 .q-fields .fld{align-content:start}
+.date-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;background:var(--soft);padding:12px 14px;font-size:14px;margin-bottom:16px}
+.date-box{max-width:460px}
+.vs.warn{color:var(--warn)}
 .pv-banner{background:#A23D2C;color:#fff;text-align:center;font:600 11px/1 var(--f-body);letter-spacing:.12em;padding:7px 10px}
 .admin-tabs{flex-wrap:wrap;overflow:visible}
 @media (max-width:640px){.who{align-items:flex-start}}
@@ -449,6 +452,7 @@ table.dp small{color:var(--muted)}
         <span class="n-prod" id="n-prod"></span>
       </div>
       <div class="chips" id="style-tabs" role="group" aria-label="Estilos" hidden></div>
+      <div class="date-bar" id="date-bar" hidden></div>
       <div class="grid" id="grid"></div>
     </div>
   </section>
@@ -823,7 +827,7 @@ function persist(){ clearTimeout(saveT); saveT = setTimeout(function(){ try { lo
 function M(){ return ev.montajes[ev.active]; }
 
 var ui = { at:'eventos', evf:'prox', ed:null, view:'inicio', cat:null, q:'', style:null, sel:null, comboStyle:null, tagCat:'cand' };
-var store = { ready:false, editor:false, db:null, styles:[], tags:{}, combos:[], people:[], reservas:[], rep:{} };
+var store = { ready:false, editor:false, db:null, styles:[], tags:{}, combos:[], people:[], reservas:[], rep:{}, dispo:[] };
 
 /* ---------- Navegación ---------- */
 function go(view, opts){
@@ -836,6 +840,7 @@ function go(view, opts){
   $$('.nav-desk button').forEach(function(b){ if (b.getAttribute('data-go') === view) b.setAttribute('aria-current','page'); else b.removeAttribute('aria-current'); });
   closeMenu();
   if (view === 'catalogo') renderCatalog();
+  if (view === 'catalogo' && RES_CLIENTES && !fechaCli() && !ui.askedDate && !store.editor) { ui.askedDate = true; setTimeout(openDatePrompt, 60); }
   if (view === 'armar') renderStudio();
   if (view === 'cotizacion') renderQuote();
   if (view === 'tienda') renderAdmin();
@@ -928,12 +933,13 @@ function renderCatalog(){
     st.hidden = false;
     st.innerHTML = '<span class="eyebrow" style="align-self:center;margin-right:4px">Estilo</span><button class="chip" data-s="" aria-pressed="' + (!ui.style) + '">Todos</button>' + store.styles.map(function(s){ return '<button class="chip" data-s="' + esc(s.id) + '" aria-pressed="' + (ui.style === s.id) + '">' + esc(s.n) + '</button>'; }).join('');
   } else { st.hidden = true; ui.style = null; }
+  renderDateBar();
   var list = filtered();
   $('#n-prod').textContent = list.length + (list.length === 1 ? ' producto' : ' productos');
   $('#grid').innerHTML = list.length ? list.map(function(p){
     var v = p.v[0], n = onTableCount(p.id);
     var code = p.v.length > 1 ? p.v.map(function(x){ return x.k || ''; }).filter(function(k, i, a){ return k && a.indexOf(k) === i; }).join(' · ') : (v.k || 'Sin código');
-    var pl = priceLabel(p), m1 = p.v.length > 1 ? p.v.length + ' medidas' : v.s, m2 = p.v.length > 1 ? 'Ver medidas y existencias' : stockText(v);
+    var pl = priceLabel(p), m1 = p.v.length > 1 ? p.v.length + ' medidas' : v.s, m2 = p.v.length > 1 ? (fechaCli() ? 'Ver medidas y disponibilidad' : 'Ver medidas y existencias') : dispoText(p, 0);
     return '<button class="card" data-p="' + p.id + '">' + (n ? '<span class="on-table">' + (ARMAR ? 'En tu mesa' : 'En tu cotización') + '</span>' : '') + '<span class="ph"><img class="' + (isPhoto(p) ? 'photo' : '') + '" src="' + catImgFor(p) + '" alt="" loading="lazy"></span><span class="info"><span class="nm">' + esc(p.n) + '</span>' + (pl ? '<span class="price">' + esc(pl) + '</span>' : '<span class="price na">Precio por confirmar</span>') + '<span class="meta">' + esc(m1) + '</span><span class="meta">' + esc(m2) + '</span></span></button>';
   }).join('') : '';
   if (!list.length) $('#grid').innerHTML = '<p class="empty" style="grid-column:1/-1">No hay productos que coincidan. Prueba con otra palabra o elige “Todo”.</p>';
@@ -962,7 +968,7 @@ function tagChips(p){
 function openProduct(pid){
   var p = BY[pid];
   var vl = p.v.map(function(v, i){
-    return '<label class="vopt"><input type="radio" name="pv" value="' + i + '"' + (i === 0 ? ' checked' : '') + '><span><span class="vk">' + esc(v.s) + '</span><br><span class="vs">' + esc(stockText(v)) + '</span></span><span class="vp">' + (v.p != null ? esc(money(v.p)) + '<br><span class="vs" style="font-weight:400">' + perUnit(v).trim() + '</span>' : '<span class="vs">Por confirmar</span>') + '</span></label>';
+    return '<label class="vopt"><input type="radio" name="pv" value="' + i + '"' + (i === 0 ? ' checked' : '') + '><span><span class="vk">' + esc(v.s) + '</span><br><span class="vs' + (libresCli(p.id, i) === 0 ? ' warn' : '') + '">' + esc(dispoText(p, i)) + '</span></span><span class="vp">' + (v.p != null ? esc(money(v.p)) + '<br><span class="vs" style="font-weight:400">' + perUnit(v).trim() + '</span>' : '<span class="vs">Por confirmar</span>') + '</span></label>';
   }).join('');
   var stylesOf = (store.tags[p.id] || []).map(function(id){ var s = store.styles.filter(function(x){ return x.id === id; })[0]; return s ? s.n : null; }).filter(Boolean);
   openSheet(closeBtn + '<div class="pd"><div class="ph"><img class="' + (isPhoto(p) ? 'photo' : '') + '" src="' + catImgFor(p) + '" alt="' + esc(p.n) + '"></div><div class="info">' +
@@ -993,6 +999,12 @@ function openProduct(pid){
       if (v.q == null) el.textContent = have ? 'Ya tienes ' + have + ' en tu cotización.' : '';
       else if (l <= 0) el.textContent = 'Ya tienes en tu cotización ' + (v.q === 1 ? 'la única ' + unitLabel(v, 1) + ' disponible' : 'las ' + v.q + ' ' + unitLabel(v, v.q) + ' disponibles') + '.';
       else el.textContent = have ? 'Ya tienes ' + have + ' en tu cotización; puedes agregar ' + l + ' más.' : 'Puedes agregar hasta ' + l + '.';
+      var lc = libresCli(pid, vi);
+      if (lc != null && l > 0) {
+        var lf = Math.max(0, lc - have);
+        if (n > lf) { el.classList.add('full'); el.textContent = (lf <= 0 ? 'Para tu fecha ya no quedan libres' : 'Para tu fecha ' + (lf === 1 ? 'queda 1 libre' : 'quedan ' + lf + ' libres')) + (have ? ' (ya tienes ' + have + ' en tu cotización)' : '') + '. Puedes agregarla igual y la tienda te confirma opciones.'; }
+        else el.textContent = 'Para tu fecha ' + (lf === 1 ? 'queda 1 libre' : 'quedan ' + lf + ' libres') + (have ? ' (ya tienes ' + have + ' en tu cotización).' : '.');
+      }
     };
     $('#pd-dec').addEventListener('click', function(){ qi.value = (parseInt(qi.value, 10) || 1) - 1; sync(); });
     $('#pd-inc').addEventListener('click', function(){ qi.value = (parseInt(qi.value, 10) || 0) + 1; sync(); });
@@ -1226,7 +1238,7 @@ function eventTotals(){
   return order.map(function(k){ return t[k]; });
 }
 function moneyTotals(){ var t = 0, pend = 0; eventTotals().forEach(function(r){ var v = BY[r.pid].v[r.vi]; if (v.p != null) t += v.p * r.n; else pend++; }); return { t:t, pend:pend }; }
-function overStock(){ return eventTotals().filter(function(r){ var q = BY[r.pid].v[r.vi].q; return q != null && r.n > q; }); }
+function overStock(){ return eventTotals().filter(function(r){ var q = BY[r.pid].v[r.vi].q, lc = libresCli(r.pid, r.vi); return (q != null && r.n > q) || (lc != null && r.n > lc); }); }
 function updateCount(){ var n = eventTotals().reduce(function(s, r){ return s + r.n; }, 0); var c = $('#q-count'); c.hidden = !n; c.textContent = n > 999 ? '999+' : n; updateQbar(n); }
 function updateQbar(n){
   var show = !ARMAR && n > 0 && (ui.view === 'catalogo' || ui.view === 'inicio' || ui.view === 'montajes');
@@ -1431,7 +1443,7 @@ function buildMsg(){
   var tot = eventTotals();
   if (tot.length) {
     L.push(ARMAR ? '*Total de piezas y precios*' : '*Piezas y precios*');
-    tot.forEach(function(r){ var p = BY[r.pid], v = p.v[r.vi]; L.push('• ' + p.n + (p.v.length > 1 ? ' (' + v.s + ')' : '') + ': ' + r.n + (v.p != null ? ' × ' + money(v.p) + ' = ' + money(v.p * r.n) : ' (precio por confirmar)') + (v.q != null && r.n > v.q ? ' (el catálogo indica ' + v.q + ')' : '')); });
+    tot.forEach(function(r){ var p = BY[r.pid], v = p.v[r.vi]; L.push('• ' + p.n + (p.v.length > 1 ? ' (' + v.s + ')' : '') + ': ' + r.n + (v.p != null ? ' × ' + money(v.p) + ' = ' + money(v.p * r.n) : ' (precio por confirmar)') + msgWarn(r)); });
     var mt = moneyTotals(); L.push(''); L.push('*Total estimado: ' + money(mt.t) + '*' + (mt.pend ? ' (más ' + mt.pend + (mt.pend === 1 ? ' pieza' : ' piezas') + ' por confirmar)' : ''));
   }
   return L.join('\n');
@@ -1441,10 +1453,10 @@ function renderQuote(){
   var tot = eventTotals();
   var mt = moneyTotals();
   $('#qt').innerHTML = tot.length ? '<thead><tr><th>Pieza</th><th class="num">Pides</th><th class="num">Precio</th><th class="num">Subtotal</th></tr></thead><tbody>' + tot.map(function(r){
-    var p = BY[r.pid], v = p.v[r.vi], over = v.q != null && r.n > v.q;
+    var p = BY[r.pid], v = p.v[r.vi], lcq = libresCli(r.pid, r.vi), overF = lcq != null && r.n > lcq, over = (v.q != null && r.n > v.q) || overF;
     var key = r.pid + ':' + r.vi;
     var qty = ARMAR ? r.n : '<span class="mini-step"><button type="button" data-qdec="' + key + '" aria-label="Quitar uno">−</button><input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="4" value="' + r.n + '" data-qn="' + key + '" aria-label="Cantidad de ' + esc(p.n) + '"><button type="button" data-qinc="' + key + '" aria-label="Agregar uno"' + (r.n >= maxQ(r.pid, r.vi) ? ' disabled title="No hay más disponibles"' : '') + '>+</button></span>' + (v.q != null && r.n >= v.q ? '<br><small style="color:var(--muted);font-size:11.5px">Máximo disponible</small>' : '');
-    return '<tr><td>' + esc(p.n) + (p.v.length > 1 ? '<br><small style="color:var(--muted)">' + esc(v.s) + '</small>' : '') + (over ? '<br><small class="warn">El catálogo indica ' + v.q + '</small>' : '') + '<small class="pu-m">' + (v.p != null ? money(v.p) + perUnit(v) : 'Precio por confirmar') + '</small>' + (ARMAR ? '' : '<button type="button" class="q-rm" data-qrm="' + key + '">Quitar</button>') + '</td><td class="num' + (over ? ' warn' : '') + '">' + qty + '</td><td class="num">' + (v.p != null ? money(v.p) : '—') + '</td><td class="num">' + (v.p != null ? money(v.p * r.n) : 'Por confirmar') + '</td></tr>';
+    return '<tr><td>' + esc(p.n) + (p.v.length > 1 ? '<br><small style="color:var(--muted)">' + esc(v.s) + '</small>' : '') + (overF ? '<br><small class="warn">Para tu fecha ' + (lcq === 1 ? 'queda 1 libre' : 'quedan ' + lcq + ' libres') + '</small>' : over ? '<br><small class="warn">El catálogo indica ' + v.q + '</small>' : '') + '<small class="pu-m">' + (v.p != null ? money(v.p) + perUnit(v) : 'Precio por confirmar') + '</small>' + (ARMAR ? '' : '<button type="button" class="q-rm" data-qrm="' + key + '">Quitar</button>') + '</td><td class="num' + (over ? ' warn' : '') + '">' + qty + '</td><td class="num">' + (v.p != null ? money(v.p) : '—') + '</td><td class="num">' + (v.p != null ? money(v.p * r.n) : 'Por confirmar') + '</td></tr>';
   }).join('') + '</tbody><tfoot><tr><td colspan="' + (!ARMAR && window.matchMedia('(max-width:560px)').matches ? 2 : 3) + '" style="font-weight:500;border-bottom:0">Total estimado' + (mt.pend ? '<br><small style="color:var(--muted);font-weight:400">' + mt.pend + (mt.pend === 1 ? ' pieza sin precio todavía; la tienda la confirma.' : ' piezas sin precio todavía; la tienda las confirma.') + '</small>' : '') + '</td><td class="num" style="font-weight:600;font-size:17px;border-bottom:0">' + money(mt.t) + '</td></tr></tfoot>' : '<tbody><tr><td style="color:var(--muted);border:0;padding-left:0">' + (ARMAR ? 'Tu evento aún no tiene piezas. Ve a “Armar mi mesa” para empezar.' : 'Tu cotización aún no tiene piezas. Abre el catálogo, elige una pieza y toca “Agregar a mi cotización”.<br><button class="btn sm" type="button" data-go="catalogo" style="margin-top:12px">Ver catálogo</button>') + '</td></tr></tbody>';
   var hasP = tot.length > 0;
   $('#q-more').hidden = !hasP || ARMAR;
@@ -1454,7 +1466,7 @@ function renderQuote(){
     return '<div class="m-sum"><h4>' + esc(m.nombre) + '</h4><span style="font-size:13.5px;color:var(--muted)">' + m.mesas + (m.mesas === 1 ? ' mesa ' : ' mesas ') + TABLES[m.mesa].n.toLowerCase() + '</span>' + (gs.length ? '<ul>' + gs.map(function(gr){ var p = BY[gr.pid]; return '<li>' + gr.n + ' × ' + esc(p.n) + ' por mesa</li>'; }).join('') + '</ul>' : '<span style="font-size:13.5px;color:var(--muted)">Sin piezas</span>') + '</div>';
   }).join('');
   var ov = overStock();
-  $('#q-warn').innerHTML = ov.length ? '<p class="warnbox">' + ov.length + (ov.length === 1 ? ' pieza pide' : ' piezas piden') + ' más de lo que indica el catálogo. Puedes enviarla igual; la tienda te dirá qué alternativas hay.</p>' : '';
+  $('#q-warn').innerHTML = ov.length ? '<p class="warnbox">' + ov.length + (ov.length === 1 ? ' pieza pide' : ' piezas piden') + ' más de lo que ' + (fechaCli() ? 'queda libre para tu fecha' : 'indica el catálogo') + '. Puedes enviarla igual; la tienda te dirá qué alternativas hay.</p>' : '';
   updateMsg();
 }
 function updateMsg(){
@@ -1511,8 +1523,8 @@ $('#qt').addEventListener('change', function(e){
   var n = parseInt(inp.value, 10); if (isNaN(n)) { renderQuote(); return; }
   listSet(inp.getAttribute('data-qn'), n);
 });
-$('#e-fin').addEventListener('change', function(){ if (this.value && ev.fecha && this.value <= ev.fecha) { this.value = ''; toast('La fecha en que termina tiene que ser después del inicio'); } ev.fin = this.value; persist(); updateMsg(); });
-$('#e-fecha').addEventListener('change', function(){ $('#e-fin').min = this.value; if (ev.fin && ev.fin <= this.value) { ev.fin = ''; $('#e-fin').value = ''; persist(); updateMsg(); } });
+$('#e-fin').addEventListener('change', function(){ if (this.value && ev.fecha && this.value <= ev.fecha) { this.value = ''; toast('La fecha en que termina tiene que ser después del inicio'); } ev.fin = this.value; persist(); renderQuote(); });
+$('#e-fecha').addEventListener('change', function(){ $('#e-fin').min = this.value; if (ev.fin && ev.fin <= this.value) { ev.fin = ''; $('#e-fin').value = ''; persist(); } renderQuote(); });
 ['e-nombre','e-fecha','e-lugar'].forEach(function(id){ $('#' + id).addEventListener('input', function(){ ev[id.slice(2)] = this.value; persist(); updateMsg(); if (!$('#err-nombre').hidden || !$('#err-fecha').hidden) showErrs(true); }); });
 $('#b-copy').addEventListener('click', function(e){
   if (!guardSend(e)) return;
@@ -1600,6 +1612,7 @@ function listen(db){
   db.doc('tienda/estilos').onSnapshot(function(s){ var d = s.exists ? s.data() : null; store.styles = d && Array.isArray(d.list) ? d.list.filter(function(x){ return x && x.id && x.n; }) : []; refreshStoreViews(); }, function(){});
   db.doc('tienda/etiquetas').onSnapshot(function(s){ if (tagBusy || tagT) return; var d = s.exists ? s.data() : null; var t = {}; if (d && d.t) Object.keys(d.t).forEach(function(k){ if (Array.isArray(d.t[k])) t[k] = d.t[k].slice(); }); store.tags = t; refreshStoreViews(); }, function(){});
   db.doc('tienda/reparacion').onSnapshot(function(s){ if (repT) return; var d = s.exists ? s.data() : null; var r = {}; if (d && d.r) Object.keys(d.r).forEach(function(k){ var n = parseInt(d.r[k], 10); if (n > 0) r[k] = n; }); store.rep = r; if (ui.view === 'tienda') renderAdmin(); }, function(){});
+  db.collection('disponibilidad').where('hasta', '>=', hoy()).onSnapshot(function(s){ store.dispo = s.docs.map(function(d){ var x = d.data() || {}; return { desde:String(x.desde || ''), hasta:String(x.hasta || ''), items:(Array.isArray(x.items) ? x.items : []).filter(function(it){ return it && BY[it.pid] && BY[it.pid].v[it.vi] && it.n > 0; }) }; }).filter(function(d){ return d.desde && d.hasta; }); refreshStoreViews(); if (ui.view === 'cotizacion') renderQuote(); }, function(){});
   db.collection('combos').orderBy('t', 'desc').onSnapshot(function(s){ store.combos = s.docs.map(function(d){ var x = d.data() || {}; return { id:d.id, n:String(x.n || 'Combinación'), s:x.s || '', mesa:x.mesa, mantel:x.mantel, items:Array.isArray(x.items) ? x.items : [] }; }); refreshStoreViews(); }, function(){});
 }
 function stopPeople(){ FB.unsub.forEach(function(f){ try { f(); } catch(e) {} }); FB.unsub = []; }
@@ -1681,7 +1694,7 @@ $('#f-person').addEventListener('submit', function(e){
 
 /* ---------- Reservas por fecha (Modo tienda) ---------- */
 var MARGEN = 1;            // días que se apartan antes y después de cada evento
-var RES_CLIENTES = false;  // fase 3: mostrar disponibilidad por fecha a los clientes
+var RES_CLIENTES = true;  // fase 3: mostrar disponibilidad por fecha a los clientes
 var MESES = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
 function dAdd(s, n){ var d = new Date(s + 'T00:00:00Z'); d.setUTCDate(d.getUTCDate() + n); return d.toISOString().slice(0, 10); }
 function hoy(){ var d = new Date(); d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); return d.toISOString().slice(0, 10); }
@@ -1900,6 +1913,58 @@ $('#rp-q').addEventListener('input', function(){
   $('#rp-res').innerHTML = res.length ? '<div class="pick-list">' + res.map(function(p){ return '<div class="pick-row"><img src="' + imgFor(p) + '" alt=""><span>' + esc(p.n) + (p.v.length === 1 ? '<br><small style="color:var(--muted)">' + esc(p.v[0].s) + '</small>' : '<br>' + variantSelect(p, 'rs' + p.id)) + '</span><button class="btn sm ghost" type="button" data-rp-add="' + p.id + '">Marcar 1</button></div>'; }).join('') + '</div>' : '';
 });
 $('#rp-res').addEventListener('click', function(e){ var a = e.target.closest('[data-rp-add]'); if (!a) return; var pid = +a.getAttribute('data-rp-add'), sel = $('#rs' + pid), vi = sel ? +sel.value : 0, k = pid + ':' + vi; setRep(k, (store.rep[k] || 0) + 1); toast(vLabel(BY[pid], vi) + ': ' + store.rep[k] + ' en reparación'); });
+
+/* --- disponibilidad por fecha para clientes --- */
+if (ev.fecha && ev.fecha < hoy()) { ev.fecha = ''; ev.fin = ''; persist(); }
+function fechaCli(){ return RES_CLIENTES && ev.fecha && ev.fecha >= hoy() ? ev.fecha : ''; }
+function finCli(){ return ev.fin && ev.fin > ev.fecha ? ev.fin : ev.fecha; }
+function libresCli(pid, vi){
+  var f = fechaCli(); if (!f) return null;
+  var q = BY[pid].v[vi].q; if (q == null) return null;
+  var s = dAdd(f, -MARGEN), e = dAdd(finCli(), MARGEN), mx = 0, g = 0;
+  var rel = store.dispo.filter(function(d){ return d.desde <= e && s <= d.hasta && d.items.some(function(it){ return it.pid === pid && it.vi === vi; }); });
+  if (rel.length) for (var d = s; d <= e && g < 400; d = dAdd(d, 1), g++) {
+    var u = 0; rel.forEach(function(r){ if (r.desde <= d && d <= r.hasta) r.items.forEach(function(it){ if (it.pid === pid && it.vi === vi) u += it.n; }); });
+    if (u > mx) mx = u;
+  }
+  return Math.max(0, q - repOf(pid, vi) - mx);
+}
+function dispoText(p, vi){
+  var l = libresCli(p.id, vi); if (l == null) return stockText(p.v[vi]);
+  return l <= 0 ? 'Agotado para tu fecha' : (l === 1 ? 'Queda 1 para tu fecha' : 'Quedan ' + l + ' para tu fecha');
+}
+function fechaTxt(){ var f = fechaCli(); if (!f) return ''; var e = finCli(); return e > f ? 'del ' + fLarga(f) + ' al ' + fLarga(e) : fLarga(f); }
+function renderDateBar(){
+  var bar = $('#date-bar'); if (!bar) return;
+  if (!RES_CLIENTES) { bar.hidden = true; return; }
+  bar.hidden = false;
+  bar.innerHTML = fechaCli() ? '<span>Disponibilidad para tu evento: <b>' + esc(fechaTxt()) + '</b></span><button class="lnk" type="button" data-date-open>Cambiar fecha</button>'
+    : '<span>Elige la fecha de tu evento para ver cuántas piezas quedan libres.</span><button class="btn sm" type="button" data-date-open>Elegir fecha</button>';
+}
+function openDatePrompt(){
+  var t = hoy();
+  openSheet(closeBtn + '<div class="login-box date-box"><h3 id="sheet-title">¿Cuándo es tu evento?</h3><p>Con la fecha te mostramos cuántas piezas quedan libres para ese día.</p>' +
+    '<div class="fld"><label for="dt-ini">Fecha del evento</label><input class="txt" id="dt-ini" type="date" min="' + t + '" value="' + esc(fechaCli()) + '"></div>' +
+    '<div class="fld"><label for="dt-fin">Termina (opcional)</label><input class="txt" id="dt-fin" type="date" min="' + esc(fechaCli() || t) + '" value="' + esc(fechaCli() && ev.fin > ev.fecha ? ev.fin : '') + '"><p class="hint">Solo si el evento dura varios días.</p></div>' +
+    '<button class="btn block" type="button" id="dt-ok">Ver disponibilidad</button>' +
+    '<button class="lnk" type="button" id="dt-skip" style="justify-self:center">' + (fechaCli() ? 'Quitar la fecha' : 'Ver el catálogo sin fecha') + '</button></div>');
+  $('#sheet .sheet-close').addEventListener('click', closeSheet);
+  $('#dt-ini').addEventListener('change', function(){ $('#dt-fin').min = this.value || t; if ($('#dt-fin').value && $('#dt-fin').value <= this.value) $('#dt-fin').value = ''; });
+  $('#dt-ok').addEventListener('click', function(){
+    var a = $('#dt-ini').value, b = $('#dt-fin').value;
+    if (!a) { toast('Elige la fecha del evento'); $('#dt-ini').focus(); return; }
+    if (a < t) { toast('La fecha ya pasó'); return; }
+    ev.fecha = a; ev.fin = b && b > a ? b : ''; persist(); closeSheet(); refreshDateViews(); toast('Disponibilidad para ' + fechaTxt());
+  });
+  $('#dt-skip').addEventListener('click', function(){ if (fechaCli()) { ev.fecha = ''; ev.fin = ''; persist(); } closeSheet(); refreshDateViews(); });
+}
+function refreshDateViews(){ if (ui.view === 'catalogo') renderCatalog(); if (ui.view === 'cotizacion') renderQuote(); }
+document.addEventListener('click', function(e){ if (e.target.closest && e.target.closest('[data-date-open]')) openDatePrompt(); });
+function msgWarn(r){
+  var v = BY[r.pid].v[r.vi], lc = libresCli(r.pid, r.vi);
+  if (lc != null && r.n > lc) return ' (para esa fecha quedan ' + lc + ')';
+  return v.q != null && r.n > v.q ? ' (el catálogo indica ' + v.q + ')' : '';
+}
 
 /* ---------- Inicio ---------- */
 renderHome();
