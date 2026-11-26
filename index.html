@@ -1,0 +1,1591 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Renta de decoración para eventos: candelabros, velas LED, quinqués, floreros, centros de mesa y servicio de alimentos. Cotiza por WhatsApp.">
+<meta property="og:title" content="The Rental Studio">
+<meta property="og:description" content="Renta de decoración para eventos. Mira el catálogo y cotiza por WhatsApp.">
+<meta property="og:image" content="ev/terraza-hd.webp">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style>
+<title>The Rental Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;500;600&family=Corinthia:wght@400;700&family=Figtree:wght@300;400;500;600&display=swap">
+<style>
+/* Concepto: tienda en blanco y negro como el catálogo impreso; el armador de mesa es la pieza central, con fotos reales sobre una mesa vista de frente. */
+:root{
+  color-scheme: light;
+  --bg:#FFFFFF; --ink:#171615; --muted:#6E6A64; --faint:#9C978F; --line:#E7E3DD; --soft:#F6F4F0; --wall:#F1EEE8; --floor:#E4DFD6;
+  --brass:#8E7046; --warn:#A23D2C; --warn-bg:#FBEFEC; --ok:#4E6A48;
+  --f-logo:'Cinzel Decorative','Cinzel',Georgia,serif;
+  --f-title:'Cinzel',Georgia,'Times New Roman',serif;
+  --f-script:'Corinthia','Snell Roundhand','Apple Chancery',cursive;
+  --f-body:'Figtree',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{background:var(--bg);color:var(--ink)}
+body{font:400 15px/1.55 var(--font,var(--f-body));font-family:var(--f-body);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+button{font:inherit;color:inherit}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px}
+@media (max-width:520px){.wrap{padding-inline:16px}}
+
+/* Encabezado */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+.top-in{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:72px}
+.top-l,.top-r{display:flex;gap:4px;align-items:center}
+.top-r{justify-content:flex-end}
+.icon-btn{width:44px;height:44px;display:grid;place-items:center;background:none;border:0;border-radius:50%;cursor:pointer;position:relative}
+.icon-btn:hover{background:var(--soft)}
+.icon-btn svg{width:23px;height:23px;stroke:var(--ink);fill:none;stroke-width:1.4}
+.count{position:absolute;top:5px;right:3px;min-width:18px;height:18px;padding:0 5px;border-radius:9px;background:var(--ink);color:#fff;font:600 11px/18px var(--f-body);text-align:center}
+.logo{background:none;border:0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:1px;padding:4px 8px;color:var(--ink)}
+.logo .the{display:flex;align-items:center;gap:8px;font:400 13px/1 var(--f-logo);letter-spacing:.06em}
+.logo .the::before,.logo .the::after{content:"";width:34px;height:1px;background:var(--ink)}
+.logo .rs{font:400 21px/1.05 var(--f-logo);letter-spacing:.02em;white-space:nowrap}
+@media (max-width:420px){.logo .rs{font-size:17px}.logo .the::before,.logo .the::after{width:22px}}
+.nav-desk{display:flex;justify-content:center;gap:28px;border-top:1px solid var(--line);height:44px;align-items:center}
+.nav-desk button{background:none;border:0;cursor:pointer;font:500 12px/1 var(--f-title);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:14px 0;border-bottom:1px solid transparent}
+.nav-desk button[aria-current="page"],.nav-desk button:hover{color:var(--ink);border-bottom-color:var(--ink)}
+@media (max-width:760px){.nav-desk{display:none}}
+
+/* Cajón de menú */
+.scrim{position:fixed;inset:0;background:rgba(20,18,16,.35);z-index:40}
+.drawer{position:fixed;top:0;bottom:0;left:0;width:min(330px,86vw);background:var(--bg);z-index:41;padding:calc(18px + env(safe-area-inset-top,0px)) 22px 24px;display:flex;flex-direction:column;gap:6px;overflow:auto}
+.drawer .d-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.drawer button.d-link{background:none;border:0;text-align:left;cursor:pointer;padding:12px 0;border-bottom:1px solid var(--line);font:500 13px/1.2 var(--f-title);letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between}
+.drawer .d-sub{padding-left:14px;font-size:11.5px;color:var(--muted);width:100%}
+.d-row{display:flex;align-items:stretch;border-bottom:1px solid var(--line)}
+.drawer .d-row button.d-main{flex:1;border-bottom:0}
+.d-toggle{width:44px;background:none;border:0;cursor:pointer;display:grid;place-items:center;color:var(--ink)}
+.d-toggle:hover{background:var(--soft)}
+.d-toggle svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.5;transition:transform .2s}
+.d-toggle[aria-expanded="true"] svg{transform:rotate(180deg)}
+#d-cats{display:flex;flex-direction:column}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 22px;border:1px solid var(--ink);background:var(--ink);color:#fff;font:500 12.5px/1 var(--f-title);letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none;border-radius:0}
+.btn:hover{background:#000}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{background:var(--soft)}
+.btn.sm{min-height:38px;padding:0 14px;font-size:11px}
+.btn.block{width:100%}
+.btn:disabled,.btn[aria-disabled="true"]{opacity:.4;pointer-events:none}
+.lnk{background:none;border:0;padding:0;cursor:pointer;font:500 12px/1 var(--f-title);letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:3px}
+.chip{border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:8px 14px;font:500 13px/1 var(--f-body);cursor:pointer;white-space:nowrap}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.chips{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+
+.script{font:400 clamp(54px,9vw,84px)/.9 var(--f-script);margin:0;font-weight:400}
+.script.md{font-size:clamp(46px,7vw,64px)}
+.eyebrow{font:500 11.5px/1.2 var(--f-title);letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.lead{color:var(--muted);max-width:56ch;margin:0}
+h2,h3{text-wrap:balance}
+.sec-title{font:500 13px/1.2 var(--f-title);letter-spacing:.16em;text-transform:uppercase;margin:0}
+
+/* Inicio */
+.hero{position:relative}
+.hero img{width:100%;height:clamp(320px,62vh,640px);object-fit:cover;object-position:center 58%}
+.intro{text-align:center;padding-block:44px 40px;display:grid;justify-items:center;gap:16px}
+.intro .acts{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:6px}
+.cats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px 18px;padding-block:8px 56px}
+.cats .cat .ph{aspect-ratio:4/3}
+@media (max-width:900px){.cats{grid-template-columns:repeat(2,minmax(0,1fr))}.cats .cat .ph{aspect-ratio:4/5}.cats .cat:last-child:nth-child(odd){grid-column:1/-1}.cats .cat:last-child:nth-child(odd) .ph{aspect-ratio:16/9}}
+.cat{background:none;border:0;padding:0;cursor:pointer;text-align:left;display:grid;gap:12px}
+.cat .ph{aspect-ratio:4/5;overflow:hidden;background:var(--soft);position:relative}
+.cat .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.cat .ph img.obj{inset:14%;width:72%;height:72%;object-fit:contain}
+.cat:hover .ph img{transform:scale(1.03)}
+.cat .lbl{display:flex;align-items:center;gap:10px;font:400 clamp(13px,1.6vw,16px)/1.25 var(--f-title);letter-spacing:.08em;text-transform:uppercase}
+.cat .lbl svg{width:18px;height:18px;stroke:var(--ink);fill:none;stroke-width:1.3;flex:none}
+.gal-head{display:flex;justify-content:space-between;align-items:end;gap:16px;border-top:1px solid var(--line);padding-top:40px;margin-bottom:22px}
+.gallery{columns:3 240px;column-gap:14px;padding-bottom:64px}
+.gallery img{width:100%;margin-bottom:14px;break-inside:avoid;cursor:zoom-in}
+.gallery.home{padding-bottom:28px}
+@media (max-width:640px){.gallery{columns:2;column-gap:8px}.gallery img{margin-bottom:8px}}
+.gal-more{display:flex;justify-content:center;padding-bottom:64px}
+.mt-head{padding-block:34px 22px;display:grid;gap:10px}
+.lightbox{position:fixed;inset:0;z-index:70;background:rgba(14,13,12,.94);display:flex;align-items:center;justify-content:center;padding:calc(56px + env(safe-area-inset-top,0px)) 56px calc(56px + env(safe-area-inset-bottom,0px))}
+.lightbox img{max-width:100%;max-height:100%;object-fit:contain}
+.lb-btn{position:absolute;background:none;border:0;color:#fff;cursor:pointer;width:48px;height:48px;display:grid;place-items:center;border-radius:50%}
+.lb-btn:hover{background:rgba(255,255,255,.1)}
+.lb-btn svg{width:26px;height:26px;stroke:#fff;fill:none;stroke-width:1.5}
+.lb-close{top:calc(10px + env(safe-area-inset-top,0px));right:10px}
+.lb-prev{left:6px;top:50%;transform:translateY(-50%)}
+.lb-next{right:6px;top:50%;transform:translateY(-50%)}
+.lb-count{position:absolute;bottom:calc(16px + env(safe-area-inset-bottom,0px));left:0;right:0;text-align:center;color:rgba(255,255,255,.75);font-size:13px;font-variant-numeric:tabular-nums}
+@media (max-width:640px){.lightbox{padding-inline:8px}.lb-prev,.lb-next{top:auto;bottom:calc(4px + env(safe-area-inset-bottom,0px));transform:none}}
+.foot{border-top:1px solid var(--line);padding-block:40px calc(48px + env(safe-area-inset-bottom,0px));display:grid;justify-items:center;gap:14px;text-align:center;color:var(--muted)}
+.foot .logo{cursor:default}
+.wa-num{font:500 15px/1.4 var(--f-body);color:var(--ink);user-select:all}
+
+/* Catálogo */
+.cat-head{padding-block:34px 18px;display:grid;gap:14px}
+.cat-tabs{border-bottom:1px solid var(--line);padding-bottom:12px}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding-block:16px}
+.search{display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--ink);min-width:min(320px,100%);flex:1 1 260px;max-width:420px}
+.search svg{width:18px;height:18px;stroke:var(--ink);fill:none;stroke-width:1.5;flex:none}
+.search input{border:0;outline:0;background:transparent;font:400 15px/1 var(--f-body);padding:10px 0;width:100%;color:var(--ink)}
+.n-prod{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding-block:10px 64px;max-width:940px;margin-inline:auto}
+@media (max-width:640px){.grid{gap:10px}}
+.card{aspect-ratio:1/1;border:1px solid var(--line);background:var(--bg);padding:16px;cursor:pointer;text-align:center;display:flex;flex-direction:column;min-width:0;overflow:hidden;position:relative;transition:border-color .2s}
+.card:hover{border-color:var(--ink)}
+.card .ph{position:relative;flex:1 1 auto;min-height:0;margin-bottom:12px}
+.card .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;transition:transform .4s ease}
+.card .ph img.photo{object-fit:cover}
+.card:hover .ph img{transform:translateY(-3px)}
+.card .info{flex:none;display:grid;gap:4px;min-width:0}
+.card .code{font:italic 400 13px/1.2 var(--f-body);color:var(--muted);letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .nm{font:400 14px/1.3 var(--f-title);letter-spacing:.07em;text-transform:uppercase;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.6em}
+.card .price{font:500 15px/1.2 var(--f-body);font-variant-numeric:tabular-nums}
+.card .price.na{font-weight:400;font-size:13px;color:var(--muted)}
+.pd .pprice{font:500 22px/1.2 var(--f-body);font-variant-numeric:tabular-nums}
+.vopt .vp{font:500 14px/1.2 var(--f-body);white-space:nowrap;text-align:right}
+.card .meta{font:300 13px/1.35 var(--f-body);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card .on-table{position:absolute;top:10px;right:10px;z-index:1;background:var(--ink);color:#fff;font:600 11px/1 var(--f-body);padding:5px 8px;border-radius:999px}
+@media (max-width:640px){.card{padding:10px}.card .ph{margin-bottom:8px}.card .info{gap:2px}.card .code{font-size:11px}.card .nm{font-size:11px;letter-spacing:.05em}.card .meta{font-size:11px}.card .price{font-size:13px}.card .on-table{top:6px;right:6px;font-size:10px;padding:4px 6px}}
+.empty{padding:40px 0 70px;color:var(--muted);text-align:center}
+
+/* Hoja de producto */
+.sheet{position:fixed;z-index:51;background:var(--bg);overflow:auto;display:flex;flex-direction:column}
+@media (min-width:761px){.sheet{top:50%;left:50%;transform:translate(-50%,-50%);width:min(920px,94vw);max-height:90vh}}
+@media (max-width:760px){.sheet{left:0;right:0;bottom:0;max-height:92dvh;border-radius:14px 14px 0 0;padding-bottom:env(safe-area-inset-bottom,0px)}}
+.scrim.s2{z-index:50}
+.sheet-close{position:absolute;top:8px;right:8px;z-index:2}
+.pd{display:grid;grid-template-columns:1.1fr 1fr;min-height:0}
+.sheet > .pd{flex-shrink:0}
+@media (max-width:760px){.pd{grid-template-columns:1fr}}
+.pd .ph{background:var(--soft);display:grid;place-items:center;padding:28px;min-height:260px}
+.pd .ph img{max-height:min(52vh,460px);max-width:100%;width:auto;object-fit:contain}
+.pd .ph img.photo{max-height:none;width:100%}
+.pd .info{padding:28px 26px 26px;display:grid;gap:16px;align-content:start;min-width:0}
+.pd h3{font:400 22px/1.25 var(--f-title);letter-spacing:.05em;text-transform:uppercase;margin:0}
+.vlist{display:grid;gap:8px}
+.vopt{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;border:1px solid var(--line);padding:11px 13px;cursor:pointer}
+.vopt:has(input:checked){border-color:var(--ink)}
+.vopt input{accent-color:var(--ink);margin:0}
+.vopt .vk{font:500 14px/1.3 var(--f-body)}
+.vopt .vs{font-size:13px;color:var(--muted)}
+.vopt .vq{font-size:13px;color:var(--muted);text-align:right;white-space:nowrap}
+.note{font-size:13px;color:var(--muted);background:var(--soft);padding:10px 12px;margin:0}
+.tagbox{display:grid;gap:8px;border-top:1px solid var(--line);padding-top:14px}
+
+/* Armador */
+.studio{padding-block:26px 64px;display:grid;gap:18px}
+.st-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px}
+.mtabs{display:flex;gap:6px;overflow-x:auto;border-bottom:1px solid var(--line);scrollbar-width:none}
+.mtabs::-webkit-scrollbar{display:none}
+.mtab{background:none;border:0;border-bottom:2px solid transparent;padding:12px 4px;margin-right:16px;cursor:pointer;text-align:left;white-space:nowrap;display:grid;gap:2px}
+.mtab b{font:500 12.5px/1.2 var(--f-title);letter-spacing:.12em;text-transform:uppercase}
+.mtab span{font-size:12.5px;color:var(--muted)}
+.mtab[aria-selected="true"]{border-bottom-color:var(--ink)}
+.mtab.add{color:var(--muted);align-self:center}
+.st-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:26px;align-items:start}
+@media (max-width:980px){.st-grid{grid-template-columns:minmax(0,1fr)}}
+.st-main{min-width:0;display:grid;gap:12px}
+.settings{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px 24px}
+.fld{display:grid;gap:8px;min-width:0}
+.fld>label,.fld>.lb{font:500 11px/1.2 var(--f-title);letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.sw{width:30px;height:30px;border-radius:50%;border:1px solid rgba(0,0,0,.2);cursor:pointer;padding:0;background:var(--c)}
+.sw[aria-pressed="true"]{box-shadow:0 0 0 2px var(--bg),0 0 0 3px var(--ink)}
+.sw.wood{background:linear-gradient(135deg,#C49A6C,#9C7149)}
+.stepper{display:inline-flex;align-items:center;border:1px solid var(--line);width:max-content}
+.stepper button{width:40px;height:40px;border:0;background:none;cursor:pointer;font-size:18px}
+.stepper button:hover{background:var(--soft)}
+.stepper input{width:54px;height:40px;border:0;text-align:center;font:500 15px/1 var(--f-body);font-variant-numeric:tabular-nums;-moz-appearance:textfield;background:transparent;color:var(--ink)}
+.stepper input::-webkit-outer-spin-button,.stepper input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.txt{border:0;border-bottom:1px solid var(--ink);padding:9px 0;font:400 15px/1.2 var(--f-body);background:transparent;width:100%;min-width:0;color:var(--ink);border-radius:0}
+.txt:focus{outline:0;border-bottom-width:2px}
+select.txt{cursor:pointer}
+.stage-box{position:relative;background:var(--wall);aspect-ratio:16/10;overflow:hidden;user-select:none;-webkit-user-select:none;touch-action:none}
+@media (max-width:640px){.stage-box{aspect-ratio:1/1.02}}
+#stage{width:100%;height:100%;display:block}
+.stage-tag{position:absolute;left:12px;top:10px;font:500 11px/1.3 var(--f-title);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);pointer-events:none}
+.stage-hint{position:absolute;right:12px;bottom:10px;font-size:12px;color:var(--muted);pointer-events:none;text-align:right}
+.it{cursor:grab}
+.it:active{cursor:grabbing}
+.selbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;min-height:46px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.selbar .sl{flex:1 1 200px;min-width:0;font-size:14px;color:var(--muted)}
+.selbar .sl b{color:var(--ink);font-weight:500}
+.selbar select{max-width:220px}
+.st-acts{display:flex;flex-wrap:wrap;gap:8px}
+.side{display:grid;gap:18px;min-width:0}
+.panel{border:1px solid var(--line);padding:18px;display:grid;gap:14px;min-width:0}
+.plist{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.prow{display:grid;grid-template-columns:44px minmax(0,1fr) auto;gap:10px;align-items:center}
+.prow img{width:44px;height:44px;object-fit:contain;background:var(--soft)}
+.prow .pn{font-size:13.5px;line-height:1.3;min-width:0}
+.prow .pn small{display:block;color:var(--muted);font-size:12px}
+.prow .pq{display:grid;justify-items:end;gap:4px}
+.mini-step{display:inline-flex;align-items:center;border:1px solid var(--line)}
+.mini-step button{width:28px;height:28px;border:0;background:none;cursor:pointer}
+.mini-step button:hover{background:var(--soft)}
+.mini-step button:disabled{opacity:.35;cursor:default;background:none}
+.pd-left{margin:0;font-size:13px;color:var(--muted)}
+.pd-left.full{color:var(--warn)}
+@media (max-width:760px){.mini-step input{font-size:16px!important}}
+.mini-step input{width:46px;height:28px;border:0;border-left:1px solid var(--line);border-right:1px solid var(--line);text-align:center;font:500 13px/1 var(--f-body);font-variant-numeric:tabular-nums;background:none;color:inherit;-moz-appearance:textfield;appearance:textfield}
+.mini-step input::-webkit-outer-spin-button,.mini-step input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.mini-step.lg button{width:40px;height:40px;font-size:18px}.mini-step.lg input{width:64px;height:40px;font-size:15px}
+.q-rm{display:block;background:none;border:0;padding:0;margin-top:4px;color:var(--muted);font-size:12.5px;text-decoration:underline;cursor:pointer}
+.mini-step output{min-width:22px;text-align:center;font:500 13px/1 var(--f-body);font-variant-numeric:tabular-nums}
+.tot{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.warn{color:var(--warn)}
+.warnbox{background:var(--warn-bg);color:var(--warn);font-size:13px;padding:9px 11px;margin:0}
+.combos{display:grid;gap:10px}
+.combo{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;align-items:center;border:1px solid var(--line);padding:10px 12px}
+.combo b{font:500 13px/1.3 var(--f-title);letter-spacing:.08em;text-transform:uppercase;display:block}
+.combo small{color:var(--muted);font-size:12.5px}
+.combo .thumbs{display:flex;gap:2px;margin-top:6px}
+.combo .thumbs img{width:26px;height:26px;object-fit:contain}
+
+/* Selector de piezas */
+.pick-body{padding:18px 18px 22px;display:grid;gap:12px;min-height:0}
+.pick-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:14px 10px;max-height:min(56dvh,560px);overflow:auto;padding-right:4px}
+.pick{background:none;border:1px solid transparent;padding:6px;cursor:pointer;display:grid;gap:4px;text-align:center;align-content:start}
+.pick:hover{border-color:var(--line)}
+.pick .ph{aspect-ratio:1;position:relative;background:var(--soft)}
+.pick .ph img{position:absolute;inset:10%;width:80%;height:80%;object-fit:contain}
+.pick span{font-size:12px;line-height:1.25}
+
+/* Cotización */
+.quote{padding-block:30px 64px;display:grid;gap:22px}
+.how{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:100%;max-width:760px;margin:10px 0 0;padding:0;list-style:none;counter-reset:how}
+.how li{counter-increment:how;display:grid;gap:6px;justify-items:center;text-align:center;font-size:14px;color:var(--muted);padding:14px 10px;border-top:1px solid var(--line)}
+.how li::before{content:counter(how);font:400 26px/1 var(--f-title);color:var(--ink)}
+.how b{font-weight:500;color:var(--ink)}
+@media (max-width:560px){.how{grid-template-columns:1fr;gap:0}.how li{grid-template-columns:28px 1fr;justify-items:start;text-align:left;column-gap:12px;padding:12px 4px}.how li::before{grid-row:span 2;font-size:22px}}
+.step-h{display:flex;align-items:baseline;gap:10px;margin:0}
+.step-h .n{font:400 22px/1 var(--f-title)}
+.q-more{justify-self:start}
+.fld .err{color:var(--warn);font-size:12.5px;margin:0}
+.txt.bad{border-bottom-color:var(--warn)}
+.req{color:var(--warn)}
+.qbar{position:fixed;left:0;right:0;bottom:0;z-index:24;background:var(--ink);color:#fff;padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;justify-content:center;gap:18px}
+.qbar .qb-t{font-size:14px;line-height:1.3}.qbar .qb-t b{font-weight:600}
+.qbar .btn{background:#fff;color:var(--ink);border-color:#fff;min-height:40px;white-space:nowrap}
+.qbar .btn:hover{background:var(--soft)}
+body.has-qbar .fab{bottom:calc(84px + env(safe-area-inset-bottom,0px))}
+body.has-qbar .toast{bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+body.has-qbar main{padding-bottom:72px}
+@media (max-width:560px){.qbar{justify-content:space-between;gap:12px}.qbar .qb-t{font-size:13px}}
+.q-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:30px;align-items:start}
+@media (max-width:900px){.q-grid{grid-template-columns:minmax(0,1fr)}}
+.q-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 20px}
+.q-fields .full{grid-column:1/-1}
+@media (max-width:520px){.q-fields{grid-template-columns:minmax(0,1fr)}}
+.table-wrap{overflow-x:auto}
+table.qt{width:100%;border-collapse:collapse;font-size:14px;min-width:460px}
+table.qt th{font:500 11px/1.2 var(--f-title);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:left;padding:10px 8px;border-bottom:1px solid var(--ink)}
+table.qt td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+table.qt td.num,table.qt th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.qt .pu-m{display:none;color:var(--muted)}
+@media (max-width:560px){table.qt{min-width:0;font-size:13px}table.qt thead th:nth-child(3),table.qt tbody td:nth-child(3){display:none}table.qt tfoot td:first-child{padding-right:0}table.qt th,table.qt td{padding:9px 5px}table.qt .pu-m{display:block}table.qt td.num{white-space:nowrap}table.qt .mini-step button{width:26px;height:28px}table.qt .mini-step input{width:38px}}
+.m-sum{border-top:1px solid var(--line);padding-top:16px;display:grid;gap:8px}
+.m-sum h4{margin:0;font:500 12.5px/1.3 var(--f-title);letter-spacing:.12em;text-transform:uppercase}
+.m-sum ul{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+textarea.msg{width:100%;min-height:200px;font:400 12.5px/1.5 ui-monospace,Menlo,monospace;border:1px solid var(--line);padding:10px;resize:vertical;background:var(--soft);color:var(--ink)}
+
+/* Modo tienda */
+.admin{padding-block:30px 64px;display:grid;gap:26px}
+.styles-list{display:flex;flex-wrap:wrap;gap:8px}
+.style-pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--ink);border-radius:999px;padding:6px 6px 6px 14px;font-size:13.5px}
+.style-pill button{width:24px;height:24px;border-radius:50%;border:0;background:var(--soft);cursor:pointer;font-size:13px;line-height:1}
+.style-pill.ask{gap:8px;padding:5px 5px 5px 14px;flex-wrap:wrap;border-radius:20px}
+.style-pill.ask button{width:auto;height:32px;padding:0 14px;border-radius:999px;font:500 13px/1 var(--f-body);color:var(--ink)}
+.style-pill.ask .sp-yes{background:var(--warn);color:#fff}
+.style-pill.ask .sp-yes:hover{background:#86301f}
+.add-row{display:flex;gap:10px;align-items:end;max-width:480px}
+.tag-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px}
+.tag-card{border:1px solid var(--line);padding:10px;display:grid;grid-template-columns:56px minmax(0,1fr);gap:10px;align-items:start}
+.tag-card img{width:56px;height:56px;object-fit:contain;background:var(--soft)}
+.tag-card .tn{font-size:13px;line-height:1.3}
+.tag-card .tn small{display:block;color:var(--muted)}
+.tag-card .chips{flex-wrap:wrap;overflow:visible;margin-top:6px;gap:5px}
+.tag-card .chip{padding:5px 9px;font-size:12px}
+
+/* Flotantes */
+.fab{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:25;width:56px;height:56px;border-radius:50%;background:var(--ink);display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.18)}
+.fab svg{width:26px;height:26px;fill:none;stroke:#fff;stroke-width:1.6}
+.toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--ink);color:#fff;padding:12px 16px;font-size:14px;z-index:60;display:flex;gap:14px;align-items:center;max-width:calc(100vw - 32px)}
+.toast{width:max-content}.toast span{flex:1 1 auto;min-width:0}
+.toast button{white-space:nowrap;background:none;border:0;color:#fff;text-decoration:underline;cursor:pointer;font-weight:500}
+.inline-confirm{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13.5px}
+.staff-link{color:var(--muted);font-size:11px;margin-top:6px}
+.admin-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.who{display:flex;flex-direction:column;align-items:flex-end;gap:8px;font-size:13px;color:var(--muted)}
+.people{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.people li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.people li small{color:var(--muted)}
+.login-box{display:grid;gap:14px;padding:28px;max-width:420px}
+.login-box h3{margin:0;font:400 22px/1.25 var(--f-title);letter-spacing:.05em;text-transform:uppercase}
+.login-box p{margin:0;color:var(--muted);font-size:14px}
+.gbtn{display:flex;align-items:center;justify-content:center;gap:10px;min-height:46px;border:1px solid var(--line);background:#fff;font:500 15px/1 var(--f-body);cursor:pointer;color:var(--ink)}
+.gbtn:hover{background:var(--soft)}
+.gbtn svg{width:20px;height:20px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap top-in">
+    <div class="top-l">
+      <button class="icon-btn" id="b-menu" aria-label="Abrir menú"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/></svg></button>
+    </div>
+    <button class="logo" id="b-logo" aria-label="Inicio"><span class="the">THE</span><span class="rs">RENTAL STUDIO</span></button>
+    <div class="top-r">
+      <button class="icon-btn" id="b-search" aria-label="Buscar en el catálogo"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg></button>
+      <button class="icon-btn" id="b-quote" aria-label="Mi cotización"><svg viewBox="0 0 24 24"><path d="M5 8h14l-1 13H6L5 8Z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></svg><span class="count" id="q-count" hidden>0</span></button>
+    </div>
+  </div>
+  <nav class="nav-desk wrap" aria-label="Secciones">
+    <button data-go="inicio">Inicio</button>
+    <button data-go="catalogo">Catálogo</button>
+    <button data-go="montajes">Montajes</button>
+    <button data-go="cotizacion">Mi cotización</button>
+    <button data-go="tienda" class="only-editor" hidden>Modo tienda</button>
+  </nav>
+</header>
+
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Menú">
+  <div class="d-head"><span class="eyebrow">Menú</span><button class="icon-btn" id="b-close-menu" aria-label="Cerrar menú"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <button class="d-link" data-go="inicio">Inicio</button>
+  <div class="d-row"><button class="d-link d-main" data-go="catalogo" data-cat="">Catálogo</button><button class="d-toggle" id="d-toggle" type="button" aria-expanded="false" aria-controls="d-cats" aria-label="Mostrar categorías del catálogo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button></div>
+  <div id="d-cats" hidden></div>
+  <button class="d-link" data-go="montajes">Montajes</button>
+  <button class="d-link" data-go="cotizacion">Mi cotización</button>
+  <button class="d-link only-editor" data-go="tienda" hidden>Modo tienda</button>
+</aside>
+
+<main>
+  <!-- INICIO -->
+  <section id="v-inicio" data-view>
+    <div class="hero"><img src="ev/terraza-hd.webp" fetchpriority="high" alt="Montaje de The Rental Studio en una terraza con mesas largas, velas y flores"></div>
+    <div class="wrap intro">
+      <h1 class="script">Decoración para tu evento</h1>
+      <p class="lead">Explora las piezas que tenemos para rentar, agrega las que te gusten a tu cotización y envíala por WhatsApp. La tienda te confirma disponibilidad y precio.</p>
+      <div class="acts"><button class="btn" data-go="catalogo">Ver catálogo</button><button class="btn ghost" data-go="montajes">Ver montajes</button></div>
+      <ol class="how" aria-label="Cómo cotizar">
+        <li><b>Elige en el catálogo</b>Abre una pieza y escoge la medida.</li>
+        <li><b>Agrega a tu cotización</b>Indica cuántas necesitas.</li>
+        <li><b>Envía por WhatsApp</b>Con tu nombre y la fecha del evento.</li>
+      </ol>
+    </div>
+    <div class="wrap"><div class="cats" id="cats"></div></div>
+    <div class="wrap">
+      <div class="gal-head"><h2 class="script md">Montajes</h2><span class="eyebrow">Eventos de The Rental Studio</span></div>
+      <div class="gallery home" id="gallery"></div>
+      <div class="gal-more"><button class="btn ghost" data-go="montajes">Ver todos los montajes</button></div>
+    </div>
+  </section>
+
+  <!-- CATÁLOGO -->
+  <section id="v-catalogo" data-view hidden>
+    <div class="wrap">
+      <div class="cat-head">
+        <h1 class="script md" id="cat-title">Catálogo</h1>
+        <div class="chips cat-tabs" id="cat-tabs" role="group" aria-label="Categorías"></div>
+      </div>
+      <div class="toolbar">
+        <label class="search" for="q"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><input id="q" type="search" placeholder="Buscar producto" autocomplete="off"></label>
+        <span class="n-prod" id="n-prod"></span>
+      </div>
+      <div class="chips" id="style-tabs" role="group" aria-label="Estilos" hidden></div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </section>
+
+  <!-- ARMAR -->
+  <section id="v-armar" data-view hidden>
+    <div class="wrap studio">
+      <div class="st-head">
+        <div><h1 class="script md">Arma tu mesa</h1><p class="lead">Empieza con el Montaje 1: elige el tipo de mesa, cuántas necesitas y agrega las piezas. Si tu evento lleva otras mesas con otra decoración, agrega un montaje más. Al terminar, cotiza el evento completo.</p></div>
+      </div>
+      <div class="mtabs" id="mtabs" role="tablist" aria-label="Montajes del evento"></div>
+      <div class="st-grid">
+        <div class="st-main">
+          <div class="settings">
+            <div class="fld"><span class="lb" id="lb-mesa">Mesa del salón</span><div class="seg" id="seg-mesa" role="group" aria-labelledby="lb-mesa"></div></div>
+            <div class="fld"><label for="m-mesas">Mesas iguales</label><div class="stepper"><button type="button" id="mesas-dec" aria-label="Una mesa menos">−</button><input id="m-mesas" type="number" min="1" max="300" inputmode="numeric"><button type="button" id="mesas-inc" aria-label="Una mesa más">+</button></div></div>
+            <div class="fld"><span class="lb" id="lb-mantel">Mantel <span id="mantel-name" style="text-transform:none;letter-spacing:0"></span></span><div class="seg" id="seg-mantel" role="group" aria-labelledby="lb-mantel"></div></div>
+          </div>
+          <div class="stage-box" id="stage-box">
+            <svg id="stage" role="group" aria-label="Vista de frente de la mesa. Las piezas se mueven con el dedo, el mouse o las flechas del teclado."></svg>
+            <span class="stage-tag" id="stage-tag"></span>
+            <span class="stage-hint">Escala aproximada · mesa de 30″ de alto</span>
+          </div>
+          <div class="selbar" id="selbar"></div>
+          <div class="st-acts">
+            <button class="btn" id="b-add">Agregar pieza</button>
+            <button class="btn ghost" id="b-clear">Vaciar mesa</button>
+            <button class="btn ghost only-editor" id="b-save-combo" hidden>Guardar como combinación</button>
+          </div>
+          <div id="save-combo" class="panel" hidden></div>
+          <div id="m-remove-box"></div>
+        </div>
+        <div class="side">
+          <div class="panel">
+            <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><h2 class="sec-title">Piezas por mesa</h2><span class="tot" id="m-tot"></span></div>
+            <ul class="plist" id="plist"></ul>
+          </div>
+          <div class="panel" id="combos-panel" hidden>
+            <h2 class="sec-title">Combinaciones de la tienda</h2>
+            <div class="chips" id="combo-styles"></div>
+            <div class="combos" id="combos"></div>
+          </div>
+          <button class="btn ghost block" type="button" id="b-add-montaje">+ Agregar otro montaje</button>
+          <button class="btn block" data-go="cotizacion">Cotizar evento</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MONTAJES -->
+  <section id="v-montajes" data-view hidden>
+    <div class="wrap">
+      <div class="mt-head"><h1 class="script md">Montajes</h1><p class="lead">Eventos montados por The Rental Studio. Toca una foto para verla en grande.</p><span class="n-prod" id="mt-count"></span></div>
+      <div class="gallery" id="gallery-all"></div>
+    </div>
+  </section>
+
+  <!-- COTIZACIÓN -->
+  <section id="v-cotizacion" data-view hidden>
+    <div class="wrap quote">
+      <div><h1 class="script md">Mi cotización</h1><p class="lead">Revisa las piezas de tu evento, completa tus datos y envía la cotización a The Rental Studio. La tienda te confirma disponibilidad y precio por WhatsApp.</p></div>
+      <div class="q-grid">
+        <div style="display:grid;gap:22px;min-width:0">
+          <h2 class="step-h"><span class="n">1</span><span class="sec-title">Tus piezas</span></h2>
+          <div class="table-wrap"><table class="qt" id="qt"></table></div>
+          <button class="btn ghost sm q-more" type="button" data-go="catalogo" id="q-more">Seguir agregando piezas</button>
+          <div id="q-montajes" style="display:grid;gap:16px"></div>
+          <h2 class="step-h" id="q-datos-h"><span class="n">2</span><span class="sec-title">Tus datos</span></h2>
+          <div class="q-fields" id="q-datos">
+            <div class="fld"><label for="e-nombre">Tu nombre <span class="req" aria-hidden="true">*</span></label><input class="txt" id="e-nombre" type="text" autocomplete="name" required aria-describedby="err-nombre"><p class="err" id="err-nombre" hidden>Escribe tu nombre.</p></div>
+            <div class="fld"><label for="e-fecha">Fecha del evento <span class="req" aria-hidden="true">*</span></label><input class="txt" id="e-fecha" type="date" required aria-describedby="err-fecha"><p class="err" id="err-fecha" hidden>Elige la fecha del evento.</p></div>
+            <div class="fld full"><label for="e-lugar">Lugar del evento (opcional)</label><input class="txt" id="e-lugar" type="text"></div>
+          </div>
+        </div>
+        <div class="panel">
+          <h2 class="step-h"><span class="n">3</span><span class="sec-title">Enviar a la tienda</span></h2>
+          <p style="margin:0;font-size:13.5px;color:var(--muted)" id="q-need"></p>
+          <div id="q-warn"></div>
+          <a class="btn block" id="b-wa" target="_blank" rel="noopener" href="#">Enviar por WhatsApp</a>
+          <button class="btn ghost block" id="b-copy" type="button">Copiar lista</button>
+          <p style="margin:0;font-size:13px;color:var(--muted)">WhatsApp de la tienda: <span class="wa-num">+504 3295-7112</span></p>
+          <span id="copy-status" role="status" aria-live="polite" style="font-size:13px;color:var(--muted)"></span>
+          <details><summary style="cursor:pointer;font-size:13.5px;color:var(--muted)">Ver el mensaje</summary><textarea class="msg" id="msg" readonly aria-label="Mensaje para WhatsApp"></textarea></details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODO TIENDA -->
+  <section id="v-tienda" data-view hidden>
+    <div class="wrap admin">
+      <div class="admin-head"><div><h1 class="script md">Modo tienda</h1><p class="lead">Solo lo ven las personas con acceso. Lo que guardes aquí lo ven todos los clientes.</p></div>
+        <div class="who"><span id="who-email"></span><button class="lnk" type="button" id="b-logout">Cerrar sesión</button></div></div>
+      <div class="panel">
+        <h2 class="sec-title">Estilos</h2>
+        <div class="styles-list" id="styles-list"></div>
+        <form class="add-row" id="f-style"><div class="fld" style="flex:1"><label for="new-style">Nuevo estilo</label><input class="txt" id="new-style" type="text" maxlength="30" placeholder="Ej. Boda en jardín"></div><button class="btn sm" type="submit">Agregar</button></form>
+      </div>
+      <div class="panel" id="combos-panel" hidden>
+        <h2 class="sec-title">Combinaciones guardadas</h2>
+        <p style="margin:0;color:var(--muted);font-size:14px">Para crear una, arma la mesa en “Armar mi mesa” y toca “Guardar como combinación”.</p>
+        <div class="combos" id="admin-combos"></div>
+      </div>
+      <div class="panel">
+        <h2 class="sec-title">Clasificar productos por estilo</h2>
+        <div class="chips" id="tag-cats"></div>
+        <div class="tag-grid" id="tag-grid"></div>
+      </div>
+      <div class="panel">
+        <h2 class="sec-title">Personas con acceso</h2>
+        <p style="margin:0;color:var(--muted);font-size:14px">Pueden entrar a Modo tienda con su cuenta de Google. Escribe el correo de Gmail exacto.</p>
+        <ul class="people" id="people"></ul>
+        <form class="add-row" id="f-person"><div class="fld" style="flex:1"><label for="new-person">Agregar correo</label><input class="txt" id="new-person" type="email" autocomplete="off" placeholder="nombre@gmail.com"></div><button class="btn sm" type="submit">Agregar</button></form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <div class="logo"><span class="the">THE</span><span class="rs">RENTAL STUDIO</span></div>
+    <div>Cotizaciones por WhatsApp<br><span class="wa-num">+504 3295-7112</span></div>
+    <button class="lnk staff-link" type="button" id="b-staff">Acceso tienda</button>
+  </footer>
+</main>
+
+<a class="fab" id="fab" href="https://wa.me/50432957112" target="_blank" rel="noopener" aria-label="Escribir a The Rental Studio por WhatsApp"><svg viewBox="0 0 24 24"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4A8 8 0 1 1 20 11.5Z"/><path d="M9 9.5c.3 2 2.2 4.2 4.6 5l1.2-1.2-1.8-.9-.8.6c-.9-.4-1.8-1.3-2.2-2.2l.6-.8-.9-1.8z" stroke-width="1.2"/></svg></a>
+
+<div class="scrim s2" id="scrim2" hidden></div>
+<div class="sheet" id="sheet" hidden role="dialog" aria-modal="true" aria-labelledby="sheet-title"></div>
+<div class="toast" id="toast" hidden role="status" aria-live="polite"></div>
+<div class="qbar" id="qbar" hidden><span class="qb-t" id="qb-t"></span><button class="btn sm" type="button" data-go="cotizacion">Ver y enviar</button></div>
+
+<script src="vendor/firebase-app-compat.js"></script>
+<script src="vendor/firebase-auth-compat.js"></script>
+<script src="vendor/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script>
+(function(){
+'use strict';
+var PRODUCTS = [{"id": 3, "c": "cand", "n": "Porta vela acanalado de vidrio", "a": "h", "e": 0, "r": 0.629, "i": "p3", "ci": "p3", "v": [{"k": "64171", "s": "4″ × 6″", "d": 6, "q": 16, "u": "u", "p": 50}]}, {"id": 4, "c": "cand", "n": "Porta vela acanalado alto", "a": "h", "e": 0, "r": 0.373, "i": "p4", "ci": "p4", "v": [{"k": "64173", "s": "4″ × 12″", "d": 12, "q": 8, "u": "u", "p": 50}]}, {"id": 5, "c": "cand", "n": "Capello de vidrio acanalado", "a": "h", "e": 0, "r": 0.416, "i": "p5", "ci": "p5", "v": [{"k": "32322", "s": "3.5″ × 14″", "d": 14, "q": 12, "u": "u", "i": "p5b", "r": 0.216, "p": 100}, {"k": null, "s": "3.5″ × 18″", "d": 18, "q": 12, "u": "u", "i": "p5a", "r": 0.18, "p": 100}]}, {"id": 7, "c": "cand", "n": "Capello de vidrio liso", "a": "h", "e": 0, "r": 0.831, "i": "p7b", "ci": "p7b", "v": [{"k": "32306", "s": "2.5″ × 15″", "d": 15, "q": 40, "u": "u", "p": 60}, {"k": "32307", "s": "4″ × 14″", "d": 14, "q": 9, "u": "u", "p": 60}, {"k": "32308", "s": "4″ × 18″", "d": 18, "q": 9, "u": "u", "p": 60}, {"k": "32309", "s": "4″ × 22″", "d": 22, "q": 9, "u": "u", "p": 60}]}, {"id": 8, "c": "cand", "n": "Porta vela de vidrio con plato", "a": "h", "e": 0, "r": 0.745, "i": "p8", "ci": "p8", "v": [{"k": "32331", "s": "4.25″ × 5″", "d": 5, "q": 24, "u": "u", "p": 40}]}, {"id": 9, "c": "cand", "n": "Candelero de vidrio gris con bulbo", "a": "h", "e": 0, "r": 0.58, "i": "p9", "ci": "p9", "v": [{"k": "34142", "s": "4″ × 6.5″", "d": 6.5, "q": 24, "u": "u", "p": 80}]}, {"id": 10, "c": "cand", "n": "Candelero de vidrio rosa y vino", "a": "h", "e": 0, "r": 0.425, "i": "p10", "ci": "p10", "v": [{"k": "34143", "s": "3″ × 7.75″", "d": 7.75, "q": 24, "u": "u", "p": 80}]}, {"id": 11, "c": "cand", "n": "Candelero de vidrio celeste y verde", "a": "h", "e": 0, "r": 0.393, "i": "p11", "ci": "p11", "v": [{"k": "34144", "s": "4″ × 10.25″", "d": 10.25, "q": 24, "u": "u", "p": 80}]}, {"id": 12, "c": "cand", "n": "Porta vela cuadrado rosado", "a": "h", "e": 0, "r": 0.78, "i": "p12", "ci": "p12", "v": [{"k": "34140", "s": "3.25″ × 4″", "d": 4, "q": 24, "u": "u", "p": 120}]}, {"id": 13, "c": "cand", "n": "Candeleros de vidrio salmón", "a": "h", "e": 0, "r": 0.714, "i": "p13", "ci": "p13", "v": [{"k": "34110", "s": "4″ × 6.25″", "d": 6.25, "q": 24, "u": "u", "p": 80}, {"k": "34111", "s": "4″ × 9.5″", "d": 9.5, "q": 24, "u": "u", "p": 80}], "pn": "Set de las 2 medidas: L 120"}, {"id": 14, "c": "cand", "n": "Copas porta vela tipo flauta (set de 3)", "a": "h", "e": 0, "r": 0.821, "i": "p14", "ci": "p14", "v": [{"k": "64166 · 64167 · 64169", "s": "Set de 3: 6″, 10″ y 12″", "d": 12, "q": 24, "u": "s", "p": 120}], "pn": "Solo se renta por set. Cada set incluye una copa de 6″, una de 10″ y una de 12″."}, {"id": 15, "c": "cand", "n": "Porta vela de copa alta 20″", "a": "h", "e": 0, "r": 0.196, "i": "p15", "ci": "p15", "v": [{"k": "49971", "s": "2″ × 20′", "d": 20, "q": 4, "u": "u", "p": 150}]}, {"id": 16, "c": "cand", "n": "Porta vela de copa alta 16″", "a": "h", "e": 0, "r": 0.227, "i": "p16", "ci": "p16", "v": [{"k": "49970", "s": "2″ × 16″", "d": 16, "q": 4, "u": "u", "p": 150}]}, {"id": 17, "c": "cand", "n": "Porta vela de copa con cilindro", "a": "h", "e": 0, "r": 0.3, "i": "p17", "ci": "p17", "v": [{"k": "47071", "s": "4″ × 17″", "d": 17, "q": 15, "u": "u", "p": 60}]}, {"id": 18, "c": "cand", "n": "Copa alta de vidrio 24″", "a": "h", "e": 0, "r": 0.261, "i": "p18", "ci": "p18", "v": [{"k": null, "s": "12.5″ × 24″", "d": 24, "q": 14, "u": "u", "p": 120}]}, {"id": 19, "c": "cand", "n": "Copa alta de vidrio 20″", "a": "h", "e": 0, "r": 0.261, "i": "p19", "ci": "p19", "v": [{"k": null, "s": "12.5″ × 20″", "d": 20, "q": 14, "u": "u", "p": 100}]}, {"id": 20, "c": "cand", "n": "Copa de vidrio 12″", "a": "h", "e": 0, "r": 0.438, "i": "p20", "ci": "p20", "v": [{"k": null, "s": "12.5″ × 12″", "d": 12, "q": 14, "u": "u", "p": 80}]}, {"id": 21, "c": "cand", "n": "Porta velas cubo de cristal (set de 3)", "a": "h", "e": 1, "r": 2.121, "i": "p21", "ci": "p21", "v": [{"k": null, "s": "Medida no indicada", "d": 4, "q": 6, "u": "s", "p": 50}]}, {"id": 22, "c": "cand", "n": "Porta vela cubo de cristal pequeño", "a": "h", "e": 0, "r": 0.746, "i": "p22", "ci": "p22", "v": [{"k": null, "s": "2.5″ × 1.5″ × 1.5″", "d": 2.5, "q": 20, "u": "u", "p": 10}]}, {"id": 23, "c": "cand", "n": "Candeleros plateados tipo mercurio", "a": "h", "e": 0, "r": 0.787, "i": "p23", "ci": "p23", "v": [{"k": null, "s": "10.5″", "d": 10.5, "q": 3, "u": "u", "p": 150}, {"k": null, "s": "8.5″", "d": 8.5, "q": 2, "u": "u", "p": 150}]}, {"id": 24, "c": "cand", "n": "Candelero de hojas doradas con cristal", "a": "h", "e": 0, "r": 0.718, "i": "p24", "ci": "p24", "v": [{"k": "61423", "s": "11″", "d": 11, "q": 4, "u": "u", "p": 150}]}, {"id": 25, "c": "cand", "n": "Candelero de hojas doradas con copa", "a": "h", "e": 0, "r": 0.48, "i": "p25", "ci": "p25", "v": [{"k": "61422", "s": "10″", "d": 10, "q": 4, "u": "u", "p": 150}]}, {"id": 26, "c": "cand", "n": "Candelero de flor dorada", "a": "h", "e": 0, "r": 0.545, "i": "p26", "ci": "p26", "v": [{"k": "61421", "s": "8″", "d": 8, "q": 4, "u": "u", "p": 150}]}, {"id": 27, "c": "cand", "n": "Candelero de hojas doradas con esfera tallada", "a": "h", "e": 0, "r": 0.586, "i": "p27", "ci": "p27", "v": [{"k": "61424", "s": "11″", "d": 11, "q": 4, "u": "u", "p": 150}]}, {"id": 28, "c": "cand", "n": "Candelabro alto de hojas doradas · A", "a": "h", "e": 0, "r": 0.221, "i": "p28", "ci": "p28", "v": [{"k": "61414", "s": "45″", "d": 45, "q": 3, "u": "u", "p": 300}]}, {"id": 29, "c": "cand", "n": "Candelabro alto de hojas doradas · B", "a": "h", "e": 0, "r": 0.205, "i": "p29", "ci": "p29", "v": [{"k": "61415", "s": "45″", "d": 45, "q": 3, "u": "u", "p": 300}]}, {"id": 30, "c": "cand", "n": "Candelabro alto de hojas doradas · C", "a": "h", "e": 0, "r": 0.2, "i": "p30", "ci": "p30", "v": [{"k": "61416", "s": "45″", "d": 45, "q": 3, "u": "u", "p": 300}]}, {"id": 31, "c": "cand", "n": "Candelabro de flores blancas y doradas", "a": "h", "e": 0, "r": 0.661, "i": "p31", "ci": "p31", "v": [{"k": "61291", "s": "22″ × 13″", "d": 22, "q": 2, "u": "u", "p": 500}]}, {"id": 32, "c": "cand", "n": "Columna floral dorada y blanca", "a": "h", "e": 0, "r": 0.257, "i": "p32", "ci": "p32", "v": [{"k": "64316", "s": "24″", "d": 24, "q": 3, "u": "u", "p": 500}]}, {"id": 33, "c": "cand", "n": "Candeleros dorados para vela pilar", "a": "h", "e": 0, "r": 0.845, "i": "p33", "ci": "p33", "v": [{"k": "0491", "s": "12.5″", "d": 12.5, "q": 9, "u": "u", "p": 120}, {"k": "0493", "s": "22″", "d": 22, "q": 8, "u": "u", "p": 150}], "pn": "Set de las 2 medidas: L 250"}, {"id": 34, "c": "cand", "n": "Candelabro de venado", "a": "h", "e": 0, "r": 1.577, "i": "p34", "ci": "p34", "v": [{"k": "75211", "s": "35″ × 11″ × 21″", "d": 21, "q": 1, "u": "u", "p": 500}]}, {"id": 35, "c": "cand", "n": "Arandela dorada para vela cónica", "a": "h", "e": 1, "r": 0.47, "i": "p35", "ci": "p35", "v": [{"k": "78695", "s": "1″ × 1.75″", "d": 11, "q": 40, "u": "u", "p": 10}]}, {"id": 36, "c": "cand", "n": "Porta vela dorado bajo", "a": "h", "e": 0, "r": 2.09, "i": "p36", "ci": "p36", "v": [{"k": "78660", "s": "2.74″ × 2″", "d": 2, "q": 48, "u": "u", "p": 30}], "pn": "Con vidrio capello: L 90"}, {"id": 37, "c": "cand", "n": "Candeleros dorados delgados", "a": "h", "e": 0, "r": 0.498, "i": "p37", "ci": "p37", "v": [{"k": "78560", "s": "3″ × 12.25″", "d": 12.25, "q": 12, "u": "u", "p": 70}, {"k": "78561", "s": "4.4″ × 16.25″", "d": 16.25, "q": 12, "u": "u", "p": 70}, {"k": "78562", "s": "5.25″ × 21.25″", "d": 21.25, "q": 12, "u": "u", "p": 70}], "pn": "Set de 3: L 200 · individual L 70"}, {"id": 38, "c": "cand", "n": "Candeleros dorados de base redonda", "a": "h", "e": 1, "r": 0.85, "i": "p38", "ci": "p38", "v": [{"k": null, "s": "Set de 3", "d": 12, "q": 24, "u": "s", "p": 100}, {"k": null, "s": "Pieza individual", "d": 12, "q": 72, "u": "u", "p": 40}]}, {"id": 39, "c": "cand", "n": "Vitrina hexagonal dorada", "a": "h", "e": 0, "r": 0.359, "i": "p39", "ci": "p39", "v": [{"k": "73405", "s": "9.75″ × 8.5″ × 25″", "d": 25, "q": 4, "u": "u", "p": 1000}]}, {"id": 40, "c": "cand", "n": "Vitrina hexagonal dorada alta", "a": "h", "e": 0, "r": 0.364, "i": "p40", "ci": "p40", "v": [{"k": "73406", "s": "13.75″ × 12″ × 37.25″", "d": 37.25, "q": 4, "u": "u", "p": 1500}]}, {"id": 41, "c": "cand", "n": "Candelero de madera tallada crema", "a": "h", "e": 0, "r": 0.282, "i": "p41", "ci": "p41", "v": [{"k": "64083", "s": "18″", "d": 18, "q": 2, "u": "u", "p": 300}]}, {"id": 42, "c": "cand", "n": "Candelero de madera tallada crema alto", "a": "h", "e": 0, "r": 0.257, "i": "p42", "ci": "p42", "v": [{"k": "64087", "s": "24″", "d": 24, "q": 1, "u": "u", "p": 350}]}, {"id": 43, "c": "cand", "n": "Candelero de madera turquesa", "a": "h", "e": 0, "r": 0.287, "i": "p43", "ci": "p43", "v": [{"k": "64082", "s": "18″", "d": 18, "q": 2, "u": "u", "p": 300}]}, {"id": 44, "c": "cand", "n": "Candelero de madera turquesa alto", "a": "h", "e": 0, "r": 0.255, "i": "p44", "ci": "p44", "v": [{"k": "64086", "s": "24″", "d": 24, "q": 1, "u": "u", "p": 350}]}, {"id": 45, "c": "cand", "n": "Candelero de madera verde y terracota", "a": "h", "e": 0, "r": 0.289, "i": "p45", "ci": "p45", "v": [{"k": "64084", "s": "18″", "d": 18, "q": 2, "u": "u", "p": 300}]}, {"id": 46, "c": "cand", "n": "Candelero de madera verde y terracota alto", "a": "h", "e": 0, "r": 0.257, "i": "p46", "ci": "p46", "v": [{"k": "64088", "s": "24″", "d": 24, "q": 1, "u": "u", "p": 350}]}, {"id": 47, "c": "cand", "n": "Candelabro plateado de brazos 78″", "a": "h", "e": 0, "r": 0.386, "i": "p47", "ci": "p47", "v": [{"k": "44147", "s": "30″ × 78″", "d": 78, "q": 2, "u": "u", "p": 2000}]}, {"id": 48, "c": "cand", "n": "Candelabro plateado de brazos 55″", "a": "h", "e": 0, "r": 0.296, "i": "p48", "ci": "p48", "v": [{"k": "41148", "s": "18″ × 55″", "d": 55, "q": 2, "u": "u", "p": 1000}]}, {"id": 49, "c": "cand", "n": "Candelabro plateado de brazos 70″", "a": "h", "e": 0, "r": 0.307, "i": "p49", "ci": "p49", "v": [{"k": "44146", "s": "30″ × 70″", "d": 70, "q": 2, "u": "u", "p": 1500}]}, {"id": 50, "c": "cand", "n": "Candelabro acrílico de 5 brazos", "a": "h", "e": 0, "r": 0.264, "i": "p50", "ci": "p50", "v": [{"k": null, "s": "8.7″ × 18.5″ × 22.5″ × 26″", "d": 26, "q": 76, "u": "u", "p": 450}], "pn": "Precio sin velas. Con velas: L 550"}, {"id": 201, "c": "cand", "n": "Candelabro acrílico de 6 brazos curvos", "a": "h", "e": 1, "x": 1, "r": 0.468, "i": "p201", "ci": "c201", "v": [{"k": null, "s": "Medida no indicada", "d": 40, "q": 13, "u": "u", "p": 500}]}, {"id": 202, "c": "cand", "n": "Candelabro acrílico de 10 velas con base redonda", "a": "h", "e": 1, "x": 1, "r": 0.304, "i": "p202", "ci": "c202", "v": [{"k": null, "s": "Medida no indicada", "d": 32, "q": 12, "u": "u", "p": 850}]}, {"id": 203, "c": "cand", "n": "Candelabro acrílico con base rectangular", "a": "h", "e": 1, "x": 1, "r": 0.373, "i": "p203", "ci": "c203", "v": [{"k": null, "s": "Medida no indicada", "d": 30, "q": 4, "u": "u", "p": 850}]}, {"id": 204, "c": "cand", "n": "Candelabro dorado de 10 velas con base redonda", "a": "h", "e": 1, "x": 1, "r": 0.336, "i": "p204", "ci": "c204", "v": [{"k": null, "s": "Medida no indicada", "d": 32, "q": 20, "u": "u", "p": 1200}]}, {"id": 208, "c": "vela", "n": "Vela votiva LED", "a": "h", "e": 0, "x": 1, "r": 1.081, "i": "p208", "ci": "p208", "v": [{"k": null, "s": "1.2″ × 1.5″", "d": 1.5, "q": 1100, "u": "u", "p": 10}], "pn": "Precio de renta por vela."}, {"id": 209, "c": "vela", "n": "Vela flotante grande LED", "a": "h", "e": 0, "x": 1, "r": 1.488, "i": "p209", "ci": "p209", "v": [{"k": null, "s": "3″ × 1.5″", "d": 1.5, "q": 37, "u": "u", "p": 15}], "pn": "Precio de renta por vela."}, {"id": 210, "c": "vela", "n": "Vela flotante pequeña LED", "a": "h", "e": 0, "x": 1, "r": 1.239, "i": "p210", "ci": "p210", "v": [{"k": null, "s": "1.5″ × 1.5″", "d": 1.5, "q": 250, "u": "u", "p": 10}], "pn": "Precio de renta por vela."}, {"id": 121, "c": "vela", "n": "Velas LED pilar marfil", "a": "h", "e": 0, "r": 1.027, "i": "p121b", "ci": "p121b", "v": [{"k": null, "s": "3″ × 6″ · batería 2AA", "d": 6, "q": 72, "u": "u", "p": 30}]}, {"id": 122, "c": "vela", "n": "Velas LED cónicas blancas", "a": "h", "e": 0, "r": 0.15, "i": "t122", "ci": "c122", "v": [{"k": null, "s": "11″ · batería 2AAA", "d": 11, "q": 260, "u": "u", "p": 25}]}, {"id": 123, "c": "vela", "n": "Velas LED cónicas negras", "a": "h", "e": 0, "r": 0.15, "i": "t123", "ci": "c123", "v": [{"k": "1111", "s": "11″ · batería 2AAA", "d": 11, "q": 100, "u": "u", "p": 20}]}, {"id": 124, "c": "vela", "n": "Velas LED en cilindro acrílico (set de 3)", "a": "h", "e": 0, "r": 1.299, "i": "p124", "ci": "p124", "v": [{"k": null, "s": "2″ × 5″, 2″ × 6″ y 2″ × 7″ · batería 1AA", "d": 7, "q": 9, "u": "s", "p": 100}]}, {"id": 119, "c": "vela", "n": "Vela LED escultórica · modelo 1", "a": "h", "e": 1, "r": 0.414, "i": "p119", "ci": "p119", "v": [{"k": "87689", "s": "Batería 2AA", "d": 8, "q": 24, "u": "u", "p": 50}]}, {"id": 120, "c": "vela", "n": "Vela LED escultórica · modelo 2", "a": "h", "e": 1, "r": 0.528, "i": "p120", "ci": "p120", "v": [{"k": "87686", "s": "Batería 2AA", "d": 8, "q": 24, "u": "u", "p": 30}]}, {"id": 52, "c": "quin", "n": "Quinqués calados negro y dorado (set de 2)", "a": "h", "e": 0, "r": 0.898, "i": "p52", "ci": "p52", "v": [{"k": "92224", "s": "5.5″ × 14.5″", "d": 14.5, "q": 4, "u": "s", "p": 600}], "pn": "Individual: grande L 400 · pequeña L 300"}, {"id": 53, "c": "quin", "n": "Quinqué casita calado", "a": "h", "e": 0, "r": 0.77, "i": "p53", "ci": "p53", "v": [{"k": "92220", "s": "11.5″ × 12″", "d": 12, "q": 6, "u": "u", "p": 250}]}, {"id": 54, "c": "quin", "n": "Porta velas calados bajos (set de 2)", "a": "h", "e": 0, "r": 1.942, "i": "p54", "ci": "p54", "v": [{"k": "88590", "s": "5″ × 4.75″", "d": 4.75, "q": 4, "u": "s", "p": 200}]}, {"id": 55, "c": "quin", "n": "Porta velas cilíndricos calados (set de 2)", "a": "h", "e": 0, "r": 1.119, "i": "p55", "ci": "p55", "v": [{"k": "92219", "s": "4″ y 6″", "d": 6, "q": 8, "u": "s", "p": 200}]}, {"id": 56, "c": "quin", "n": "Porta velas de malla negro y dorado (set de 2)", "a": "h", "e": 0, "r": 1.167, "i": "p56", "ci": "p56", "v": [{"k": "88589", "s": "4″ y 6″", "d": 6, "q": 4, "u": "s", "p": 200}]}, {"id": 57, "c": "quin", "n": "Porta velas calados geométricos (set de 2)", "a": "h", "e": 0, "r": 0.988, "i": "p57", "ci": "p57", "v": [{"k": "88218", "s": "7.75″ y 10″", "d": 10, "q": 3, "u": "s", "p": 200}]}, {"id": 58, "c": "quin", "n": "Quinqués celestes con asa (set de 2)", "a": "h", "e": 0, "r": 0.85, "i": "p58", "ci": "p58", "v": [{"k": "88598", "s": "11″ y 13″", "d": 13, "q": 4, "u": "s", "p": 400}]}, {"id": 59, "c": "quin", "n": "Porta velas celestes calados (set de 2)", "a": "h", "e": 0, "r": 0.886, "i": "p59", "ci": "p59", "v": [{"k": "88212", "s": "7.75″ y 10″", "d": 10, "q": 3, "u": "s", "p": 200}]}, {"id": 60, "c": "quin", "n": "Quinqué circular", "a": "h", "e": 0, "r": 1.27, "i": "p60", "ci": "p60", "v": [{"k": "70780", "s": "22″", "d": 22, "q": 6, "u": "u", "p": 600}, {"k": "70782", "s": "17.5″", "d": 17.5, "q": 6, "u": "u", "p": 500}], "pn": "Set de 2: L 1,000"}, {"id": 61, "c": "quin", "n": "Quinqué jaula dorado", "a": "h", "e": 0, "r": 0.321, "i": "p61", "ci": "p61", "v": [{"k": "2392", "s": "7″ × 24″", "d": 24, "q": 8, "u": "u", "p": 450}]}, {"id": 62, "c": "quin", "n": "Farol geométrico Paragon", "a": "h", "e": 0, "r": 0.552, "i": "p62", "ci": "p62", "v": [{"k": "Paragon", "s": "12.5″ × 12.5″ × 18″", "d": 18, "q": 4, "u": "u", "p": 500}]}, {"id": 63, "c": "quin", "n": "Farol geométrico Geo", "a": "h", "e": 0, "r": 0.834, "i": "p63", "ci": "p63", "v": [{"k": "Geo", "s": "16″ × 16″ × 13″", "d": 13, "q": 4, "u": "u", "p": 500}]}, {"id": 64, "c": "quin", "n": "Farol geométrico Medina", "a": "h", "e": 0, "r": 0.911, "i": "p64", "ci": "p64", "v": [{"k": "Medina", "s": "14″ × 14″ × 14″", "d": 14, "q": 4, "u": "u", "p": 500}]}, {"id": 65, "c": "quin", "n": "Farol geométrico Noble", "a": "h", "e": 0, "r": 0.664, "i": "p65", "ci": "p65", "v": [{"k": "Noble", "s": "12″ × 12″ × 15″", "d": 15, "q": 4, "u": "u", "p": 500}]}, {"id": 66, "c": "quin", "n": "Faroles geométricos Corinth", "a": "h", "e": 0, "r": 0.943, "i": "p66", "ci": "p66", "v": [{"k": "Corinth", "s": "10″ × 10″ × 17″", "d": 17, "q": 1, "u": "u", "p": 250}, {"k": "Corinth", "s": "10″ × 10″ × 13″", "d": 13, "q": 1, "u": "u", "p": 250}, {"k": "Corinth", "s": "6″ × 6″ × 8″", "d": 8, "q": 1, "u": "u", "p": 250}], "pn": "Set completo de 3 faroles: L 650"}, {"id": 67, "c": "quin", "n": "Terrarios geométricos dorados", "a": "h", "e": 0, "r": 1.138, "i": "p67", "ci": "p67", "v": [{"k": "0507", "s": "11.5″", "d": 11.5, "q": 4, "u": "u", "p": 350}, {"k": "0508", "s": "13″", "d": 13, "q": 4, "u": "u", "p": 300}, {"k": "0509", "s": "15.25″", "d": 15.25, "q": 4, "u": "u", "p": 250}], "pn": "Set de 3: L 900"}, {"id": 68, "c": "quin", "n": "Farol de metal y madera 20″", "a": "h", "e": 0, "r": 0.446, "i": "p68", "ci": "p68", "v": [{"k": "92356", "s": "6.5″ × 20″", "d": 20, "q": 6, "u": "u", "p": 500}]}, {"id": 69, "c": "quin", "n": "Farol de metal y madera 25″", "a": "h", "e": 0, "r": 0.39, "i": "p69", "ci": "p69", "v": [{"k": "92354", "s": "7″ × 25″", "d": 25, "q": 6, "u": "u", "p": 600}]}, {"id": 70, "c": "quin", "n": "Quinqués cónicos de ratán (set de 2)", "a": "h", "e": 0, "r": 0.818, "i": "p70", "ci": "p70", "v": [{"k": "88705", "s": "23″ y 28″", "d": 28, "q": 1, "u": "s", "p": 800}]}, {"id": 71, "c": "quin", "n": "Quinqué de ratán tejido", "a": "h", "e": 0, "r": 0.53, "i": "p71", "ci": "p71", "v": [{"k": "78043", "s": "20″", "d": 20, "q": 4, "u": "u", "p": 400}]}, {"id": 72, "c": "quin", "n": "Quinqué de ratán tejido · modelo 2", "a": "h", "e": 0, "r": 0.457, "i": "p72", "ci": "p72", "v": [{"k": "78042", "s": "20″", "d": 20, "q": 4, "u": "u", "p": 500}], "pn": "Set: L 800"}, {"id": 73, "c": "quin", "n": "Faroles de madera clara (set de 3)", "a": "h", "e": 0, "r": 1.122, "i": "p73", "ci": "p73", "v": [{"k": "74327", "s": "12″, 20″ y 29″", "d": 29, "q": 2, "u": "s", "p": 1000}], "pn": "Individual: 12″ L 400 · 20″ L 450 · 29″ L 500"}, {"id": 75, "c": "flor", "n": "Florero celeste labrado", "a": "h", "e": 0, "r": 1.637, "i": "p75", "ci": "p75", "v": [{"k": "85550", "s": "8″ × 8″", "d": 8, "q": 6, "u": "u", "p": 300}, {"k": "85549", "s": "6.5″ × 6.5″", "d": 6.5, "q": 6, "u": "u", "p": 200}], "pn": "Set de 2: L 500"}, {"id": 76, "c": "flor", "n": "Florero azul labrado", "a": "h", "e": 0, "r": 0.688, "i": "p76", "ci": "p76", "v": [{"k": "85494", "s": "6″ × 8″", "d": 8, "q": 6, "u": "u", "p": 300}]}, {"id": 77, "c": "flor", "n": "Florero de cristal en rombos", "a": "h", "e": 0, "r": 0.714, "i": "p77", "ci": "p77", "v": [{"k": "61595", "s": "8″ × 10″", "d": 10, "q": 4, "u": "u", "p": 400}]}, {"id": 78, "c": "flor", "n": "Florero acanalado con pie", "a": "h", "e": 0, "r": 0.534, "i": "p78", "ci": "p78", "v": [{"k": "61299", "s": "7″ × 15″", "d": 15, "q": 4, "u": "u", "p": 400}]}, {"id": 79, "c": "flor", "n": "Florero acanalado alto con base", "a": "h", "e": 0, "r": 0.396, "i": "p79", "ci": "p79", "v": [{"k": "53041", "s": "6″ × 15″", "d": 15, "q": 2, "u": "u", "p": 500}]}, {"id": 80, "c": "flor", "n": "Florero de cristal diamantado", "a": "h", "e": 0, "r": 0.764, "i": "p80", "ci": "p80", "v": [{"k": "61219", "s": "6″ × 9″", "d": 9, "q": 4, "u": "u", "p": 250}]}, {"id": 81, "c": "flor", "n": "Florero de cristal tallado", "a": "h", "e": 0, "r": 0.721, "i": "p81", "ci": "p81", "v": [{"k": "61211", "s": "6″ × 7″", "d": 7, "q": 4, "u": "u", "p": 250}]}, {"id": 82, "c": "flor", "n": "Florero de cristal tallado pequeño", "a": "h", "e": 0, "r": 0.764, "i": "p82", "ci": "p82", "v": [{"k": "61210", "s": "4″ × 6″", "d": 6, "q": 6, "u": "u", "p": 200}]}, {"id": 83, "c": "flor", "n": "Copa florero tipo ánfora baja", "a": "h", "e": 0, "r": 1.109, "i": "p83", "ci": "p83", "v": [{"k": "47560", "s": "6″ × 7″", "d": 7, "q": 12, "u": "u", "p": 130}]}, {"id": 84, "c": "flor", "n": "Copa florero tipo ánfora", "a": "h", "e": 0, "r": 0.727, "i": "p84", "ci": "p84", "v": [{"k": "47557", "s": "6″ × 8″", "d": 8, "q": 12, "u": "u", "p": 100}]}, {"id": 85, "c": "flor", "n": "Copa florero tipo ánfora grande", "a": "h", "e": 0, "r": 0.727, "i": "p85", "ci": "p85", "v": [{"k": "47558", "s": "8″ × 10″", "d": 10, "q": 6, "u": "u", "p": 200}]}, {"id": 86, "c": "flor", "n": "Copa florero tipo ánfora pequeña", "a": "h", "e": 0, "r": 0.725, "i": "p86", "ci": "p86", "v": [{"k": "47556", "s": "4″ × 6″", "d": 6, "q": 24, "u": "u", "p": 80}]}, {"id": 87, "c": "flor", "n": "Frutero de cristal con pie", "a": "w", "e": 0, "r": 1.789, "i": "p87", "ci": "p87", "v": [{"k": "47562", "s": "6″ × 12″", "d": 12, "q": 4, "u": "u", "p": 250}]}, {"id": 88, "c": "flor", "n": "Bombonera de cristal con tapa", "a": "h", "e": 0, "r": 0.516, "i": "p88", "ci": "p88", "v": [{"k": "47563", "s": "7″ × 15″", "d": 15, "q": 4, "u": "u", "p": 350}]}, {"id": 89, "c": "flor", "n": "Bombonera de cristal alta con tapa", "a": "h", "e": 0, "r": 0.37, "i": "p89", "ci": "p89", "v": [{"k": "47564", "s": "6″ × 18″", "d": 18, "q": 4, "u": "u", "p": 400}]}, {"id": 90, "c": "flor", "n": "Florero con malla dorada 8″", "a": "h", "e": 0, "r": 0.509, "i": "p90", "ci": "p90", "v": [{"k": "55930", "s": "5″ × 8″", "d": 8, "q": 8, "u": "u", "p": 100}]}, {"id": 91, "c": "flor", "n": "Florero con malla dorada 4″ × 7″", "a": "h", "e": 0, "r": 0.509, "i": "p91", "ci": "p91", "v": [{"k": "55929", "s": "4″ × 7″", "d": 7, "q": 12, "u": "u", "p": 70}]}, {"id": 92, "c": "flor", "n": "Florero con malla dorada 5.5″", "a": "h", "e": 0, "r": 0.561, "i": "p92", "ci": "p92", "v": [{"k": "55927", "s": "4″ × 5.5″", "d": 5.5, "q": 8, "u": "u", "p": 90}]}, {"id": 93, "c": "flor", "n": "Florero con malla dorada ancho 5″", "a": "h", "e": 0, "r": 0.723, "i": "p93", "ci": "p93", "v": [{"k": "55925", "s": "3″ × 5″", "d": 5, "q": 12, "u": "u", "p": 70}]}, {"id": 94, "c": "flor", "n": "Florero con malla dorada 3.5″ × 7″", "a": "h", "e": 0, "r": 0.438, "i": "p94", "ci": "p94", "v": [{"k": "55926", "s": "3.5″ × 7″", "d": 7, "q": 12, "u": "u", "p": 70}]}, {"id": 95, "c": "flor", "n": "Florero de cristal en dos piezas 21.75″", "a": "h", "e": 0, "r": 0.398, "i": "p95", "ci": "p95", "v": [{"k": "46925", "s": "8.5″ × 21.75″", "d": 21.75, "q": 6, "u": "u", "p": 350}]}, {"id": 96, "c": "flor", "n": "Florero de cristal en dos piezas 31.25″", "a": "h", "e": 0, "r": 0.273, "i": "p96", "ci": "p96", "v": [{"k": "46926", "s": "8.5″ × 31.25″", "d": 31.25, "q": 6, "u": "u", "p": 500}]}, {"id": 97, "c": "flor", "n": "Florero torre acanalado", "a": "h", "e": 0, "r": 0.423, "i": "p97", "ci": "p97", "v": [{"k": "47111", "s": "9″ × 36.5″", "d": 36.5, "q": 11, "u": "u", "p": 600}]}, {"id": 98, "c": "flor", "n": "Botecitos de vidrio surtidos", "a": "h", "e": 1, "r": 1.637, "i": "p98", "ci": "p98", "v": [{"k": null, "s": "Medida no indicada", "d": 5, "q": 120, "u": "u", "p": 20}]}, {"id": 205, "c": "flor", "n": "Florero botella acanalado", "a": "h", "e": 1, "x": 1, "r": 0.36, "i": "p205", "ci": "c205", "v": [{"k": null, "s": "Medida no indicada", "d": 7, "q": 100, "u": "u", "p": 20}]}, {"id": 206, "c": "flor", "n": "Florero botella de vidrio liso", "a": "h", "e": 1, "x": 1, "r": 0.503, "i": "p206", "ci": "c206", "v": [{"k": null, "s": "Medida no indicada", "d": 6, "q": 100, "u": "u", "p": 20}]}, {"id": 207, "c": "flor", "n": "Florero cilíndrico de vidrio", "a": "h", "e": 1, "x": 1, "r": 1.425, "i": "p207", "ci": "c207", "v": [{"k": null, "s": "Pequeño · medida no indicada", "d": 5, "q": 16, "u": "u", "i": "p207s", "r": 0.674, "p": 30}, {"k": null, "s": "Mediano · medida no indicada", "d": 7, "q": 16, "u": "u", "i": "p207m", "r": 0.508, "p": 30}, {"k": null, "s": "Grande · medida no indicada", "d": 9, "q": 16, "u": "u", "i": "p207l", "r": 0.401, "p": 30}], "pn": "Set de 3 tamaños: L 90"}, {"id": 99, "c": "flor", "n": "Florero de cerámica blanca ondulado", "a": "h", "e": 0, "r": 1.461, "i": "p99b", "ci": "p99b", "v": [{"k": "64420", "s": "Chico · 6″ × 11″", "d": 11, "q": 6, "u": "u", "p": 300}, {"k": "64422", "s": "Mediano · 10″ × 18″", "d": 18, "q": 2, "u": "u", "p": 600}, {"k": null, "s": "Grande · 5″ × 17″", "d": 17, "q": 2, "u": "u", "p": 800}]}, {"id": 100, "c": "flor", "n": "Florero de cerámica blanca drapeado", "a": "h", "e": 0, "r": 0.8, "i": "p100", "ci": "p100", "v": [{"k": "64412", "s": "7″ × 12″", "d": 12, "q": 6, "u": "u", "p": 300}, {"k": "64413", "s": "12″ × 18″", "d": 18, "q": 4, "u": "u", "p": 600}], "pn": "Set de 2: L 800"}, {"id": 101, "c": "flor", "n": "Floreritos blancos en bandeja alargada", "a": "w", "e": 0, "r": 1.595, "i": "p101", "ci": "p101", "v": [{"k": "94300", "s": "11.75″ × 4.5″ × 6″", "d": 11.75, "q": 27, "u": "u", "p": 100}]}, {"id": 102, "c": "flor", "n": "Floreritos blancos en bandeja cuadrada", "a": "h", "e": 0, "r": 1.035, "i": "p102", "ci": "p102", "v": [{"k": "94301", "s": "6.25″ × 5.5″", "d": 5.5, "q": 36, "u": "u", "p": 100}]}, {"id": 103, "c": "flor", "n": "Jardinera dorada con asas", "a": "w", "e": 0, "r": 1.21, "i": "p103", "ci": "p103", "v": [{"k": "73161", "s": "23.5″ × 4″ × 4.5″", "d": 23.5, "q": 8, "u": "u", "p": 300}]}, {"id": 104, "c": "flor", "n": "Jardinera dorada con patas", "a": "w", "e": 0, "r": 1.518, "i": "p104", "ci": "p104", "v": [{"k": "72230", "s": "17.5″ × 4″ × 5.25″", "d": 17.5, "q": 8, "u": "u", "p": 250}, {"k": "72231", "s": "33.75″ × 4.5″ × 5.25″", "d": 33.75, "q": 6, "u": "u", "p": 400}], "pn": "Set de 2: L 650"}, {"id": 105, "c": "flor", "n": "Floreritos dorados de cerámica", "a": "h", "e": 1, "r": 1.745, "i": "p105", "ci": "p105", "v": [{"k": null, "s": "Medida no indicada", "d": 4, "q": 27, "u": "u", "p": 30}]}, {"id": 106, "c": "flor", "n": "Jaulas de metal galvanizado (set de 2)", "a": "h", "e": 0, "r": 1.328, "i": "p106", "ci": "p106", "v": [{"k": "74435", "s": "15.5″ y 20″", "d": 20, "q": 1, "u": "s", "p": 800}], "pn": "Individual: grande L 500 · pequeña L 300"}, {"id": 107, "c": "flor", "n": "Porta tubos de ensayo en arco", "a": "w", "e": 0, "r": 0.97, "i": "p107", "ci": "p107", "v": [{"k": "64186", "s": "12″ × 2.25″ × 11.5″", "d": 12, "q": 4, "u": "u", "p": 250}]}, {"id": 108, "c": "flor", "n": "Porta tubos de ensayo bajo", "a": "w", "e": 1, "r": 0.961, "i": "p108", "ci": "p108", "v": [{"k": "64185", "s": "12″ × 2.25″ × 11.5″", "d": 12, "q": 4, "u": "u", "p": 250}]}, {"id": 109, "c": "flor", "n": "Esfera de vidrio con base de madera", "a": "h", "e": 0, "r": 0.982, "i": "p109", "ci": "p109", "v": [{"k": "43280", "s": "4.75″ × 9″", "d": 9, "q": 12, "u": "u", "p": 500}, {"k": "43281", "s": "5.5″ × 12″", "d": 12, "q": 8, "u": "u", "p": 500}]}, {"id": 110, "c": "flor", "n": "Canastas tejidas con asa (set de 2)", "a": "h", "e": 0, "r": 1.478, "i": "p110", "ci": "p110", "v": [{"k": "74108", "s": "15″ y 18″", "d": 18, "q": 6, "u": "s", "p": 500}], "pn": "Individual: L 200 y L 300"}, {"id": 111, "c": "flor", "n": "Maceteros de tronco pequeños", "a": "h", "e": 0, "r": 2.8, "i": "p111", "ci": "p111", "v": [{"k": "64017", "s": "3″ × 4″", "d": 4, "q": 6, "u": "u", "p": 50}, {"k": "64017", "s": "6″ × 9″", "d": 9, "q": 6, "u": "u", "p": 100}]}, {"id": 112, "c": "flor", "n": "Macetero de tronco 10″", "a": "h", "e": 0, "r": 0.868, "i": "p112", "ci": "p112", "v": [{"k": "50710", "s": "10″ × 10″", "d": 10, "q": 4, "u": "u", "p": 350}]}, {"id": 113, "c": "flor", "n": "Macetero de tronco 12″", "a": "h", "e": 0, "r": 0.952, "i": "p113", "ci": "p113", "v": [{"k": "50711", "s": "12″ × 12″", "d": 12, "q": 2, "u": "u", "p": 400}]}, {"id": 114, "c": "flor", "n": "Base alta de alambre negro", "a": "h", "e": 0, "r": 0.446, "i": "p114", "ci": "p114", "v": [{"k": "78716", "s": "18″ × 32.5″", "d": 32.5, "q": 6, "u": "u", "p": 600}]}, {"id": 115, "c": "flor", "n": "Canastas colgantes de ratán", "a": "h", "e": 1, "r": 0.964, "i": "p115", "ci": "p115", "v": [{"k": "60050", "s": "23″ × 6.5″", "d": 23, "q": 1, "u": "u", "p": 350}, {"k": "60051", "s": "35″ × 6.75″", "d": 35, "q": 1, "u": "u", "p": 500}]}, {"id": 117, "c": "cent", "n": "Centro de mesa de cristal en niveles", "a": "h", "e": 1, "r": 0.882, "i": "p117", "ci": "p117", "v": [{"k": null, "s": "32″ × 62″", "d": 32, "q": 24, "u": "u", "p": 1500}]}, {"id": 125, "c": "acce", "n": "Centro de cuencos plateados", "a": "w", "e": 0, "r": 2.121, "i": "p125", "ci": "p125", "v": [{"k": "64131", "s": "24″", "d": 24, "q": 2, "u": "u", "p": 500}]}, {"id": 126, "c": "acce", "n": "Centro de cuencos plateados abierto", "a": "w", "e": 0, "r": 2.055, "i": "p126", "ci": "p126", "v": [{"k": "15952", "s": "24″", "d": 24, "q": 3, "u": "u", "p": 350}]}, {"id": 127, "c": "acce", "n": "Esfera dorada de hojas pequeña", "a": "h", "e": 0, "r": 1.029, "i": "p127", "ci": "p127", "v": [{"k": "56378", "s": "3″ × 3″", "d": 3, "q": 6, "u": "u", "p": 100}]}, {"id": 128, "c": "acce", "n": "Esfera dorada de hojas", "a": "h", "e": 0, "r": 1.063, "i": "p128", "ci": "p128", "v": [{"k": "56379", "s": "5″ × 5″", "d": 5, "q": 4, "u": "u", "p": 150}]}, {"id": 129, "c": "acce", "n": "Granada dorada", "a": "h", "e": 0, "r": 0.891, "i": "p129", "ci": "p129", "v": [{"k": "47033", "s": "3″ × 3″", "d": 3, "q": 36, "u": "u", "p": 50}], "pn": "Granada grande: L 100"}, {"id": 130, "c": "acce", "n": "Figuras doradas: caracol, pájaro, abeja y mariposa", "a": "w", "e": 1, "r": 1.225, "i": "p130", "ci": "p130", "v": [{"k": null, "s": "6″ · 3 de cada una", "d": 14, "q": 12, "u": "u", "p": 30}]}, {"id": 131, "c": "acce", "n": "Sombrilla de papel blanca", "a": "h", "e": 0, "r": 0.971, "i": "p131", "ci": "p131", "v": [{"k": "56756", "s": "76″ × 86″", "d": 86, "q": 4, "u": "u", "p": 1000}]}, {"id": 132, "c": "acce", "n": "Mantis de madera", "a": "w", "e": 0, "r": 1.159, "i": "p132", "ci": "p132", "v": [{"k": "0246", "s": "37″ × 31″", "d": 37, "q": 1, "u": "u", "p": 700}]}, {"id": 133, "c": "acce", "n": "Saltamontes de madera", "a": "w", "e": 0, "r": 1.972, "i": "p133", "ci": "p133", "v": [{"k": "0245", "s": "28″ × 14″", "d": 28, "q": 1, "u": "u", "p": 700}]}, {"id": 134, "c": "acce", "n": "Pantalla de ratán tejido", "a": "h", "e": 0, "r": 0.839, "i": "p134", "ci": "p134", "v": [{"k": "62371", "s": "23″ × 22″", "d": 22, "q": 6, "u": "u", "p": 600}]}, {"id": 135, "c": "acce", "n": "Elevadores de madera blanca (set de 2)", "a": "w", "e": 1, "r": 0.9, "i": "p135", "ci": "p135", "v": [{"k": null, "s": "Medida no indicada", "d": 22, "q": 2, "u": "s", "p": 400}]}, {"id": 136, "c": "acce", "n": "Cubos elevadores de acrílico (set de 3)", "a": "h", "e": 1, "r": 0.821, "i": "p136", "ci": "p136", "v": [{"k": null, "s": "Medida no indicada", "d": 14, "q": 4, "u": "s", "p": 200}]}, {"id": 137, "c": "acce", "n": "Escalones exhibidores de acrílico", "a": "h", "e": 1, "r": 0.475, "i": "p137", "ci": "p137", "v": [{"k": null, "s": "Medida no indicada", "d": 6, "q": 4, "u": "s", "p": 150}]}, {"id": 139, "c": "serv", "n": "Etagere de 2 niveles con arco", "a": "h", "e": 0, "r": 0.63, "i": "p139", "ci": "p139", "v": [{"k": "92867", "s": "13″ × 10″ × 24″", "d": 24, "q": 2, "u": "u", "p": 350}]}, {"id": 140, "c": "serv", "n": "Tabla de madera con domo de malla", "a": "w", "e": 0, "r": 1.676, "i": "p140", "ci": "p140", "v": [{"k": "92555", "s": "19.5″ × 11″ × 8.5″", "d": 19.5, "q": 2, "u": "u", "p": 200}]}, {"id": 141, "c": "serv", "n": "Tabla de madera Stacy (set de 2)", "a": "w", "e": 0, "r": 1.417, "i": "p141", "ci": "p141", "v": [{"k": "92319", "s": "17″ × 13″ × 5″", "d": 17, "q": 2, "u": "s", "p": 500}], "pn": "Individual: L 300 y L 250"}, {"id": 142, "c": "serv", "n": "Mini tablas con patas (set de 3)", "a": "h", "e": 0, "r": 4.93, "i": "p142", "ci": "p142", "v": [{"k": "88615", "s": "2.25″ a 3.25″", "d": 3.25, "q": 1, "u": "s", "p": 500}]}, {"id": 143, "c": "serv", "n": "Domo de cristal con base de madera", "a": "h", "e": 0, "r": 1.208, "i": "p143", "ci": "p143", "v": [{"k": "88385", "s": "9.75″ × 7.5″", "d": 7.5, "q": 2, "u": "u", "p": 150}]}, {"id": 144, "c": "serv", "n": "Pastelero de madera con domo", "a": "h", "e": 0, "r": 0.869, "i": "p144", "ci": "p144", "v": [{"k": "88384", "s": "10.5″", "d": 10.5, "q": 2, "u": "u", "p": 150}]}, {"id": 145, "c": "serv", "n": "Mesitas elevadoras de metal y madera (set de 2)", "a": "h", "e": 0, "r": 2.057, "i": "p145", "ci": "p145", "v": [{"k": "82697", "s": "10.5″ × 7″", "d": 7, "q": 2, "u": "s", "p": 500}]}, {"id": 146, "c": "serv", "n": "Bandeja de madera con aro de metal", "a": "h", "e": 0, "r": 1.011, "i": "p146", "ci": "p146", "v": [{"k": "82082", "s": "14.25″ × 14″", "d": 14, "q": 2, "u": "u", "p": 300}]}, {"id": 147, "c": "serv", "n": "Bandejas de madera con borde de metal (set de 2)", "a": "w", "e": 0, "r": 1.845, "i": "p147", "ci": "p147", "v": [{"k": "66456", "s": "15.75″", "d": 15.75, "q": 2, "u": "s", "p": 350}]}, {"id": 148, "c": "serv", "n": "Pastelero de madera", "a": "w", "e": 0, "r": 1.778, "i": "p148", "ci": "p148", "v": [{"k": "64436", "s": "7″ × 4″", "d": 7, "q": 2, "u": "u", "p": 60}, {"k": "64435", "s": "4″ × 3″", "d": 4, "q": 6, "u": "u", "p": 40}, {"k": "64434", "s": "5.5″ × 3″", "d": 5.5, "q": 3, "u": "u", "p": 50}]}, {"id": 149, "c": "serv", "n": "Pasteleros de cristal", "a": "h", "e": 0, "r": 0.709, "i": "p149", "ci": "p149", "v": [{"k": "64377", "s": "16″ × 9″", "d": 9, "q": 4, "u": "u", "p": 500}, {"k": "64376", "s": "12″ × 5.5″", "d": 5.5, "q": 3, "u": "u", "p": 300}, {"k": "64375", "s": "6″ × 4″", "d": 4, "q": 12, "u": "u", "p": 150}]}, {"id": 150, "c": "serv", "n": "Ponchera de cristal con pie", "a": "w", "e": 0, "r": 1.789, "i": "p150", "ci": "p150", "v": [{"k": "64359", "s": "12″ × 6″", "d": 12, "q": 7, "u": "u", "p": 250}]}, {"id": 151, "c": "serv", "n": "Torre dorada de 5 niveles", "a": "h", "e": 0, "r": 0.465, "i": "p151", "ci": "p151", "v": [{"k": "16227", "s": "45″", "d": 45, "q": 1, "u": "u", "p": 1000}]}, {"id": 152, "c": "serv", "n": "Beaded 3 pisos", "a": "h", "e": 0, "r": 0.59, "i": "p152", "ci": "p152", "v": [{"k": "13107", "s": "21.5″", "d": 21.5, "q": 1, "u": "u", "p": 500}]}, {"id": 153, "c": "serv", "n": "Beaded cake stand", "a": "w", "e": 0, "r": 1.739, "i": "p153", "ci": "p153", "v": [{"k": "8393", "s": "13″", "d": 13, "q": 2, "u": "u", "p": 300}]}, {"id": 154, "c": "serv", "n": "Beaded handle", "a": "w", "e": 0, "r": 2.679, "i": "p154", "ci": "p154", "v": [{"k": "6353", "s": "19″ × 7.5″", "d": 19, "q": 3, "u": "u", "p": 250}]}, {"id": 155, "c": "serv", "n": "Beaded square", "a": "w", "e": 0, "r": 1.139, "i": "p155", "ci": "p155", "v": [{"k": "6285", "s": "19″ × 11.5″", "d": 19, "q": 2, "u": "u", "p": 400}]}, {"id": 156, "c": "serv", "n": "Concha tray", "a": "w", "e": 0, "r": 1.871, "i": "p156", "ci": "p156", "v": [{"k": "8347", "s": "16″", "d": 16, "q": 2, "u": "u", "p": 550}]}, {"id": 157, "c": "serv", "n": "Azafate hoja", "a": "w", "e": 0, "r": 1.293, "i": "p157", "ci": "p157", "v": [{"k": "16041", "s": "23″", "d": 23, "q": 2, "u": "u", "p": 250}]}, {"id": 158, "c": "serv", "n": "Plato plateado texturizado", "a": "w", "e": 0, "r": 1.047, "i": "p158", "ci": "p158", "v": [{"k": "20528", "s": "12″", "d": 12, "q": 4, "u": "u", "p": 300}]}, {"id": 159, "c": "serv", "n": "Crab tray", "a": "w", "e": 0, "r": 1.333, "i": "p159", "ci": "p159", "v": [{"k": "15172", "s": "18″", "d": 18, "q": 3, "u": "u", "p": 300}]}, {"id": 160, "c": "serv", "n": "Hammered tray", "a": "w", "e": 0, "r": 1.653, "i": "p160", "ci": "p160", "v": [{"k": "12829", "s": "25″", "d": 25, "q": 2, "u": "u", "p": 500}]}, {"id": 161, "c": "serv", "n": "Beaded bowl", "a": "w", "e": 0, "r": 1.175, "i": "p161", "ci": "p161", "v": [{"k": "11299", "s": "10.5″", "d": 10.5, "q": 3, "u": "u", "p": 250}]}, {"id": 162, "c": "serv", "n": "Hammered scalloped", "a": "w", "e": 1, "r": 2.249, "i": "p162", "ci": "p162", "v": [{"k": "12809", "s": "Medida no indicada", "d": 15.3, "q": 3, "u": "u", "p": 450}]}, {"id": 163, "c": "serv", "n": "Base mármol Castella", "a": "w", "e": 0, "r": 1.053, "i": "p163", "ci": "p163", "v": [{"k": "71103", "s": "Chica · 11″ × 4″", "d": 11, "q": 2, "u": "u", "p": 300}, {"k": "71103", "s": "Grande · 13″ × 6″", "d": 13, "q": 2, "u": "u", "p": 500}]}, {"id": 165, "c": "serv", "n": "Base mármol ovalada", "a": "w", "e": 0, "r": 1.126, "i": "p165", "ci": "p165", "v": [{"k": "75180", "s": "17.25″ × 6″", "d": 17.25, "q": 2, "u": "u"}, {"k": "75181", "s": "13″ × 4″", "d": 13, "q": 2, "u": "u"}], "pn": "Set de las 2 medidas: L 350"}, {"id": 166, "c": "serv", "n": "Base mármol 2 pisos", "a": "h", "e": 0, "r": 1.168, "i": "p166", "ci": "p166", "v": [{"k": "71101", "s": "13″ × 7″ × 10.7″", "d": 10.7, "q": 2, "u": "u", "p": 350}]}, {"id": 167, "c": "serv", "n": "Bandeja plateada rectangular larga", "a": "w", "e": 0, "r": 1.425, "i": "p167", "ci": "p167", "v": [{"k": "15842", "s": "24″", "d": 24, "q": 3, "u": "u", "p": 200}]}, {"id": 168, "c": "serv", "n": "Bandeja plateada extra larga", "a": "w", "e": 0, "r": 1.032, "i": "p168", "ci": "p168", "v": [{"k": "15841", "s": "39″", "d": 39, "q": 2, "u": "u", "p": 400}]}, {"id": 173, "c": "hiel", "n": "Hieleras martilladas doradas (set de 3)", "a": "w", "e": 0, "r": 1.355, "i": "p173", "ci": "p173", "v": [{"k": "75144", "s": "21″, 18″ y 16″", "d": 21, "q": 1, "u": "s", "p": 800}]}, {"id": 174, "c": "hiel", "n": "Hieleras martilladas cobre (set de 3)", "a": "w", "e": 0, "r": 1.357, "i": "p174", "ci": "p174", "v": [{"k": "75145", "s": "21″, 18″ y 16″", "d": 21, "q": 1, "u": "s", "p": 800}], "pn": "Individual: grande L 400 · mediana L 300 · chica L 200"}, {"id": 175, "c": "hiel", "n": "Hieleras martilladas plateadas (set de 3)", "a": "w", "e": 0, "r": 1.307, "i": "p175", "ci": "p175", "v": [{"k": "75143", "s": "21″, 18″ y 16″", "d": 21, "q": 1, "u": "s", "p": 800}]}, {"id": 176, "c": "hiel", "n": "Hielera galvanizada ovalada", "a": "w", "e": 0, "r": 1.567, "i": "p176", "ci": "p176", "v": [{"k": "20135", "s": "18″ × 12″ × 8″", "d": 18, "q": 4, "u": "u", "p": 300}]}, {"id": 178, "c": "uten", "n": "Cucharón con mango de perlas", "a": "w", "e": 0, "r": 1.373, "i": "p178", "ci": "p178", "v": [{"k": "11321", "s": "13″", "d": 13, "q": 6, "u": "u", "p": 100}]}, {"id": 179, "c": "uten", "n": "Cuchillo de pastel con perlas", "a": "w", "e": 0, "r": 1.692, "i": "p179", "ci": "p179", "v": [{"k": "13507", "s": "13″", "d": 13, "q": 6, "u": "u", "p": 100}]}, {"id": 180, "c": "uten", "n": "Pala de pastel con perlas", "a": "w", "e": 0, "r": 1.16, "i": "p180", "ci": "p180", "v": [{"k": "11322", "s": "11″", "d": 11, "q": 6, "u": "u", "p": 100}]}, {"id": 181, "c": "uten", "n": "Set de quesos con mango de perlas", "a": "h", "e": 1, "r": 1.024, "i": "p181", "ci": "p181", "v": [{"k": "15693", "s": "Medida no indicada", "d": 8, "q": 3, "u": "s", "p": 200}]}, {"id": 182, "c": "uten", "n": "Set de quesos con venado dorado", "a": "h", "e": 1, "r": 0.977, "i": "p182", "ci": "p182", "v": [{"k": "75084", "s": "Medida no indicada", "d": 8, "q": 4, "u": "s", "p": 200}]}, {"id": 183, "c": "uten", "n": "Set de quesos con nudo", "a": "h", "e": 1, "r": 1.098, "i": "p183", "ci": "p183", "v": [{"k": "15705", "s": "Medida no indicada", "d": 7, "q": 3, "u": "s", "p": 200}]}, {"id": 184, "c": "uten", "n": "Set de quesos con bambú dorado", "a": "w", "e": 1, "r": 1.198, "i": "p184", "ci": "p184", "v": [{"k": "75086", "s": "Medida no indicada", "d": 9, "q": 4, "u": "s", "p": 200}]}, {"id": 185, "c": "uten", "n": "Pinzas de servir", "a": "w", "e": 1, "r": 1.282, "i": "p185", "ci": "p185", "v": [{"k": "20687", "s": "Medida no indicada", "d": 10, "q": 12, "u": "u", "p": 50}]}, {"id": 186, "c": "uten", "n": "Cubiertos de ensalada con venado dorado", "a": "h", "e": 1, "r": 0.464, "i": "p186", "ci": "p186", "v": [{"k": "15690", "s": "Medida no indicada", "d": 12, "q": 4, "u": "s", "p": 200}]}, {"id": 187, "c": "uten", "n": "Cubiertos de servir lisos", "a": "w", "e": 1, "r": 1.552, "i": "p187", "ci": "p187", "v": [{"k": "20366", "s": "Medida no indicada", "d": 12, "q": 4, "u": "s", "p": 200}]}, {"id": 188, "c": "uten", "n": "Cubiertos de servir martillados", "a": "w", "e": 1, "r": 1.163, "i": "p188", "ci": "p188", "v": [{"k": "20365", "s": "Medida no indicada", "d": 12, "q": 4, "u": "s", "p": 200}]}, {"id": 189, "c": "uten", "n": "Cubiertos de ensalada con ramas doradas", "a": "w", "e": 1, "r": 1.004, "i": "p189", "ci": "p189", "v": [{"k": "75080", "s": "Medida no indicada", "d": 12, "q": 4, "u": "s", "p": 200}]}, {"id": 190, "c": "uten", "n": "Cubiertos de servir con nudo", "a": "h", "e": 1, "r": 0.383, "i": "p190", "ci": "p190", "v": [{"k": "2666", "s": "Medida no indicada", "d": 12, "q": 4, "u": "s", "p": 200}]}, {"id": 191, "c": "uten", "n": "Cubiertos de servir con caballito de mar", "a": "w", "e": 1, "r": 1.037, "i": "p191", "ci": "p191", "v": [{"k": "20361", "s": "Medida no indicada", "d": 12, "q": 4, "u": "s", "p": 200}]}];
+var WA = '50432957112';
+var CATS = [
+  {id:'cand', n:'Candelabros y porta velas', img:'ev/candeleros-dorados.webp'},
+  {id:'vela', n:'Velas LED', img:'mt/m076.webp', pos:'center 70%'},
+  {id:'quin', n:'Quinqués', img:'ev/faroles-madera.webp'},
+  {id:'flor', n:'Floreros', img:'ev/rosas.webp'},
+  {id:'cent', n:'Centros de mesa', img:'ev/florero-torre.webp'},
+  {id:'acce', n:'Accesorios', img:'ev/mesa-azul.webp'},
+  {id:'serv', n:'Servicio de alimentos', img:'ev/buffet.webp'},
+  {id:'hiel', n:'Hieleras', img:'ev/hieleras.webp', pos:'center 88%'},
+  {id:'uten', n:'Utensilios para servir', img:'p/p182.webp', obj:true}
+];
+var GALLERY = [
+  ['mt/m063.webp','Montaje de The Rental Studio','mt/t063.webp'],
+  ['mt/m017.webp','Montaje de The Rental Studio','mt/t017.webp'],
+  ['mt/m094.webp','Montaje de The Rental Studio','mt/t094.webp'],
+  ['mt/m053.webp','Montaje de The Rental Studio','mt/t053.webp'],
+  ['mt/m089.webp','Montaje de The Rental Studio','mt/t089.webp'],
+  ['mt/m041.webp','Montaje de The Rental Studio','mt/t041.webp'],
+  ['mt/m077.webp','Montaje de The Rental Studio','mt/t077.webp'],
+  ['coliflor','Centro de mesa con coliflores en copas de cristal'],
+  ['mt/m072.webp','Montaje de The Rental Studio','mt/t072.webp'],
+  ['rooftop','Mesas con mantel arena en terraza de vidrio'],
+  ['quinques-circulares','Quinqués circulares con helechos en salón'],
+  ['mesa-atardecer','Mesa larga con rosas en floreritos y velas al atardecer'],
+  ['candeleros-dorados','Candeleros dorados con flores color vino y granadas doradas'],
+  ['floreritos-blancos','Floreritos blancos de cerámica con follaje'],
+  ['farol-geo','Farol geométrico con vela LED'],
+  ['pasta','Mesa con anturios, pasta y velas'],
+  ['helechos','Mesa con helechos y velas negras'],
+  ['centros-verdes','Centros verdes sobre mantel arena'],
+  ['panes','Mesa con panes y rosas naranja'],
+  ['mesa-azul','Mesa larga con candeleros dorados y granadas'],
+  ['faroles-madera','Faroles de madera y metal con velas'],
+  ['buffet','Buffet con bandejas plateadas'],
+  ['mt/m001.webp','Montaje de The Rental Studio','mt/t001.webp'],
+  ['mt/m002.webp','Montaje de The Rental Studio','mt/t002.webp'],
+  ['mt/m003.webp','Montaje de The Rental Studio','mt/t003.webp'],
+  ['mt/m004.webp','Montaje de The Rental Studio','mt/t004.webp'],
+  ['mt/m005.webp','Montaje de The Rental Studio','mt/t005.webp'],
+  ['mt/m006.webp','Montaje de The Rental Studio','mt/t006.webp'],
+  ['mt/m007.webp','Montaje de The Rental Studio','mt/t007.webp'],
+  ['mt/m008.webp','Montaje de The Rental Studio','mt/t008.webp'],
+  ['mt/m009.webp','Montaje de The Rental Studio','mt/t009.webp'],
+  ['mt/m010.webp','Montaje de The Rental Studio','mt/t010.webp'],
+  ['mt/m011.webp','Montaje de The Rental Studio','mt/t011.webp'],
+  ['mt/m012.webp','Montaje de The Rental Studio','mt/t012.webp'],
+  ['mt/m013.webp','Montaje de The Rental Studio','mt/t013.webp'],
+  ['mt/m014.webp','Montaje de The Rental Studio','mt/t014.webp'],
+  ['mt/m015.webp','Montaje de The Rental Studio','mt/t015.webp'],
+  ['mt/m016.webp','Montaje de The Rental Studio','mt/t016.webp'],
+  ['mt/m018.webp','Montaje de The Rental Studio','mt/t018.webp'],
+  ['mt/m019.webp','Montaje de The Rental Studio','mt/t019.webp'],
+  ['mt/m020.webp','Montaje de The Rental Studio','mt/t020.webp'],
+  ['mt/m021.webp','Montaje de The Rental Studio','mt/t021.webp'],
+  ['mt/m022.webp','Montaje de The Rental Studio','mt/t022.webp'],
+  ['mt/m023.webp','Montaje de The Rental Studio','mt/t023.webp'],
+  ['mt/m024.webp','Montaje de The Rental Studio','mt/t024.webp'],
+  ['mt/m025.webp','Montaje de The Rental Studio','mt/t025.webp'],
+  ['mt/m026.webp','Montaje de The Rental Studio','mt/t026.webp'],
+  ['mt/m027.webp','Montaje de The Rental Studio','mt/t027.webp'],
+  ['mt/m028.webp','Montaje de The Rental Studio','mt/t028.webp'],
+  ['mt/m029.webp','Montaje de The Rental Studio','mt/t029.webp'],
+  ['mt/m030.webp','Montaje de The Rental Studio','mt/t030.webp'],
+  ['mt/m031.webp','Montaje de The Rental Studio','mt/t031.webp'],
+  ['mt/m032.webp','Montaje de The Rental Studio','mt/t032.webp'],
+  ['mt/m033.webp','Montaje de The Rental Studio','mt/t033.webp'],
+  ['mt/m034.webp','Montaje de The Rental Studio','mt/t034.webp'],
+  ['mt/m035.webp','Montaje de The Rental Studio','mt/t035.webp'],
+  ['mt/m036.webp','Montaje de The Rental Studio','mt/t036.webp'],
+  ['mt/m037.webp','Montaje de The Rental Studio','mt/t037.webp'],
+  ['mt/m038.webp','Montaje de The Rental Studio','mt/t038.webp'],
+  ['mt/m039.webp','Montaje de The Rental Studio','mt/t039.webp'],
+  ['mt/m040.webp','Montaje de The Rental Studio','mt/t040.webp'],
+  ['mt/m042.webp','Montaje de The Rental Studio','mt/t042.webp'],
+  ['mt/m043.webp','Montaje de The Rental Studio','mt/t043.webp'],
+  ['mt/m044.webp','Montaje de The Rental Studio','mt/t044.webp'],
+  ['mt/m045.webp','Montaje de The Rental Studio','mt/t045.webp'],
+  ['mt/m046.webp','Montaje de The Rental Studio','mt/t046.webp'],
+  ['mt/m047.webp','Montaje de The Rental Studio','mt/t047.webp'],
+  ['mt/m048.webp','Montaje de The Rental Studio','mt/t048.webp'],
+  ['mt/m049.webp','Montaje de The Rental Studio','mt/t049.webp'],
+  ['mt/m050.webp','Montaje de The Rental Studio','mt/t050.webp'],
+  ['mt/m051.webp','Montaje de The Rental Studio','mt/t051.webp'],
+  ['mt/m052.webp','Montaje de The Rental Studio','mt/t052.webp'],
+  ['mt/m054.webp','Montaje de The Rental Studio','mt/t054.webp'],
+  ['mt/m055.webp','Montaje de The Rental Studio','mt/t055.webp'],
+  ['mt/m056.webp','Montaje de The Rental Studio','mt/t056.webp'],
+  ['mt/m057.webp','Montaje de The Rental Studio','mt/t057.webp'],
+  ['mt/m058.webp','Montaje de The Rental Studio','mt/t058.webp'],
+  ['mt/m059.webp','Montaje de The Rental Studio','mt/t059.webp'],
+  ['mt/m060.webp','Montaje de The Rental Studio','mt/t060.webp'],
+  ['mt/m061.webp','Montaje de The Rental Studio','mt/t061.webp'],
+  ['mt/m062.webp','Montaje de The Rental Studio','mt/t062.webp'],
+  ['mt/m064.webp','Montaje de The Rental Studio','mt/t064.webp'],
+  ['mt/m065.webp','Montaje de The Rental Studio','mt/t065.webp'],
+  ['mt/m066.webp','Montaje de The Rental Studio','mt/t066.webp'],
+  ['mt/m067.webp','Montaje de The Rental Studio','mt/t067.webp'],
+  ['mt/m068.webp','Montaje de The Rental Studio','mt/t068.webp'],
+  ['mt/m069.webp','Montaje de The Rental Studio','mt/t069.webp'],
+  ['mt/m070.webp','Montaje de The Rental Studio','mt/t070.webp'],
+  ['mt/m071.webp','Montaje de The Rental Studio','mt/t071.webp'],
+  ['mt/m073.webp','Montaje de The Rental Studio','mt/t073.webp'],
+  ['mt/m074.webp','Montaje de The Rental Studio','mt/t074.webp'],
+  ['mt/m075.webp','Montaje de The Rental Studio','mt/t075.webp'],
+  ['mt/m076.webp','Montaje de The Rental Studio','mt/t076.webp'],
+  ['mt/m078.webp','Montaje de The Rental Studio','mt/t078.webp'],
+  ['mt/m079.webp','Montaje de The Rental Studio','mt/t079.webp'],
+  ['mt/m080.webp','Montaje de The Rental Studio','mt/t080.webp'],
+  ['mt/m081.webp','Montaje de The Rental Studio','mt/t081.webp'],
+  ['mt/m082.webp','Montaje de The Rental Studio','mt/t082.webp'],
+  ['mt/m083.webp','Montaje de The Rental Studio','mt/t083.webp'],
+  ['mt/m084.webp','Montaje de The Rental Studio','mt/t084.webp'],
+  ['mt/m085.webp','Montaje de The Rental Studio','mt/t085.webp'],
+  ['mt/m086.webp','Montaje de The Rental Studio','mt/t086.webp'],
+  ['mt/m087.webp','Montaje de The Rental Studio','mt/t087.webp'],
+  ['mt/m088.webp','Montaje de The Rental Studio','mt/t088.webp'],
+  ['mt/m090.webp','Montaje de The Rental Studio','mt/t090.webp'],
+  ['mt/m091.webp','Montaje de The Rental Studio','mt/t091.webp'],
+  ['mt/m092.webp','Montaje de The Rental Studio','mt/t092.webp'],
+  ['mt/m093.webp','Montaje de The Rental Studio','mt/t093.webp'],
+  ['mt/m095.webp','Montaje de The Rental Studio','mt/t095.webp'],
+  ['mt/m096.webp','Montaje de The Rental Studio','mt/t096.webp'],
+  ['mt/m097.webp','Montaje de The Rental Studio','mt/t097.webp'],
+  ['mt/m098.webp','Montaje de The Rental Studio','mt/t098.webp'],
+  ['mt/m099.webp','Montaje de The Rental Studio','mt/t099.webp'],
+  ['mt/m100.webp','Montaje de The Rental Studio','mt/t100.webp'],
+  ['mt/m101.webp','Montaje de The Rental Studio','mt/t101.webp'],
+  ['mt/m102.webp','Montaje de The Rental Studio','mt/t102.webp'],
+  ['mt/m103.webp','Montaje de The Rental Studio','mt/t103.webp'],
+  ['mt/m104.webp','Montaje de The Rental Studio','mt/t104.webp']
+];
+var TABLES = {
+  r72:{n:'Redonda 72″', short:'Redonda 72″', w:72, round:true},
+  r60:{n:'Redonda 60″', short:'Redonda 60″', w:60, round:true},
+  rect3072:{n:'Rectangular 30″ × 72″', short:'Rect. 30″ × 72″', w:72, d:30, round:false},
+  rect:{n:'Rectangular 40″ × 80″', short:'Rect. 40″ × 80″', w:80, d:40, round:false},
+  rect4880:{n:'Rectangular 48″ × 80″', short:'Rect. 48″ × 80″', w:80, d:48, round:false}
+};
+var TH = 30; // alto de mesa dibujado (pulgadas)
+var CLOTHS = [
+  {id:'blanco', n:'blanco', c:'#FAF9F6'},
+  {id:'marfil', n:'marfil', c:'#F0E8D8'},
+  {id:'champan', n:'champán', c:'#E2D1B3'},
+  {id:'arena', n:'arena', c:'#D6C3A8'},
+  {id:'gris', n:'gris perla', c:'#D3D2CE'},
+  {id:'salvia', n:'salvia', c:'#B5C0AC'},
+  {id:'negro', n:'negro', c:'#2B2A29'},
+  {id:'madera', n:'sin mantel (madera)', c:'#B9895B', wood:true}
+];
+var BY = {}; PRODUCTS.forEach(function(p){ BY[p.id] = p; });
+function $(s){ return document.querySelector(s); }
+function $$(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); }
+function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+function norm(s){ return String(s||'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,''); }
+function f1(n){ return Math.round(n*100)/100; }
+function catName(id){ for (var i=0;i<CATS.length;i++) if (CATS[i].id===id) return CATS[i].n; return ''; }
+function codeOf(p, vi){ var v = p.v[vi||0]; return v.k ? v.k : (p.x ? 'S/C · nuevo' : 'S/C pág. ' + p.id); }
+function unitLabel(v, n){ var s = v.u === 's'; return n === 1 ? (s ? 'set' : 'unidad') : (s ? 'sets' : 'unidades'); }
+function money(n){ return 'L ' + Number(n).toLocaleString('en-US'); }
+function perUnit(v){ return v.u === 's' ? ' el set' : ' c/u'; }
+function priceLabel(p){ var ps = p.v.map(function(v){ return v.p; }).filter(function(x){ return x != null; }); if (!ps.length) return null; var mn = Math.min.apply(null, ps), mx = Math.max.apply(null, ps); return (mn === mx && ps.length === p.v.length ? money(mn) : 'Desde ' + money(mn)) + (p.v[0].u === 's' && p.v.length === 1 ? ' el set' : ''); }
+function stockText(v){ return v.q == null ? 'Existencia no indicada' : v.q + ' ' + unitLabel(v, v.q) + (v.q === 1 ? ' disponible' : ' disponibles'); }
+function uid(){ return Math.random().toString(36).slice(2, 9); }
+function imgFor(p){ return 'p/' + p.i + '.webp'; }
+function catImgFor(p){ return 'p/' + p.ci + '.webp'; }
+function isPhoto(p){ return p.ci !== p.i && !p.x; }
+
+/* ---------- Estado ---------- */
+var LS = 'trs-evento-v2';
+function newMontaje(n){ return { id:uid(), nombre:'Montaje ' + n, mesa:'r72', mesas:1, mantel:'blanco', items:[] }; }
+var ev = null;
+try { var raw = localStorage.getItem(LS); if (raw) ev = JSON.parse(raw); } catch(e) {}
+if (!ev || !ev.montajes || !ev.montajes.length) ev = { nombre:'', fecha:'', lugar:'', montajes:[newMontaje(1)], active:0 };
+ev.montajes.forEach(function(m){ m.items = (m.items||[]).filter(function(it){ return BY[it.pid] && BY[it.pid].v[it.vi]; }); });
+if (ev.active >= ev.montajes.length) ev.active = 0;
+function renumber(){ ev.montajes.forEach(function(m, i){ m.nombre = 'Montaje ' + (i + 1); }); }
+renumber();
+/* "Armar mi mesa" queda guardado para después del lanzamiento. Con ARMAR = false la cotización se arma directo desde el catálogo. */
+var ARMAR = false;
+if (!Array.isArray(ev.lista)) ev.lista = [];
+ev.lista = ev.lista.filter(function(r){ return r && BY[r.pid] && BY[r.pid].v[r.vi] && r.n > 0; });
+function listFind(pid, vi){ for (var i = 0; i < ev.lista.length; i++) if (ev.lista[i].pid === pid && ev.lista[i].vi === vi) return i; return -1; }
+function maxQ(pid, vi){ var q = BY[pid].v[vi].q; return q == null ? 9999 : q; }
+function inList(pid, vi){ var i = listFind(pid, vi); return i > -1 ? ev.lista[i].n : 0; }
+function listAdd(pid, vi, n){ n = Math.max(0, Math.min(n, maxQ(pid, vi) - inList(pid, vi))); if (!n) return 0; var i = listFind(pid, vi); if (i > -1) ev.lista[i].n += n; else ev.lista.push({ pid:pid, vi:vi, n:n }); persist(); updateCount(); return n; }
+ev.lista.forEach(function(r){ r.n = Math.min(r.n, maxQ(r.pid, r.vi)); }); ev.lista = ev.lista.filter(function(r){ return r.n > 0; });
+var saveT = null;
+function persist(){ clearTimeout(saveT); saveT = setTimeout(function(){ try { localStorage.setItem(LS, JSON.stringify(ev)); } catch(e) {} }, 300); }
+function M(){ return ev.montajes[ev.active]; }
+
+var ui = { view:'inicio', cat:null, q:'', style:null, sel:null, comboStyle:null, tagCat:'cand' };
+var store = { ready:false, editor:false, db:null, styles:[], tags:{}, combos:[], people:[] };
+
+/* ---------- Navegación ---------- */
+function go(view, opts){
+  opts = opts || {};
+  if (view === 'tienda' && !store.editor) view = 'inicio';
+  if (view === 'armar' && !ARMAR) view = 'catalogo';
+  ui.view = view;
+  if (opts.cat !== undefined) ui.cat = opts.cat;
+  $$('[data-view]').forEach(function(s){ s.hidden = s.id !== 'v-' + view; });
+  $$('.nav-desk button').forEach(function(b){ if (b.getAttribute('data-go') === view) b.setAttribute('aria-current','page'); else b.removeAttribute('aria-current'); });
+  closeMenu();
+  if (view === 'catalogo') renderCatalog();
+  if (view === 'armar') renderStudio();
+  if (view === 'cotizacion') renderQuote();
+  if (view === 'tienda') renderAdmin();
+  if (view === 'montajes') renderMontajes();
+  updateCount();
+  window.scrollTo(0, 0);
+  if (opts.focus) setTimeout(function(){ $(opts.focus).focus(); }, 50);
+}
+document.addEventListener('click', function(e){
+  var t = e.target.closest ? e.target.closest('[data-go]') : null;
+  if (t) { e.preventDefault(); go(t.getAttribute('data-go'), { cat: t.hasAttribute('data-cat') ? (t.getAttribute('data-cat') || null) : undefined }); }
+});
+function openMenu(){ $('#drawer').hidden = false; $('#scrim').hidden = false; $('#b-close-menu').focus(); }
+function closeMenu(){ $('#drawer').hidden = true; $('#scrim').hidden = true; }
+$('#b-menu').addEventListener('click', openMenu);
+$('#b-close-menu').addEventListener('click', closeMenu);
+$('#d-toggle').addEventListener('click', function(){ var open = this.getAttribute('aria-expanded') !== 'true'; this.setAttribute('aria-expanded', String(open)); $('#d-cats').hidden = !open; });
+$('#scrim').addEventListener('click', closeMenu);
+$('#b-logo').addEventListener('click', function(){ go('inicio'); });
+$('#b-search').addEventListener('click', function(){ go('catalogo', { cat:null, focus:'#q' }); });
+$('#b-quote').addEventListener('click', function(){ go('cotizacion'); });
+document.addEventListener('keydown', function(e){ if (e.key === 'Escape') { closeMenu(); closeSheet(); } });
+
+var toastT = null;
+function toast(msg, undo, label){
+  var t = $('#toast');
+  t.innerHTML = '<span>' + esc(msg) + '</span>' + (undo ? '<button type="button" id="t-undo">' + esc(label || 'Deshacer') + '</button>' : '');
+  t.hidden = false;
+  if (undo) $('#t-undo').addEventListener('click', function(){ undo(); t.hidden = true; });
+  clearTimeout(toastT); toastT = setTimeout(function(){ t.hidden = true; }, undo ? 6000 : 2600);
+}
+
+/* ---------- Inicio ---------- */
+function arrow(){ return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M14 7l5 5-5 5"/></svg>'; }
+function galThumb(g){ return g[2] || galSrc(g); }
+function galSrc(g){ return g[0].indexOf('/') > -1 ? g[0] : 'ev/' + g[0] + '.webp'; }
+function renderMontajes(){
+  $('#mt-count').textContent = GALLERY.length + (GALLERY.length === 1 ? ' foto' : ' fotos');
+  $('#gallery-all').innerHTML = GALLERY.map(function(g, i){ return '<img src="' + galThumb(g) + '" alt="' + esc(g[1]) + '" loading="lazy" data-gi="' + i + '">'; }).join('');
+}
+var lb = { i:0, el:null, last:null };
+function openLb(i){
+  lb.last = document.activeElement; lb.i = i;
+  if (!lb.el) {
+    lb.el = document.createElement('div'); lb.el.className = 'lightbox'; lb.el.setAttribute('role','dialog'); lb.el.setAttribute('aria-modal','true'); lb.el.setAttribute('aria-label','Foto del montaje');
+    lb.el.innerHTML = '<img alt=""><button class="lb-btn lb-close" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button><button class="lb-btn lb-prev" type="button" aria-label="Foto anterior"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button><button class="lb-btn lb-next" type="button" aria-label="Foto siguiente"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button><span class="lb-count"></span>';
+    document.body.appendChild(lb.el);
+    lb.el.addEventListener('click', function(e){
+      if (e.target.closest('.lb-close') || e.target === lb.el) closeLb();
+      else if (e.target.closest('.lb-prev')) stepLb(-1);
+      else if (e.target.closest('.lb-next')) stepLb(1);
+    });
+    var sx = null;
+    lb.el.addEventListener('touchstart', function(e){ sx = e.touches[0].clientX; }, { passive:true });
+    lb.el.addEventListener('touchend', function(e){ if (sx == null) return; var dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 50) stepLb(dx < 0 ? 1 : -1); sx = null; });
+  }
+  lb.el.hidden = false; showLb(); lb.el.querySelector('.lb-close').focus();
+}
+function showLb(){ var g = GALLERY[lb.i]; var im = lb.el.querySelector('img'); im.src = galSrc(g); im.alt = g[1]; lb.el.querySelector('.lb-count').textContent = (lb.i + 1) + ' / ' + GALLERY.length; }
+function stepLb(d){ lb.i = (lb.i + d + GALLERY.length) % GALLERY.length; showLb(); }
+function closeLb(){ if (lb.el) lb.el.hidden = true; if (lb.last && lb.last.focus) lb.last.focus(); }
+document.addEventListener('keydown', function(e){ if (!lb.el || lb.el.hidden) return; if (e.key === 'Escape') closeLb(); else if (e.key === 'ArrowLeft') stepLb(-1); else if (e.key === 'ArrowRight') stepLb(1); });
+document.addEventListener('click', function(e){ var im = e.target.closest ? e.target.closest('.gallery img[data-gi]') : null; if (im) openLb(+im.getAttribute('data-gi')); });
+function renderHome(){
+  $('#cats').innerHTML = CATS.map(function(c){
+    return '<button class="cat" data-go="catalogo" data-cat="' + c.id + '"><div class="ph"><img class="' + (c.obj ? 'obj' : '') + '"' + (c.pos ? ' style="object-position:' + c.pos + '"' : '') + ' src="' + c.img + '" alt="" loading="lazy"></div><span class="lbl">' + esc(c.n) + arrow() + '</span></button>';
+  }).join('');
+  $('#gallery').innerHTML = GALLERY.slice(0, 12).map(function(g, i){ return '<img src="' + galThumb(g) + '" alt="' + esc(g[1]) + '" loading="lazy" data-gi="' + i + '">'; }).join('');
+  $('#d-cats').innerHTML = CATS.map(function(c){ return '<button class="d-link d-sub" data-go="catalogo" data-cat="' + c.id + '">' + esc(c.n) + '</button>'; }).join('');
+}
+
+/* ---------- Catálogo ---------- */
+function styleMatch(p, sid){ var t = store.tags[p.id]; return t && t.indexOf(sid) > -1; }
+function filtered(){
+  var q = norm(ui.q);
+  return PRODUCTS.filter(function(p){
+    if (ui.cat && p.c !== ui.cat) return false;
+    if (ui.style && !styleMatch(p, ui.style)) return false;
+    if (!q) return true;
+    var hay = norm(p.n + ' ' + catName(p.c) + ' ' + p.v.map(function(v){ return (v.k||'') + ' ' + v.s; }).join(' ') + (p.x ? ' nuevo' : ' pag ' + p.id));
+    return q.split(/\s+/).every(function(w){ return hay.indexOf(w) > -1; });
+  });
+}
+function onTableCount(pid){ if (!ARMAR) return ev.lista.reduce(function(s, r){ return s + (r.pid === pid ? r.n : 0); }, 0); var n = 0; M().items.forEach(function(it){ if (it.pid === pid) n++; }); return n; }
+function renderCatalog(){
+  $('#cat-title').textContent = ui.cat ? catName(ui.cat) : 'Catálogo';
+  $('#cat-tabs').innerHTML = '<button class="chip" data-c="" aria-pressed="' + (!ui.cat) + '">Todo</button>' + CATS.map(function(c){ return '<button class="chip" data-c="' + c.id + '" aria-pressed="' + (ui.cat === c.id) + '">' + esc(c.n) + '</button>'; }).join('');
+  var st = $('#style-tabs');
+  if (store.styles.length) {
+    st.hidden = false;
+    st.innerHTML = '<span class="eyebrow" style="align-self:center;margin-right:4px">Estilo</span><button class="chip" data-s="" aria-pressed="' + (!ui.style) + '">Todos</button>' + store.styles.map(function(s){ return '<button class="chip" data-s="' + esc(s.id) + '" aria-pressed="' + (ui.style === s.id) + '">' + esc(s.n) + '</button>'; }).join('');
+  } else { st.hidden = true; ui.style = null; }
+  var list = filtered();
+  $('#n-prod').textContent = list.length + (list.length === 1 ? ' producto' : ' productos');
+  $('#grid').innerHTML = list.length ? list.map(function(p){
+    var v = p.v[0], n = onTableCount(p.id);
+    var code = p.v.length > 1 ? p.v.map(function(x){ return x.k || ''; }).filter(function(k, i, a){ return k && a.indexOf(k) === i; }).join(' · ') : (v.k || 'Sin código');
+    var pl = priceLabel(p), m1 = p.v.length > 1 ? p.v.length + ' medidas' : v.s, m2 = p.v.length > 1 ? 'Ver medidas y existencias' : stockText(v);
+    return '<button class="card" data-p="' + p.id + '">' + (n ? '<span class="on-table">' + (ARMAR ? 'En tu mesa' : 'En tu cotización') + '</span>' : '') + '<span class="ph"><img class="' + (isPhoto(p) ? 'photo' : '') + '" src="' + catImgFor(p) + '" alt="" loading="lazy"></span><span class="info"><span class="nm">' + esc(p.n) + '</span>' + (pl ? '<span class="price">' + esc(pl) + '</span>' : '<span class="price na">Precio por confirmar</span>') + '<span class="meta">' + esc(m1) + '</span><span class="meta">' + esc(m2) + '</span></span></button>';
+  }).join('') : '';
+  if (!list.length) $('#grid').innerHTML = '<p class="empty" style="grid-column:1/-1">No hay productos que coincidan. Prueba con otra palabra o elige “Todo”.</p>';
+}
+$('#cat-tabs').addEventListener('click', function(e){ var b = e.target.closest('[data-c]'); if (!b) return; ui.cat = b.getAttribute('data-c') || null; renderCatalog(); });
+$('#style-tabs').addEventListener('click', function(e){ var b = e.target.closest('[data-s]'); if (!b) return; ui.style = b.getAttribute('data-s') || null; renderCatalog(); });
+$('#q').addEventListener('input', function(){ ui.q = this.value; renderCatalog(); });
+$('#grid').addEventListener('click', function(e){ var b = e.target.closest('[data-p]'); if (b) openProduct(+b.getAttribute('data-p')); });
+
+/* ---------- Hoja de producto ---------- */
+var lastFocus = null;
+function openSheet(html){
+  lastFocus = document.activeElement;
+  var s = $('#sheet'); s.innerHTML = html; s.hidden = false; $('#scrim2').hidden = false;
+  var c = s.querySelector('.sheet-close'); if (c) c.focus();
+}
+function closeSheet(){ if ($('#sheet').hidden) return; $('#sheet').hidden = true; $('#scrim2').hidden = true; if (lastFocus && lastFocus.focus) lastFocus.focus(); }
+$('#scrim2').addEventListener('click', closeSheet);
+var closeBtn = '<button class="icon-btn sheet-close" type="button" aria-label="Cerrar"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg></button>';
+function tagChips(p){
+  if (!store.editor) return '';
+  if (!store.styles.length) return '<div class="tagbox"><span class="eyebrow">Estilos</span><p style="margin:0;font-size:13px;color:var(--muted)">Crea estilos en Modo tienda para clasificar este producto.</p></div>';
+  var t = store.tags[p.id] || [];
+  return '<div class="tagbox"><span class="eyebrow">Estilos (Modo tienda)</span><div class="chips" style="flex-wrap:wrap">' + store.styles.map(function(s){ return '<button type="button" class="chip" data-tag="' + esc(s.id) + '" data-pid="' + p.id + '" aria-pressed="' + (t.indexOf(s.id) > -1) + '">' + esc(s.n) + '</button>'; }).join('') + '</div></div>';
+}
+function openProduct(pid){
+  var p = BY[pid];
+  var vl = p.v.map(function(v, i){
+    return '<label class="vopt"><input type="radio" name="pv" value="' + i + '"' + (i === 0 ? ' checked' : '') + '><span><span class="vk">' + esc(v.s) + '</span><br><span class="vs">' + esc(stockText(v)) + '</span></span><span class="vp">' + (v.p != null ? esc(money(v.p)) + '<br><span class="vs" style="font-weight:400">' + perUnit(v).trim() + '</span>' : '<span class="vs">Por confirmar</span>') + '</span></label>';
+  }).join('');
+  var stylesOf = (store.tags[p.id] || []).map(function(id){ var s = store.styles.filter(function(x){ return x.id === id; })[0]; return s ? s.n : null; }).filter(Boolean);
+  openSheet(closeBtn + '<div class="pd"><div class="ph"><img class="' + (isPhoto(p) ? 'photo' : '') + '" src="' + catImgFor(p) + '" alt="' + esc(p.n) + '"></div><div class="info">' +
+    '<span class="eyebrow">' + esc(catName(p.c)) + '</span>' +
+    '<h3 id="sheet-title">' + esc(p.n) + '</h3>' +
+    (stylesOf.length && !store.editor ? '<span style="font-size:13px;color:var(--muted)">Estilo: ' + esc(stylesOf.join(', ')) + '</span>' : '') +
+    (priceLabel(p) ? '<span class="pprice">' + esc(priceLabel(p)) + '</span>' : '<span class="pprice" style="font-size:15px;color:var(--muted)">Precio por confirmar</span>') +
+    (p.pn ? '<p class="note" style="margin:0">' + esc(p.pn) + '</p>' : '') +
+    '<div class="vlist" role="radiogroup" aria-label="Medida">' + vl + '</div>' +
+    (p.e && ARMAR ? '<p class="note">El catálogo no indica la medida exacta de esta pieza. En la mesa se muestra a un tamaño aproximado.</p>' : '') +
+    (ARMAR ? '<button class="btn block" type="button" id="pd-add">Agregar a “' + esc(M().nombre) + '”</button>' :
+      '<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap"><span class="eyebrow">Cantidad</span><span class="mini-step lg"><button type="button" id="pd-dec" aria-label="Quitar uno">−</button><input id="pd-n" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="4" value="1" aria-label="Cantidad"><button type="button" id="pd-inc" aria-label="Agregar uno">+</button></span></div><p class="pd-left" id="pd-left" role="status" aria-live="polite"></p>' +
+      '<button class="btn block" type="button" id="pd-add">Agregar a mi cotización</button>') +
+    tagChips(p) + '</div></div>');
+  $('#sheet .sheet-close').addEventListener('click', closeSheet);
+  if (!ARMAR) {
+    var qi = $('#pd-n');
+    var curVi = function(){ return +(($('#sheet input[name="pv"]:checked') || {}).value || 0); };
+    var left = function(){ var vi = curVi(); return maxQ(pid, vi) - inList(pid, vi); };
+    var sync = function(){
+      var vi = curVi(), v = p.v[vi], l = left(), have = inList(pid, vi), n = parseInt(qi.value, 10);
+      if (isNaN(n) || n < 1) n = 1;
+      if (l > 0 && n > l) n = l;
+      qi.value = n; qi.max = Math.max(1, l);
+      $('#pd-dec').disabled = n <= 1; $('#pd-inc').disabled = l <= 0 || n >= l;
+      $('#pd-add').disabled = l <= 0; qi.disabled = l <= 0;
+      var el = $('#pd-left'); el.classList.toggle('full', l <= 0);
+      if (v.q == null) el.textContent = have ? 'Ya tienes ' + have + ' en tu cotización.' : '';
+      else if (l <= 0) el.textContent = 'Ya tienes en tu cotización ' + (v.q === 1 ? 'la única ' + unitLabel(v, 1) + ' disponible' : 'las ' + v.q + ' ' + unitLabel(v, v.q) + ' disponibles') + '.';
+      else el.textContent = have ? 'Ya tienes ' + have + ' en tu cotización; puedes agregar ' + l + ' más.' : 'Puedes agregar hasta ' + l + '.';
+    };
+    $('#pd-dec').addEventListener('click', function(){ qi.value = (parseInt(qi.value, 10) || 1) - 1; sync(); });
+    $('#pd-inc').addEventListener('click', function(){ qi.value = (parseInt(qi.value, 10) || 0) + 1; sync(); });
+    qi.addEventListener('change', sync);
+    var selAll = function(){ setTimeout(function(){ try { qi.setSelectionRange(0, qi.value.length); } catch(e) { qi.select(); } }, 0); };
+    qi.addEventListener('focus', selAll); qi.addEventListener('click', selAll);
+    qi.addEventListener('input', function(){
+      var clean = qi.value.replace(/[^0-9]/g, ''); if (clean !== qi.value) qi.value = clean;
+      var n = parseInt(clean, 10), l = left(), el = $('#pd-left');
+      var over = !isNaN(n) && n > l && maxQ(pid, curVi()) < 9999;
+      el.classList.toggle('full', over || l <= 0);
+      if (over) el.textContent = 'Solo hay ' + l + (l === 1 ? ' disponible' : ' disponibles') + ' para agregar. Se ajustará a ' + l + '.';
+      $('#pd-inc').disabled = l <= 0 || (!isNaN(n) && n >= l);
+      $('#pd-dec').disabled = isNaN(n) || n <= 1;
+    });
+    qi.addEventListener('blur', function(){ var n = parseInt(qi.value, 10), l = left(); if (!isNaN(n) && n > l && l > 0) toast('Solo hay ' + l + (l === 1 ? ' disponible' : ' disponibles') + '; se ajustó la cantidad'); sync(); });
+    qi.addEventListener('keydown', function(e){ if (e.key === 'Enter') { e.preventDefault(); qi.blur(); } });
+    $$('#sheet input[name="pv"]').forEach(function(r){ r.addEventListener('change', function(){ qi.value = 1; sync(); }); });
+    setTimeout(sync, 0);
+  }
+  $('#pd-add').addEventListener('click', function(){
+    var vi = +(($('#sheet input[name="pv"]:checked') || {}).value || 0);
+    if (!ARMAR) {
+      var want = Math.max(1, parseInt($('#pd-n').value, 10) || 1);
+      var qn = listAdd(pid, vi, want);
+      if (!qn) { toast('Ya tienes todas las disponibles en tu cotización'); return; }
+      closeSheet(); if (ui.view === 'catalogo') renderCatalog();
+      toast((qn < want ? 'Solo había ' + qn + ' disponibles: ' : '') + qn + ' × ' + p.n + ' en tu cotización', function(){ go('cotizacion'); }, 'Ver cotización');
+      return;
+    }
+    addItem(pid, vi); closeSheet(); go('armar');
+    toast(p.n + ' agregado a la mesa');
+  });
+}
+$('#sheet').addEventListener('click', function(e){
+  var b = e.target.closest('[data-tag]'); if (!b) return;
+  toggleTag(+b.getAttribute('data-pid'), b.getAttribute('data-tag'));
+  b.setAttribute('aria-pressed', String((store.tags[+b.getAttribute('data-pid')] || []).indexOf(b.getAttribute('data-tag')) > -1));
+});
+
+/* ---------- Geometría de la mesa ---------- */
+function tableGeo(m){
+  var T = TABLES[m.mesa];
+  var Dv = T.round ? T.w * 0.2 : T.d * 0.26;
+  return { T:T, W:T.w, Dv:Dv, hwFront:T.w/2, hwBack: T.round ? T.w/2 : T.w/2*0.93 };
+}
+function dims(it){
+  var p = BY[it.pid], v = p.v[it.vi] || p.v[0];
+  var r = v.r || p.r, w, h; if (p.a === 'h') { h = v.d; w = v.d * r; } else { w = v.d; h = v.d / r; }
+  return { w:w, h:h };
+}
+function place(it, g){
+  // devuelve base (x, y en pulgadas desde el piso) y escala por profundidad
+  if (it.f) { var yb = -1 + 7 * (1 - it.z); return { x:it.x, y:yb, s:0.9 + 0.1 * it.z }; }
+  return { x:it.x, y:TH + g.Dv * (1 - it.z), s:0.9 + 0.1 * it.z };
+}
+function halfAt(g, z){
+  if (g.T.round) { var t = (z - 0.5) * 2; return g.W/2 * Math.sqrt(Math.max(0, 1 - t*t)); }
+  return g.hwBack + (g.hwFront - g.hwBack) * z;
+}
+function clampIt(it, g){
+  it.z = Math.max(0, Math.min(1, it.z));
+  var d = dims(it);
+  if (it.f) { var lim = g.W/2 + 36; it.x = Math.max(-lim, Math.min(lim, it.x)); return; }
+  if (g.T.round) it.z = Math.max(0.06, Math.min(0.97, it.z));
+  var hw = Math.max(1, halfAt(g, it.z) - Math.min(d.w * 0.35, 6) - 1);
+  it.x = Math.max(-hw, Math.min(hw, it.x));
+}
+function shade(hex, amt){
+  var n = parseInt(hex.slice(1), 16), r = n >> 16, gg = (n >> 8) & 255, b = n & 255;
+  function f(c){ return Math.max(0, Math.min(255, Math.round(amt < 0 ? c * (1 + amt) : c + (255 - c) * amt))); }
+  return '#' + ((1 << 24) + (f(r) << 16) + (f(gg) << 8) + f(b)).toString(16).slice(1);
+}
+
+/* ---------- Escenario ---------- */
+var stage = $('#stage');
+var VB = { x:0, y:0, w:100, h:60 };
+function computeVB(m, g){
+  var xmin = -(g.W/2 + 10), xmax = g.W/2 + 10, ymax = TH + g.Dv + 16, ymin = -5;
+  m.items.forEach(function(it){
+    var d = dims(it), pl = place(it, g);
+    xmin = Math.min(xmin, pl.x - d.w*pl.s/2 - 4); xmax = Math.max(xmax, pl.x + d.w*pl.s/2 + 4);
+    ymax = Math.max(ymax, pl.y + d.h*pl.s + 5);
+  });
+  var box = $('#stage-box'), cw = box.clientWidth || 800, ch = box.clientHeight || 500, A = cw / ch;
+  var w = xmax - xmin, h = ymax - ymin;
+  if (w / h < A) { var nw = h * A; xmin -= (nw - w) / 2; w = nw; }
+  else { var nh = w / A; ymax += (nh - h); h = nh; }
+  VB = { x:xmin, y:-ymax, w:w, h:h };
+}
+function chairsSVG(g){
+  var xs = g.T.round ? [-0.34, -0.11, 0.11, 0.34] : [-0.39, -0.13, 0.13, 0.39];
+  return xs.map(function(k){
+    var x = k * g.W, top = TH + g.Dv + 9;
+    return '<g opacity=".55"><rect x="' + f1(x - 8) + '" y="' + f1(-top) + '" width="16" height="' + f1(top - TH) + '" rx="4" fill="#CDBEA9"/><rect x="' + f1(x - 6.2) + '" y="' + f1(-top + 2) + '" width="12.4" height="' + f1(top - TH - 4) + '" rx="2.6" fill="#E3D8C8"/></g>';
+  }).join('');
+}
+function tableSVG(m, g){
+  var cl = CLOTHS.filter(function(c){ return c.id === m.mantel; })[0] || CLOTHS[0];
+  var c = cl.c, top = shade(c, 0.08), skirt = shade(c, -0.05), deep = shade(c, -0.14), W2 = g.W/2, s = '';
+  var cy = -(TH + g.Dv/2);
+  if (cl.wood) {
+    var legW = 2.6;
+    if (g.T.round) {
+      s += '<rect x="' + f1(-4) + '" y="' + f1(-TH + 1.6) + '" width="8" height="' + f1(TH - 3) + '" fill="#8A6440"/><ellipse cx="0" cy="-1.2" rx="14" ry="2.6" fill="#7B5836"/>';
+      s += '<ellipse cx="0" cy="' + f1(cy + 1.6) + '" rx="' + W2 + '" ry="' + f1(g.Dv/2) + '" fill="' + shade(c, -0.2) + '"/>';
+      s += '<ellipse cx="0" cy="' + f1(cy) + '" rx="' + W2 + '" ry="' + f1(g.Dv/2) + '" fill="url(#gTop)"/>';
+    } else {
+      [-W2 + 3, W2 - 3 - legW].forEach(function(x){ s += '<rect x="' + f1(x) + '" y="' + f1(-TH + 1.6) + '" width="' + legW + '" height="' + f1(TH - 1.6) + '" fill="#8A6440"/>'; });
+      s += '<rect x="' + f1(-W2) + '" y="' + f1(-TH) + '" width="' + g.W + '" height="1.8" fill="' + shade(c, -0.22) + '"/>';
+      s += '<polygon points="' + f1(-g.hwBack) + ',' + f1(-(TH + g.Dv)) + ' ' + f1(g.hwBack) + ',' + f1(-(TH + g.Dv)) + ' ' + W2 + ',' + (-TH) + ' ' + (-W2) + ',' + (-TH) + '" fill="url(#gTop)"/>';
+    }
+    return '<defs><linearGradient id="gTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + shade(c, -0.08) + '"/><stop offset="1" stop-color="' + shade(c, 0.06) + '"/></linearGradient></defs>' + s;
+  }
+  var defs = '<defs><linearGradient id="gSkirt" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="' + deep + '"/><stop offset=".22" stop-color="' + skirt + '"/><stop offset=".55" stop-color="' + shade(c, 0.02) + '"/><stop offset=".85" stop-color="' + skirt + '"/><stop offset="1" stop-color="' + deep + '"/></linearGradient><linearGradient id="gTop" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="' + shade(c, -0.03) + '"/><stop offset="1" stop-color="' + top + '"/></linearGradient></defs>';
+  var folds = '', n = Math.round(g.W / 9);
+  if (g.T.round) {
+    s += '<path d="M' + (-W2) + ' ' + f1(cy) + ' C ' + f1(-W2 - 1) + ' ' + f1(cy * 0.55) + ', ' + f1(-W2 - 3) + ' -6, ' + f1(-W2 - 4) + ' -0.4 Q 0 1.6 ' + f1(W2 + 4) + ' -0.4 C ' + f1(W2 + 3) + ' -6, ' + f1(W2 + 1) + ' ' + f1(cy * 0.55) + ', ' + W2 + ' ' + f1(cy) + ' Z" fill="url(#gSkirt)"/>';
+    for (var i = 1; i < n; i++) { var fx = -W2 + g.W * i / n, k = fx / W2; folds += '<path d="M' + f1(fx * 0.99) + ' ' + f1(-TH + Math.abs(k) * 2) + ' L' + f1(fx * 1.05) + ' -0.2" stroke="rgba(0,0,0,.05)" stroke-width=".5" fill="none"/>'; }
+    s += folds + '<ellipse cx="0" cy="' + f1(cy) + '" rx="' + W2 + '" ry="' + f1(g.Dv/2) + '" fill="url(#gTop)"/>';
+  } else {
+    s += '<path d="M' + (-W2) + ' ' + (-TH) + ' L' + f1(-W2 - 1.5) + ' -0.3 L' + f1(W2 + 1.5) + ' -0.3 L' + W2 + ' ' + (-TH) + ' Z" fill="url(#gSkirt)"/>';
+    for (var j = 1; j < n; j++) { var fx2 = -W2 + g.W * j / n; folds += '<path d="M' + f1(fx2) + ' ' + (-TH + 1) + ' L' + f1(fx2 * 1.02) + ' -0.4" stroke="rgba(0,0,0,.05)" stroke-width=".5" fill="none"/>'; }
+    s += folds + '<polygon points="' + f1(-g.hwBack) + ',' + f1(-(TH + g.Dv)) + ' ' + f1(g.hwBack) + ',' + f1(-(TH + g.Dv)) + ' ' + W2 + ',' + (-TH) + ' ' + (-W2) + ',' + (-TH) + '" fill="url(#gTop)"/>';
+    s += '<line x1="' + (-W2) + '" y1="' + (-TH) + '" x2="' + W2 + '" y2="' + (-TH) + '" stroke="' + deep + '" stroke-width=".35"/>';
+  }
+  return defs + s;
+}
+function itemSVG(it, g){
+  var p = BY[it.pid], d = dims(it), pl = place(it, g), w = d.w * pl.s, h = d.h * pl.s;
+  var x = pl.x - w/2, y = -(pl.y + h), sel = ui.sel === it.u;
+  var tf = it.fl ? ' transform="translate(' + f1(2 * pl.x) + ' 0) scale(-1 1)"' : '';
+  return '<g class="it" data-u="' + it.u + '" tabindex="0" role="button" aria-label="' + esc(p.n) + (sel ? ', seleccionado' : '') + '">' +
+    '<ellipse cx="' + f1(pl.x) + '" cy="' + f1(-pl.y + 0.15) + '" rx="' + f1(Math.max(1, w * 0.3)) + '" ry="' + f1(Math.max(0.3, w * 0.045)) + '" fill="rgba(40,30,20,.13)"/>' +
+    '<image href="' + (p.v[it.vi] && p.v[it.vi].i ? 'p/' + p.v[it.vi].i + '.webp' : imgFor(p)) + '" x="' + f1(x) + '" y="' + f1(y) + '" width="' + f1(w) + '" height="' + f1(h) + '" preserveAspectRatio="xMidYMax meet"' + tf + '/>' +
+    (sel ? '<rect x="' + f1(x - 0.8) + '" y="' + f1(y - 0.8) + '" width="' + f1(w + 1.6) + '" height="' + f1(h + 1.6) + '" fill="none" stroke="#171615" stroke-width=".3" stroke-dasharray="1 .8" vector-effect="non-scaling-stroke"/>' : '') +
+    '<rect x="' + f1(x) + '" y="' + f1(y) + '" width="' + f1(w) + '" height="' + f1(h) + '" fill="transparent"/></g>';
+}
+function renderStage(){
+  var m = M(), g = tableGeo(m);
+  computeVB(m, g);
+  stage.setAttribute('viewBox', [f1(VB.x), f1(VB.y), f1(VB.w), f1(VB.h)].join(' '));
+  var bg = '<defs><linearGradient id="gWall" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F6F4EF"/><stop offset="1" stop-color="#ECE7DF"/></linearGradient><radialGradient id="gShadow"><stop offset="0" stop-color="rgba(60,45,30,.28)"/><stop offset="1" stop-color="rgba(60,45,30,0)"/></radialGradient></defs>' +
+    '<rect x="' + f1(VB.x) + '" y="' + f1(VB.y) + '" width="' + f1(VB.w) + '" height="' + f1(VB.h) + '" fill="url(#gWall)"/>' +
+    '<rect x="' + f1(VB.x) + '" y="-7" width="' + f1(VB.w) + '" height="' + f1(VB.h) + '" fill="#E6E0D6"/>' +
+    '<line x1="' + f1(VB.x) + '" y1="-7" x2="' + f1(VB.x + VB.w) + '" y2="-7" stroke="#D8D1C5" stroke-width=".25"/>' +
+    '<ellipse cx="0" cy="0" rx="' + f1(g.W/2 + 10) + '" ry="3.2" fill="url(#gShadow)"/>';
+  var back = '', front = '', top = '';
+  var floorItems = m.items.filter(function(it){ return it.f; }), onTable = m.items.filter(function(it){ return !it.f; });
+  floorItems.slice().sort(function(a, b){ return a.z - b.z; }).forEach(function(it){ if (it.z < 0.45) back += itemSVG(it, g); else front += itemSVG(it, g); });
+  onTable.slice().sort(function(a, b){ return a.z - b.z; }).forEach(function(it){ top += itemSVG(it, g); });
+  stage.innerHTML = bg + back + tableSVG(m, g) + top + front;
+  var cl = CLOTHS.filter(function(c){ return c.id === m.mantel; })[0];
+  $('#stage-tag').textContent = TABLES[m.mesa].n + ' · ' + m.mesas + (m.mesas === 1 ? ' mesa' : ' mesas');
+  if (ui.sel) { var el = stage.querySelector('[data-u="' + ui.sel + '"]'); if (el && document.activeElement && document.activeElement.closest && document.activeElement.closest('#stage')) el.focus({ preventScroll:true }); }
+}
+function svgPt(e){ var pt = stage.createSVGPoint(); pt.x = e.clientX; pt.y = e.clientY; var r = pt.matrixTransform(stage.getScreenCTM().inverse()); return { x:r.x, y:-r.y }; }
+var drag = null;
+stage.addEventListener('pointerdown', function(e){
+  if (e.pointerType === 'mouse' && e.button !== 0) return;
+  var gEl = e.target.closest ? e.target.closest('.it') : null;
+  if (!gEl) { if (ui.sel) { ui.sel = null; renderStage(); renderSelbar(); } return; }
+  e.preventDefault();
+  var it = findIt(gEl.getAttribute('data-u')); if (!it) return;
+  ui.sel = it.u;
+  var g = tableGeo(M()), pl = place(it, g), pt = svgPt(e);
+  drag = { u:it.u, dx:pt.x - pl.x, dy:pt.y - pl.y, moved:false };
+  try { stage.setPointerCapture(e.pointerId); } catch(err) {}
+  renderStage(); renderSelbar();
+});
+stage.addEventListener('pointermove', function(e){
+  if (!drag) return;
+  var it = findIt(drag.u); if (!it) return;
+  var m = M(), g = tableGeo(m), pt = svgPt(e);
+  var bx = pt.x - drag.dx, by = pt.y - drag.dy;
+  if (!it.f && by < TH - 7) it.f = true;
+  else if (it.f && by > TH - 1 && Math.abs(bx) < g.W/2) it.f = false;
+  it.x = bx;
+  it.z = it.f ? 1 - (by + 1) / 7 : 1 - (by - TH) / g.Dv;
+  clampIt(it, g); drag.moved = true;
+  m.example = false;
+  renderStage();
+});
+function endDrag(){ if (drag && drag.moved) { persist(); renderSelbar(); } drag = null; }
+stage.addEventListener('pointerup', endDrag);
+stage.addEventListener('pointercancel', endDrag);
+stage.addEventListener('focusin', function(e){
+  var gEl = e.target.closest ? e.target.closest('.it') : null; if (!gEl) return;
+  var u = gEl.getAttribute('data-u'); if (ui.sel !== u) { ui.sel = u; renderStage(); renderSelbar(); }
+});
+stage.addEventListener('keydown', function(e){
+  var it = ui.sel && findIt(ui.sel); if (!it) return;
+  var g = tableGeo(M()), st = e.shiftKey ? 4 : 1, did = true;
+  if (e.key === 'ArrowLeft') it.x -= st; else if (e.key === 'ArrowRight') it.x += st;
+  else if (e.key === 'ArrowUp') it.z -= 0.08 * st; else if (e.key === 'ArrowDown') it.z += 0.08 * st;
+  else if (e.key === 'Delete' || e.key === 'Backspace') { removeIt(it.u); e.preventDefault(); return; }
+  else did = false;
+  if (did) { e.preventDefault(); clampIt(it, g); persist(); renderStage(); }
+});
+var rT = null;
+window.addEventListener('resize', function(){ clearTimeout(rT); rT = setTimeout(function(){ if (ui.view === 'armar') renderStage(); }, 120); });
+var qMQ = window.matchMedia('(max-width:560px)');
+function onQMQ(){ if (ui.view === 'cotizacion') renderQuote(); }
+if (qMQ.addEventListener) qMQ.addEventListener('change', onQMQ); else if (qMQ.addListener) qMQ.addListener(onQMQ);
+
+/* ---------- Piezas ---------- */
+function findIt(u){ return M().items.filter(function(i){ return i.u === u; })[0]; }
+function addItem(pid, vi, m){
+  m = m || M();
+  var g = tableGeo(m), n = m.items.filter(function(i){ return !i.f; }).length;
+  var spots = [0, -0.28, 0.28, -0.14, 0.14, -0.4, 0.4, -0.06, 0.06];
+  var it = { u:uid(), pid:pid, vi:vi || 0, x:spots[n % spots.length] * g.W, z:n % 2 ? 0.75 : 0.5, f:false, fl:false };
+  clampIt(it, g); m.items.push(it); m.example = false; ui.sel = it.u; persist(); updateCount();
+  return it;
+}
+function removeIt(u){
+  var m = M(), idx = m.items.findIndex(function(i){ return i.u === u; }); if (idx < 0) return;
+  var it = m.items.splice(idx, 1)[0]; if (ui.sel === u) ui.sel = null; m.example = false;
+  persist(); renderStudio(); updateCount();
+  toast(BY[it.pid].n + ' quitado', function(){ m.items.splice(idx, 0, it); persist(); renderStudio(); updateCount(); });
+}
+function groups(m){
+  var gmap = {}, order = [];
+  m.items.forEach(function(it){ var k = it.pid + ':' + it.vi; if (!gmap[k]) { gmap[k] = { pid:it.pid, vi:it.vi, n:0 }; order.push(k); } gmap[k].n++; });
+  return order.map(function(k){ return gmap[k]; });
+}
+function eventTotals(){
+  if (!ARMAR) return ev.lista.map(function(r){ return { pid:r.pid, vi:r.vi, n:r.n }; });
+  var t = {}, order = [];
+  ev.montajes.forEach(function(m){ groups(m).forEach(function(gr){ var k = gr.pid + ':' + gr.vi; if (!t[k]) { t[k] = { pid:gr.pid, vi:gr.vi, n:0 }; order.push(k); } t[k].n += gr.n * m.mesas; }); });
+  return order.map(function(k){ return t[k]; });
+}
+function moneyTotals(){ var t = 0, pend = 0; eventTotals().forEach(function(r){ var v = BY[r.pid].v[r.vi]; if (v.p != null) t += v.p * r.n; else pend++; }); return { t:t, pend:pend }; }
+function overStock(){ return eventTotals().filter(function(r){ var q = BY[r.pid].v[r.vi].q; return q != null && r.n > q; }); }
+function updateCount(){ var n = eventTotals().reduce(function(s, r){ return s + r.n; }, 0); var c = $('#q-count'); c.hidden = !n; c.textContent = n > 999 ? '999+' : n; updateQbar(n); }
+function updateQbar(n){
+  var show = !ARMAR && n > 0 && (ui.view === 'catalogo' || ui.view === 'inicio' || ui.view === 'montajes');
+  $('#qbar').hidden = !show; document.body.classList.toggle('has-qbar', show);
+  if (!show) return;
+  var mt = moneyTotals();
+  $('#qb-t').innerHTML = '<b>Tu cotización</b><br>' + n + (n === 1 ? ' pieza' : ' piezas') + (mt.t ? ' · ' + esc(money(mt.t)) + (mt.pend ? ' + por confirmar' : '') : '');
+}
+
+/* ---------- Armador: UI ---------- */
+function renderTabs(){
+  $('#mtabs').innerHTML = ev.montajes.map(function(m, i){
+    var n = m.items.length;
+    return '<button class="mtab" role="tab" data-mi="' + i + '" aria-selected="' + (i === ev.active) + '"><b>' + esc(m.nombre) + '</b><span>' + TABLES[m.mesa].short + ' · ' + m.mesas + (m.mesas === 1 ? ' mesa' : ' mesas') + ' · ' + n + (n === 1 ? ' pieza' : ' piezas') + '</span></button>';
+  }).join('') + '<button class="mtab add" id="m-add" type="button"><b>+ Agregar montaje</b><span>Otro tipo de mesa</span></button>';
+}
+$('#mtabs').addEventListener('click', function(e){
+  if (e.target.closest('#m-add')) { addMontaje(); return; }
+  var b = e.target.closest('[data-mi]'); if (!b) return; ev.active = +b.getAttribute('data-mi'); ui.sel = null; persist(); renderStudio();
+});
+function renderSettings(){
+  var m = M();
+  $('#seg-mesa').innerHTML = Object.keys(TABLES).map(function(k){ return '<button class="chip" type="button" data-mesa="' + k + '" aria-pressed="' + (m.mesa === k) + '">' + TABLES[k].n + '</button>'; }).join('');
+  $('#m-mesas').value = m.mesas;
+  $('#seg-mantel').innerHTML = CLOTHS.map(function(c){ return '<button class="sw' + (c.wood ? ' wood' : '') + '" type="button" style="--c:' + c.c + '" data-mantel="' + c.id + '" aria-pressed="' + (m.mantel === c.id) + '" aria-label="Mantel ' + c.n + '" title="' + c.n + '"></button>'; }).join('');
+  var cl = CLOTHS.filter(function(c){ return c.id === m.mantel; })[0];
+  $('#mantel-name').textContent = '· ' + (cl ? cl.n : '');
+  renderRemove();
+}
+function addMontaje(){ ev.montajes.push(newMontaje(ev.montajes.length + 1)); renumber(); ev.active = ev.montajes.length - 1; ui.sel = null; persist(); renderStudio(); updateCount(); window.scrollTo({ top: $('#mtabs').getBoundingClientRect().top + window.scrollY - 140, behavior:'smooth' }); toast(M().nombre + ' agregado. Elige la mesa y agrega sus piezas.'); }
+function renderRemove(){
+  var box = $('#m-remove-box');
+  box.innerHTML = ev.montajes.length > 1 ? '<button class="lnk" type="button" id="m-del">Quitar ' + esc(M().nombre) + '</button>' : '';
+}
+$('#m-remove-box').addEventListener('click', function(e){
+  if (e.target.id === 'm-del') { this.innerHTML = '<span class="inline-confirm">¿Quitar ' + esc(M().nombre) + ' y sus piezas? <button class="lnk" type="button" id="m-del-ok">Sí, quitar</button><button class="lnk" type="button" id="m-del-no">No</button></span>'; return; }
+  if (e.target.id === 'm-del-no') { renderRemove(); return; }
+  if (e.target.id === 'm-del-ok') {
+    var idx = ev.active, gone = ev.montajes.splice(idx, 1)[0];
+    renumber(); ev.active = Math.max(0, idx - 1); ui.sel = null; persist(); renderStudio(); updateCount();
+    toast('Montaje quitado', function(){ ev.montajes.splice(idx, 0, gone); renumber(); ev.active = idx; persist(); renderStudio(); updateCount(); });
+  }
+});
+$('#b-add-montaje').addEventListener('click', addMontaje);
+$('#seg-mesa').addEventListener('click', function(e){ var b = e.target.closest('[data-mesa]'); if (!b) return; var m = M(); m.mesa = b.getAttribute('data-mesa'); var g = tableGeo(m); m.items.forEach(function(it){ clampIt(it, g); }); persist(); renderStudio(); });
+$('#seg-mantel').addEventListener('click', function(e){ var b = e.target.closest('[data-mantel]'); if (!b) return; M().mantel = b.getAttribute('data-mantel'); persist(); renderSettings(); renderStage(); });
+function setMesas(v){ v = parseInt(v, 10); if (isNaN(v)) return; M().mesas = Math.max(1, Math.min(300, v)); persist(); $('#m-mesas').value = M().mesas; renderTabs(); renderPieces(); $('#stage-tag').textContent = TABLES[M().mesa].n + ' · ' + M().mesas + (M().mesas === 1 ? ' mesa' : ' mesas'); updateCount(); }
+$('#m-mesas').addEventListener('change', function(){ setMesas(this.value); });
+$('#mesas-dec').addEventListener('click', function(){ setMesas(M().mesas - 1); });
+$('#mesas-inc').addEventListener('click', function(){ setMesas(M().mesas + 1); });
+
+function renderSelbar(){
+  var it = ui.sel && findIt(ui.sel), bar = $('#selbar');
+  if (!it) { bar.innerHTML = '<span class="sl">Toca una pieza en la mesa para moverla, cambiar su medida o quitarla.</span>'; return; }
+  var p = BY[it.pid];
+  var vsel = p.v.length > 1 ? '<select class="txt" id="sel-v" aria-label="Medida">' + p.v.map(function(v, i){ return '<option value="' + i + '"' + (i === it.vi ? ' selected' : '') + '>' + esc((v.k ? v.k + ' · ' : '') + v.s) + '</option>'; }).join('') + '</select>' : '';
+  bar.innerHTML = '<span class="sl">Seleccionado: <b>' + esc(p.n) + '</b>' + (p.v.length === 1 ? ' · ' + esc(codeOf(p, it.vi)) : '') + '</span>' + vsel +
+    '<button class="btn ghost sm" type="button" id="sel-flip">Voltear</button>' +
+    '<button class="btn ghost sm" type="button" id="sel-floor">' + (it.f ? 'Subir a la mesa' : 'Poner en el piso') + '</button>' +
+    '<button class="btn ghost sm" type="button" id="sel-dup">Duplicar</button>' +
+    '<button class="btn ghost sm" type="button" id="sel-del">Quitar</button>';
+}
+$('#selbar').addEventListener('change', function(e){ if (e.target.id !== 'sel-v') return; var it = findIt(ui.sel); if (!it) return; it.vi = +e.target.value; clampIt(it, tableGeo(M())); persist(); renderStudio(); });
+$('#selbar').addEventListener('click', function(e){
+  var it = ui.sel && findIt(ui.sel); if (!it) return; var g = tableGeo(M()), id = e.target.id;
+  if (id === 'sel-flip') { it.fl = !it.fl; }
+  else if (id === 'sel-floor') { it.f = !it.f; it.z = it.f ? 0.7 : 0.5; if (it.f) it.x = (it.x >= 0 ? 1 : -1) * (g.W/2 + 10); else it.x = 0; }
+  else if (id === 'sel-dup') { var c = { u:uid(), pid:it.pid, vi:it.vi, x:it.x + 8, z:it.z, f:it.f, fl:it.fl }; clampIt(c, g); M().items.push(c); ui.sel = c.u; }
+  else if (id === 'sel-del') { removeIt(it.u); return; }
+  else return;
+  M().example = false; clampIt(it, g); persist(); renderStudio(); updateCount();
+});
+function renderPieces(){
+  var m = M(), gs = groups(m), tot = {};
+  eventTotals().forEach(function(r){ tot[r.pid + ':' + r.vi] = r.n; });
+  var count = m.items.length;
+  $('#m-tot').textContent = count + (count === 1 ? ' pieza' : ' piezas') + ' × ' + m.mesas + (m.mesas === 1 ? ' mesa' : ' mesas');
+  var sub = 0; gs.forEach(function(gr){ var vv = BY[gr.pid].v[gr.vi]; if (vv.p != null) sub += vv.p * gr.n * m.mesas; });
+  if (sub) $('#m-tot').textContent += ' · ' + money(sub);
+  $('#plist').innerHTML = gs.length ? gs.map(function(gr){
+    var p = BY[gr.pid], v = p.v[gr.vi], all = tot[gr.pid + ':' + gr.vi], over = v.q != null && all > v.q;
+    return '<li class="prow"><img src="' + imgFor(p) + '" alt=""><span class="pn">' + esc(p.n) + '<small>' + esc(codeOf(p, gr.vi)) + ' · ' + esc(v.s) + '</small><small>' + (v.p != null ? money(v.p) + perUnit(v) : 'Precio por confirmar') + '</small>' +
+      (over ? '<small class="warn">El evento pide ' + all + '; el catálogo indica ' + v.q + '.</small>' : '') + '</span>' +
+      '<span class="pq"><span class="mini-step"><button type="button" data-dec="' + gr.pid + ':' + gr.vi + '" aria-label="Quitar uno">−</button><output>' + gr.n + '</output><button type="button" data-inc="' + gr.pid + ':' + gr.vi + '" aria-label="Agregar uno">+</button></span><span class="tot' + (over ? ' warn' : '') + '">' + (gr.n * m.mesas) + ' en total</span></span></li>';
+  }).join('') : '<li style="color:var(--muted);font-size:14px">La mesa está vacía. Toca “Agregar pieza” o abre el catálogo.</li>';
+}
+$('#plist').addEventListener('click', function(e){
+  var b = e.target.closest('[data-inc],[data-dec]'); if (!b) return;
+  var k = (b.getAttribute('data-inc') || b.getAttribute('data-dec')).split(':'), pid = +k[0], vi = +k[1];
+  if (b.hasAttribute('data-inc')) { addItem(pid, vi); renderStudio(); }
+  else { var m = M(), last = null; m.items.forEach(function(i){ if (i.pid === pid && i.vi === vi) last = i; }); if (last) removeIt(last.u); }
+});
+$('#b-clear').addEventListener('click', function(){
+  var m = M(), prev = m.items.slice(); if (!prev.length) return;
+  m.items = []; m.example = false; ui.sel = null; persist(); renderStudio(); updateCount();
+  toast('Mesa vacía', function(){ m.items = prev; persist(); renderStudio(); updateCount(); });
+});
+function renderStudio(){
+  renderTabs(); renderSettings(); renderStage(); renderSelbar(); renderPieces(); renderCombos(); updateCount();
+  $$('.only-editor').forEach(function(el){ el.hidden = !store.editor; });
+  $('#save-combo').hidden = true;
+}
+
+/* ---------- Selector de piezas ---------- */
+var pickState = { c:null, q:'', s:null };
+$('#b-add').addEventListener('click', openPicker);
+function openPicker(){
+  openSheet(closeBtn + '<div class="pick-body"><h3 id="sheet-title" class="sec-title">Agregar pieza a “' + esc(M().nombre) + '”</h3>' +
+    '<label class="search" for="pk-q" style="max-width:none"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg><input id="pk-q" type="search" placeholder="Buscar producto" autocomplete="off"></label>' +
+    '<div class="chips" id="pk-cats"></div><div class="chips" id="pk-styles"></div><div class="pick-grid" id="pk-grid"></div></div>');
+  $('#sheet .sheet-close').addEventListener('click', closeSheet);
+  $('#pk-q').value = pickState.q;
+  $('#pk-q').addEventListener('input', function(){ pickState.q = this.value; renderPicker(); });
+  $('#pk-cats').addEventListener('click', function(e){ var b = e.target.closest('[data-c]'); if (!b) return; pickState.c = b.getAttribute('data-c') || null; renderPicker(); });
+  $('#pk-styles').addEventListener('click', function(e){ var b = e.target.closest('[data-s]'); if (!b) return; pickState.s = b.getAttribute('data-s') || null; renderPicker(); });
+  $('#pk-grid').addEventListener('click', function(e){
+    var b = e.target.closest('[data-p]'); if (!b) return;
+    var pid = +b.getAttribute('data-p'); addItem(pid, 0); closeSheet(); renderStudio();
+    toast(BY[pid].n + ' agregado' + (BY[pid].v.length > 1 ? '. Puedes cambiar la medida abajo de la mesa.' : ''));
+  });
+  renderPicker();
+}
+function renderPicker(){
+  $('#pk-cats').innerHTML = '<button class="chip" data-c="" aria-pressed="' + (!pickState.c) + '">Todo</button>' + CATS.map(function(c){ return '<button class="chip" data-c="' + c.id + '" aria-pressed="' + (pickState.c === c.id) + '">' + esc(c.n) + '</button>'; }).join('');
+  $('#pk-styles').innerHTML = store.styles.length ? '<button class="chip" data-s="" aria-pressed="' + (!pickState.s) + '">Todos los estilos</button>' + store.styles.map(function(s){ return '<button class="chip" data-s="' + esc(s.id) + '" aria-pressed="' + (pickState.s === s.id) + '">' + esc(s.n) + '</button>'; }).join('') : '';
+  var q = norm(pickState.q);
+  var list = PRODUCTS.filter(function(p){
+    if (pickState.c && p.c !== pickState.c) return false;
+    if (pickState.s && !styleMatch(p, pickState.s)) return false;
+    if (!q) return true;
+    var hay = norm(p.n + ' ' + p.v.map(function(v){ return v.k || ''; }).join(' '));
+    return q.split(/\s+/).every(function(w){ return hay.indexOf(w) > -1; });
+  });
+  $('#pk-grid').innerHTML = list.length ? list.map(function(p){ return '<button class="pick" type="button" data-p="' + p.id + '"><span class="ph"><img src="' + imgFor(p) + '" alt="" loading="lazy"></span><span>' + esc(p.n) + '</span></button>'; }).join('') : '<p style="color:var(--muted);grid-column:1/-1">No hay piezas que coincidan.</p>';
+}
+
+/* ---------- Combinaciones ---------- */
+function styleName(id){ var s = store.styles.filter(function(x){ return x.id === id; })[0]; return s ? s.n : 'Sin estilo'; }
+function comboCard(c, admin){
+  var thumbs = [], seen = {};
+  (c.items || []).forEach(function(it){ if (BY[it.pid] && !seen[it.pid] && thumbs.length < 6) { seen[it.pid] = 1; thumbs.push('<img src="' + imgFor(BY[it.pid]) + '" alt="">'); } });
+  var n = (c.items || []).length;
+  return '<div class="combo"><div style="min-width:0"><b>' + esc(c.n) + '</b><small>' + esc(styleName(c.s)) + ' · ' + (TABLES[c.mesa] ? TABLES[c.mesa].short : '') + ' · ' + n + (n === 1 ? ' pieza' : ' piezas') + '</small><div class="thumbs">' + thumbs.join('') + '</div></div>' +
+    (admin ? '<span class="cdel" data-cid="' + esc(c.id) + '"><button class="btn ghost sm" type="button" data-askdel="' + esc(c.id) + '">Borrar</button></span>' : '<button class="btn sm" type="button" data-use="' + esc(c.id) + '">Usar</button>') + '</div>';
+}
+function renderCombos(){
+  var panel = $('#combos-panel');
+  if (!store.ready) { panel.hidden = true; return; }
+  panel.hidden = !(store.combos.length || store.editor);
+  var used = store.styles.filter(function(s){ return store.combos.some(function(c){ return c.s === s.id; }); });
+  $('#combo-styles').innerHTML = used.length > 1 ? '<button class="chip" data-cs="" aria-pressed="' + (!ui.comboStyle) + '">Todas</button>' + used.map(function(s){ return '<button class="chip" data-cs="' + esc(s.id) + '" aria-pressed="' + (ui.comboStyle === s.id) + '">' + esc(s.n) + '</button>'; }).join('') : '';
+  var list = store.combos.filter(function(c){ return !ui.comboStyle || c.s === ui.comboStyle; });
+  $('#combos').innerHTML = list.length ? list.map(function(c){ return comboCard(c, false); }).join('') : '<p style="margin:0;color:var(--muted);font-size:14px">' + (store.editor ? 'Aún no hay combinaciones. Arma una mesa y toca “Guardar como combinación”.' : 'La tienda aún no ha publicado combinaciones.') + '</p>';
+}
+$('#combo-styles').addEventListener('click', function(e){ var b = e.target.closest('[data-cs]'); if (!b) return; ui.comboStyle = b.getAttribute('data-cs') || null; renderCombos(); });
+$('#combos').addEventListener('click', function(e){
+  var b = e.target.closest('[data-use]'); if (!b) return;
+  var c = store.combos.filter(function(x){ return x.id === b.getAttribute('data-use'); })[0]; if (!c) return;
+  var m = M(), prev = { items:m.items.slice(), mesa:m.mesa, mantel:m.mantel, ex:m.example };
+  m.mesa = TABLES[c.mesa] ? c.mesa : m.mesa; if (c.mantel) m.mantel = c.mantel;
+  var g = tableGeo(m);
+  m.items = (c.items || []).filter(function(it){ return BY[it.pid] && BY[it.pid].v[it.vi || 0]; }).map(function(it){ var n = { u:uid(), pid:it.pid, vi:it.vi || 0, x:+it.x || 0, z:+it.z || 0.5, f:!!it.f, fl:!!it.fl }; clampIt(n, g); return n; });
+  m.example = false; ui.sel = null; persist(); renderStudio(); updateCount();
+  toast('Combinación “' + c.n + '” aplicada', function(){ m.items = prev.items; m.mesa = prev.mesa; m.mantel = prev.mantel; m.example = prev.ex; persist(); renderStudio(); updateCount(); });
+});
+$('#b-save-combo').addEventListener('click', function(){
+  var box = $('#save-combo'), m = M();
+  if (!m.items.length) { toast('Agrega piezas a la mesa antes de guardar'); return; }
+  box.hidden = false;
+  box.innerHTML = '<h2 class="sec-title">Guardar como combinación de la tienda</h2>' +
+    '<div class="settings"><div class="fld"><label for="cb-n">Nombre</label><input class="txt" id="cb-n" type="text" maxlength="40" value="' + esc(m.nombre) + '"></div>' +
+    '<div class="fld"><label for="cb-s">Estilo</label><select class="txt" id="cb-s"><option value="">Sin estilo</option>' + store.styles.map(function(s){ return '<option value="' + esc(s.id) + '">' + esc(s.n) + '</option>'; }).join('') + '</select></div></div>' +
+    '<div class="st-acts"><button class="btn sm" type="button" id="cb-ok">Guardar para los clientes</button><button class="btn ghost sm" type="button" id="cb-cancel">Cancelar</button></div>' +
+    (store.styles.length ? '' : '<p class="note">Todavía no hay estilos. Puedes crearlos en Modo tienda y luego volver a guardar.</p>');
+  $('#cb-n').focus();
+  $('#cb-cancel').addEventListener('click', function(){ box.hidden = true; });
+  $('#cb-ok').addEventListener('click', function(){
+    var name = $('#cb-n').value.trim() || m.nombre;
+    var data = { n:name, s:$('#cb-s').value, mesa:m.mesa, mantel:m.mantel, t:Date.now(), items:m.items.map(function(it){ return { pid:it.pid, vi:it.vi, x:f1(it.x), z:f1(it.z), f:it.f, fl:it.fl }; }) };
+    this.disabled = true;
+    store.db.collection('combos').add(data).then(function(){ box.hidden = true; toast('Combinación guardada. Ya la ven los clientes.'); })
+      .catch(function(err){ $('#cb-ok').disabled = false; toast(saveErr(err)); });
+  });
+});
+function saveErr(err){ var c = err && err.code; if (c === 'invalid_argument' || c === 'permission-denied') return 'No tienes permiso para guardar cambios de la tienda.'; if (c === 'quota_exceeded') return 'Se llenó el espacio de la tienda. Borra combinaciones que ya no uses.'; return 'No se pudo guardar. Revisa tu conexión e inténtalo otra vez.'; }
+
+/* ---------- Cotización ---------- */
+function fmtDate(s){ if (!s) return ''; var d = new Date(s + 'T00:00:00'); if (isNaN(d)) return s; return d.toLocaleDateString('es-HN', { weekday:'long', day:'numeric', month:'long', year:'numeric' }); }
+function buildMsg(){
+  var L = ['Hola The Rental Studio, quiero cotizar piezas para un evento.', ''];
+  if (ev.nombre) L.push('Nombre: ' + ev.nombre);
+  if (ev.fecha) L.push('Fecha: ' + fmtDate(ev.fecha));
+  if (ev.lugar) L.push('Lugar: ' + ev.lugar);
+  if (ev.nombre || ev.fecha || ev.lugar) L.push('');
+  if (ARMAR) ev.montajes.forEach(function(m){
+    var gs = groups(m); if (!gs.length) return;
+    var cl = CLOTHS.filter(function(c){ return c.id === m.mantel; })[0];
+    L.push('*' + m.nombre + '* — ' + m.mesas + (m.mesas === 1 ? ' mesa ' : ' mesas ') + TABLES[m.mesa].n.toLowerCase() + ', mantel ' + (cl ? cl.n : ''));
+    gs.forEach(function(gr){ var p = BY[gr.pid]; L.push('• ' + p.n + (p.v.length > 1 ? ' (' + p.v[gr.vi].s + ')' : '') + ': ' + gr.n + ' por mesa = ' + (gr.n * m.mesas)); });
+    L.push('');
+  });
+  var tot = eventTotals();
+  if (tot.length) {
+    L.push(ARMAR ? '*Total de piezas y precios*' : '*Piezas y precios*');
+    tot.forEach(function(r){ var p = BY[r.pid], v = p.v[r.vi]; L.push('• ' + p.n + (p.v.length > 1 ? ' (' + v.s + ')' : '') + ': ' + r.n + (v.p != null ? ' × ' + money(v.p) + ' = ' + money(v.p * r.n) : ' (precio por confirmar)') + (v.q != null && r.n > v.q ? ' (el catálogo indica ' + v.q + ')' : '')); });
+    var mt = moneyTotals(); L.push(''); L.push('*Total estimado: ' + money(mt.t) + '*' + (mt.pend ? ' (más ' + mt.pend + (mt.pend === 1 ? ' pieza' : ' piezas') + ' por confirmar)' : ''));
+  }
+  return L.join('\n');
+}
+function renderQuote(){
+  $('#e-nombre').value = ev.nombre || ''; $('#e-fecha').value = ev.fecha || ''; $('#e-lugar').value = ev.lugar || '';
+  var tot = eventTotals();
+  var mt = moneyTotals();
+  $('#qt').innerHTML = tot.length ? '<thead><tr><th>Pieza</th><th class="num">Pides</th><th class="num">Precio</th><th class="num">Subtotal</th></tr></thead><tbody>' + tot.map(function(r){
+    var p = BY[r.pid], v = p.v[r.vi], over = v.q != null && r.n > v.q;
+    var key = r.pid + ':' + r.vi;
+    var qty = ARMAR ? r.n : '<span class="mini-step"><button type="button" data-qdec="' + key + '" aria-label="Quitar uno">−</button><input type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="4" value="' + r.n + '" data-qn="' + key + '" aria-label="Cantidad de ' + esc(p.n) + '"><button type="button" data-qinc="' + key + '" aria-label="Agregar uno"' + (r.n >= maxQ(r.pid, r.vi) ? ' disabled title="No hay más disponibles"' : '') + '>+</button></span>' + (v.q != null && r.n >= v.q ? '<br><small style="color:var(--muted);font-size:11.5px">Máximo disponible</small>' : '');
+    return '<tr><td>' + esc(p.n) + (p.v.length > 1 ? '<br><small style="color:var(--muted)">' + esc(v.s) + '</small>' : '') + (over ? '<br><small class="warn">El catálogo indica ' + v.q + '</small>' : '') + '<small class="pu-m">' + (v.p != null ? money(v.p) + perUnit(v) : 'Precio por confirmar') + '</small>' + (ARMAR ? '' : '<button type="button" class="q-rm" data-qrm="' + key + '">Quitar</button>') + '</td><td class="num' + (over ? ' warn' : '') + '">' + qty + '</td><td class="num">' + (v.p != null ? money(v.p) : '—') + '</td><td class="num">' + (v.p != null ? money(v.p * r.n) : 'Por confirmar') + '</td></tr>';
+  }).join('') + '</tbody><tfoot><tr><td colspan="' + (!ARMAR && window.matchMedia('(max-width:560px)').matches ? 2 : 3) + '" style="font-weight:500;border-bottom:0">Total estimado' + (mt.pend ? '<br><small style="color:var(--muted);font-weight:400">' + mt.pend + (mt.pend === 1 ? ' pieza sin precio todavía; la tienda la confirma.' : ' piezas sin precio todavía; la tienda las confirma.') + '</small>' : '') + '</td><td class="num" style="font-weight:600;font-size:17px;border-bottom:0">' + money(mt.t) + '</td></tr></tfoot>' : '<tbody><tr><td style="color:var(--muted);border:0;padding-left:0">' + (ARMAR ? 'Tu evento aún no tiene piezas. Ve a “Armar mi mesa” para empezar.' : 'Tu cotización aún no tiene piezas. Abre el catálogo, elige una pieza y toca “Agregar a mi cotización”.<br><button class="btn sm" type="button" data-go="catalogo" style="margin-top:12px">Ver catálogo</button>') + '</td></tr></tbody>';
+  var hasP = tot.length > 0;
+  $('#q-more').hidden = !hasP || ARMAR;
+  try { var td = new Date(); td.setMinutes(td.getMinutes() - td.getTimezoneOffset()); $('#e-fecha').min = td.toISOString().slice(0, 10); } catch(e) {}
+  $('#q-montajes').innerHTML = !ARMAR ? '' : ev.montajes.map(function(m){
+    var gs = groups(m);
+    return '<div class="m-sum"><h4>' + esc(m.nombre) + '</h4><span style="font-size:13.5px;color:var(--muted)">' + m.mesas + (m.mesas === 1 ? ' mesa ' : ' mesas ') + TABLES[m.mesa].n.toLowerCase() + '</span>' + (gs.length ? '<ul>' + gs.map(function(gr){ var p = BY[gr.pid]; return '<li>' + gr.n + ' × ' + esc(p.n) + ' por mesa</li>'; }).join('') + '</ul>' : '<span style="font-size:13.5px;color:var(--muted)">Sin piezas</span>') + '</div>';
+  }).join('');
+  var ov = overStock();
+  $('#q-warn').innerHTML = ov.length ? '<p class="warnbox">' + ov.length + (ov.length === 1 ? ' pieza pide' : ' piezas piden') + ' más de lo que indica el catálogo. Puedes enviarla igual; la tienda te dirá qué alternativas hay.</p>' : '';
+  updateMsg();
+}
+function updateMsg(){
+  var msg = buildMsg(), has = eventTotals().length > 0;
+  $('#msg').value = msg;
+  $('#b-wa').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(msg);
+  $('#b-wa').setAttribute('aria-disabled', String(!has));
+  $('#b-copy').disabled = !has;
+  var miss = missing();
+  $('#q-need').textContent = !has ? 'Primero agrega piezas desde el catálogo.' : (miss.length ? 'Para enviar falta: ' + miss.map(function(m){ return m.l; }).join(' y ') + '.' : 'Todo listo. Revisa y envía.');
+}
+function missing(){
+  var m = [];
+  if (!String(ev.nombre || '').trim()) m.push({ id:'nombre', l:'tu nombre' });
+  if (!ev.fecha) m.push({ id:'fecha', l:'la fecha del evento' });
+  return m;
+}
+function showErrs(on){
+  ['nombre','fecha'].forEach(function(k){ var bad = on && missing().some(function(m){ return m.id === k; }); $('#err-' + k).hidden = !bad; $('#e-' + k).classList.toggle('bad', bad); $('#e-' + k).setAttribute('aria-invalid', String(bad)); });
+}
+function guardSend(e){
+  var miss = missing(); if (!miss.length) return true;
+  e.preventDefault(); showErrs(true);
+  var el = $('#e-' + miss[0].id); el.scrollIntoView({ behavior:'smooth', block:'center' }); setTimeout(function(){ el.focus(); }, 250);
+  toast('Para enviar falta ' + miss.map(function(m){ return m.l; }).join(' y ') + '.');
+  return false;
+}
+$('#b-wa').addEventListener('click', function(e){ guardSend(e); });
+function listSet(key, n){
+  var k = key.split(':'), i = listFind(+k[0], +k[1]); if (i < 0) return;
+  if (n <= 0) {
+    var gone = ev.lista.splice(i, 1)[0]; persist(); updateCount(); renderQuote();
+    toast(BY[gone.pid].n + ' quitado', function(){ ev.lista.splice(i, 0, gone); persist(); updateCount(); renderQuote(); });
+    return;
+  }
+  var mx = maxQ(+k[0], +k[1]);
+  if (n > mx) { n = mx; toast('Solo hay ' + mx + (mx === 1 ? ' disponible' : ' disponibles') + ' de esta pieza'); }
+  ev.lista[i].n = n; persist(); updateCount(); renderQuote();
+}
+$('#qt').addEventListener('click', function(e){
+  if (ARMAR) return;
+  var b = e.target.closest('[data-qinc],[data-qdec],[data-qrm]'); if (!b) return;
+  var key = b.getAttribute('data-qinc') || b.getAttribute('data-qdec') || b.getAttribute('data-qrm');
+  var k = key.split(':'), i = listFind(+k[0], +k[1]); if (i < 0) return;
+  var cur = ev.lista[i].n;
+  listSet(key, b.hasAttribute('data-qrm') ? 0 : cur + (b.hasAttribute('data-qinc') ? 1 : -1));
+});
+$('#qt').addEventListener('focusin', function(e){ var inp = e.target.closest('[data-qn]'); if (inp) setTimeout(function(){ try { inp.setSelectionRange(0, inp.value.length); } catch(x) { inp.select(); } }, 0); });
+$('#qt').addEventListener('input', function(e){ var inp = e.target.closest('[data-qn]'); if (inp) { var c = inp.value.replace(/[^0-9]/g, ''); if (c !== inp.value) inp.value = c; } });
+$('#qt').addEventListener('keydown', function(e){ var inp = e.target.closest('[data-qn]'); if (inp && e.key === 'Enter') { e.preventDefault(); inp.blur(); } });
+$('#qt').addEventListener('change', function(e){
+  if (ARMAR) return;
+  var inp = e.target.closest('[data-qn]'); if (!inp) return;
+  var n = parseInt(inp.value, 10); if (isNaN(n)) { renderQuote(); return; }
+  listSet(inp.getAttribute('data-qn'), n);
+});
+['e-nombre','e-fecha','e-lugar'].forEach(function(id){ $('#' + id).addEventListener('input', function(){ ev[id.slice(2)] = this.value; persist(); updateMsg(); if (!$('#err-nombre').hidden || !$('#err-fecha').hidden) showErrs(true); }); });
+$('#b-copy').addEventListener('click', function(e){
+  if (!guardSend(e)) return;
+  var msg = $('#msg').value, st = $('#copy-status');
+  function fb(){ var d = $('#msg').closest('details'); d.open = true; $('#msg').focus(); $('#msg').select(); st.textContent = 'Selecciona el texto y cópialo.'; }
+  try { navigator.clipboard.writeText(msg).then(function(){ st.textContent = 'Lista copiada.'; }, fb); } catch(e) { fb(); }
+});
+
+/* ---------- Modo tienda ---------- */
+function renderAdmin(){
+  if (!store.editor) return;
+  renderPeople();
+  $('#styles-list').innerHTML = store.styles.length ? store.styles.map(function(s){ var n = PRODUCTS.filter(function(p){ return styleMatch(p, s.id); }).length; return '<span class="style-pill">' + esc(s.n) + ' <small style="color:var(--muted)">' + n + '</small><span data-sdel="' + esc(s.id) + '"><button type="button" aria-label="Borrar estilo ' + esc(s.n) + '" data-askstyle="' + esc(s.id) + '">×</button></span></span>'; }).join('') : '<p style="margin:0;color:var(--muted);font-size:14px">Aún no hay estilos.</p>';
+  $('#admin-combos').innerHTML = store.combos.length ? store.combos.map(function(c){ return comboCard(c, true); }).join('') : '<p style="margin:0;color:var(--muted);font-size:14px">Aún no hay combinaciones guardadas.</p>';
+  $('#tag-cats').innerHTML = CATS.map(function(c){ return '<button class="chip" data-tc="' + c.id + '" aria-pressed="' + (ui.tagCat === c.id) + '">' + esc(c.n) + '</button>'; }).join('');
+  var list = PRODUCTS.filter(function(p){ return p.c === ui.tagCat; });
+  $('#tag-grid').innerHTML = store.styles.length ? list.map(function(p){
+    var t = store.tags[p.id] || [];
+    return '<div class="tag-card"><img src="' + imgFor(p) + '" alt=""><div class="tn">' + esc(p.n) + '<small>' + esc(codeOf(p, 0)) + '</small><div class="chips">' + store.styles.map(function(s){ return '<button type="button" class="chip" data-tag="' + esc(s.id) + '" data-pid="' + p.id + '" aria-pressed="' + (t.indexOf(s.id) > -1) + '">' + esc(s.n) + '</button>'; }).join('') + '</div></div></div>';
+  }).join('') : '<p style="margin:0;color:var(--muted);font-size:14px">Crea al menos un estilo para empezar a clasificar.</p>';
+}
+$('#f-style').addEventListener('submit', function(e){
+  e.preventDefault(); var n = $('#new-style').value.trim(); if (!n) return;
+  if (store.styles.some(function(s){ return norm(s.n) === norm(n); })) { toast('Ese estilo ya existe'); return; }
+  var next = store.styles.concat([{ id:'s' + uid(), n:n }]);
+  writeStyles(next).then(function(){ $('#new-style').value = ''; });
+});
+function writeStyles(list){ store.styles = list; renderAdmin(); return store.db.doc('tienda/estilos').set({ list:list }).catch(function(err){ toast(saveErr(err)); }); }
+$('#styles-list').addEventListener('click', function(e){
+  var a = e.target.closest('[data-askstyle]');
+  if (a) {
+    var id = a.getAttribute('data-askstyle'), pill = a.closest('.style-pill'), st = store.styles.filter(function(x){ return x.id === id; })[0];
+    var cnt = PRODUCTS.filter(function(p){ return styleMatch(p, id); }).length;
+    pill.classList.add('ask');
+    pill.innerHTML = '<span>¿Borrar “' + esc(st ? st.n : '') + '”?' + (cnt ? ' <small style="color:var(--muted)">Se quita de ' + cnt + (cnt === 1 ? ' producto' : ' productos') + '.</small>' : '') + '</span><button type="button" class="sp-yes" data-delstyle="' + esc(id) + '">Sí, borrar</button><button type="button" data-keep>Cancelar</button>';
+    pill.querySelector('[data-keep]').focus();
+    return;
+  }
+  var d = e.target.closest('[data-delstyle]');
+  if (d) { var sid = d.getAttribute('data-delstyle'); writeStyles(store.styles.filter(function(s){ return s.id !== sid; })); var t = {}; Object.keys(store.tags).forEach(function(k){ var v = store.tags[k].filter(function(x){ return x !== sid; }); if (v.length) t[k] = v; }); store.tags = t; queueTags(); return; }
+  if (e.target.closest('[data-keep]')) renderAdmin();
+});
+$('#tag-cats').addEventListener('click', function(e){ var b = e.target.closest('[data-tc]'); if (!b) return; ui.tagCat = b.getAttribute('data-tc'); renderAdmin(); });
+$('#tag-grid').addEventListener('click', function(e){ var b = e.target.closest('[data-tag]'); if (!b) return; toggleTag(+b.getAttribute('data-pid'), b.getAttribute('data-tag')); b.setAttribute('aria-pressed', String((store.tags[+b.getAttribute('data-pid')] || []).indexOf(b.getAttribute('data-tag')) > -1)); });
+function toggleTag(pid, sid){
+  if (!store.editor) return;
+  var t = (store.tags[pid] || []).slice(), i = t.indexOf(sid);
+  if (i > -1) t.splice(i, 1); else t.push(sid);
+  if (t.length) store.tags[pid] = t; else delete store.tags[pid];
+  queueTags();
+}
+var tagT = null, tagBusy = false, tagAgain = false;
+function queueTags(){ clearTimeout(tagT); tagT = setTimeout(flushTags, 700); }
+function flushTags(){
+  if (tagBusy) { tagAgain = true; return; }
+  tagBusy = true;
+  store.db.doc('tienda/etiquetas').set({ t:JSON.parse(JSON.stringify(store.tags)) }).catch(function(err){ toast(saveErr(err)); }).then(function(){ tagBusy = false; if (tagAgain) { tagAgain = false; flushTags(); } });
+}
+$('#admin-combos').addEventListener('click', function(e){
+  var a = e.target.closest('[data-askdel]');
+  if (a) { var id = a.getAttribute('data-askdel'); a.parentNode.innerHTML = '<span class="inline-confirm">¿Borrar? <button type="button" class="lnk" data-delcombo="' + esc(id) + '">Sí, borrar</button><button type="button" class="lnk" data-keep>No</button></span>'; return; }
+  var d = e.target.closest('[data-delcombo]');
+  if (d) { store.db.collection('combos').doc(d.getAttribute('data-delcombo')).delete().then(function(){ toast('Combinación borrada'); }).catch(function(err){ toast(saveErr(err)); }); return; }
+  if (e.target.closest('[data-keep]')) renderAdmin();
+});
+
+/* ---------- Datos de la tienda (compartidos) ---------- */
+function refreshStoreViews(){
+  if (ui.view === 'catalogo') renderCatalog();
+  if (ui.view === 'armar') { renderCombos(); $$('.only-editor').forEach(function(el){ el.hidden = !store.editor; }); }
+  if (ui.view === 'tienda') renderAdmin();
+}
+/* ---------- Firebase: datos de la tienda e inicio de sesión ---------- */
+var FB = { app:null, auth:null, db:null, user:null, unsub:[] };
+var SUPER = ['jorgecarreonusa@gmail.com'];
+function normEmail(e){ return String(e || '').trim().toLowerCase(); }
+function showEditor(){ $$('.only-editor').forEach(function(el){ el.hidden = !store.editor; }); }
+function listen(db){
+  store.db = db; store.ready = true;
+  db.doc('tienda/estilos').onSnapshot(function(s){ var d = s.exists ? s.data() : null; store.styles = d && Array.isArray(d.list) ? d.list.filter(function(x){ return x && x.id && x.n; }) : []; refreshStoreViews(); }, function(){});
+  db.doc('tienda/etiquetas').onSnapshot(function(s){ if (tagBusy || tagT) return; var d = s.exists ? s.data() : null; var t = {}; if (d && d.t) Object.keys(d.t).forEach(function(k){ if (Array.isArray(d.t[k])) t[k] = d.t[k].slice(); }); store.tags = t; refreshStoreViews(); }, function(){});
+  db.collection('combos').orderBy('t', 'desc').onSnapshot(function(s){ store.combos = s.docs.map(function(d){ var x = d.data() || {}; return { id:d.id, n:String(x.n || 'Combinación'), s:x.s || '', mesa:x.mesa, mantel:x.mantel, items:Array.isArray(x.items) ? x.items : [] }; }); refreshStoreViews(); }, function(){});
+}
+function stopPeople(){ FB.unsub.forEach(function(f){ try { f(); } catch(e) {} }); FB.unsub = []; }
+function checkEditor(user){
+  stopPeople();
+  if (!user) { store.editor = false; store.people = []; showEditor(); if (ui.view === 'tienda') go('inicio'); return Promise.resolve(false); }
+  var em = normEmail(user.email);
+  var p = SUPER.indexOf(em) > -1 ? Promise.resolve(true) : FB.db.doc('admins/' + em).get().then(function(s){ return s.exists; }, function(){ return false; });
+  return p.then(function(ok){
+    store.editor = ok; showEditor();
+    if (ok) FB.unsub.push(FB.db.collection('admins').onSnapshot(function(s){ store.people = s.docs.map(function(d){ var x = d.data() || {}; return { email:d.id, by:x.by || '', t:x.t || 0 }; }); if (ui.view === 'tienda') renderPeople(); }, function(){}));
+    return ok;
+  });
+}
+function connect(){
+  if (!window.firebase || !window.FIREBASE_CONFIG) return;
+  try {
+    FB.app = firebase.initializeApp(window.FIREBASE_CONFIG);
+    FB.auth = firebase.auth(); FB.db = firebase.firestore();
+  } catch(e) { return; }
+  listen(FB.db);
+  FB.auth.getRedirectResult().catch(function(){});
+  FB.auth.onAuthStateChanged(function(user){
+    FB.user = user;
+    checkEditor(user).then(function(ok){
+      if (user && !ok && loginPending) { loginPending = false; toast('La cuenta ' + user.email + ' no tiene acceso a Modo tienda.'); FB.auth.signOut(); }
+      else if (ok && loginPending) { loginPending = false; closeSheet(); go('tienda'); toast('Bienvenida/o a Modo tienda'); }
+      refreshStoreViews();
+    });
+  });
+}
+var loginPending = false;
+var G_ICON = '<svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9.1 3.6l6.8-6.8C35.8 2.4 30.3 0 24 0 14.6 0 6.6 5.4 2.6 13.3l7.9 6.1C12.4 13.6 17.7 9.5 24 9.5z"/><path fill="#4285F4" d="M46.1 24.6c0-1.6-.1-3.1-.4-4.6H24v9h12.4c-.5 2.9-2.2 5.3-4.6 6.9l7.4 5.7c4.3-4 6.9-9.9 6.9-17z"/><path fill="#FBBC05" d="M10.5 28.6A14.5 14.5 0 0 1 9.5 24c0-1.6.3-3.2.9-4.6l-7.9-6.1A24 24 0 0 0 0 24c0 3.9.9 7.5 2.6 10.7l7.9-6.1z"/><path fill="#34A853" d="M24 48c6.5 0 11.9-2.1 15.9-5.8l-7.4-5.7c-2.1 1.4-4.8 2.3-8.5 2.3-6.3 0-11.6-4.1-13.5-9.9l-7.9 6.1C6.6 42.6 14.6 48 24 48z"/></svg>';
+function openLogin(){
+  if (!FB.auth) { toast('No se pudo conectar. Revisa tu internet.'); return; }
+  if (store.editor) { go('tienda'); return; }
+  openSheet(closeBtn + '<div class="login-box"><h3 id="sheet-title">Acceso tienda</h3><p>Solo para el equipo de The Rental Studio. Entra con la cuenta de Google que tiene acceso.</p><button class="gbtn" type="button" id="b-google">' + G_ICON + 'Entrar con Google</button><p id="login-msg" role="status" aria-live="polite"></p></div>');
+  $('#sheet .sheet-close').addEventListener('click', closeSheet);
+  $('#b-google').addEventListener('click', function(){
+    var prov = new firebase.auth.GoogleAuthProvider(); prov.setCustomParameters({ prompt:'select_account' });
+    loginPending = true; $('#login-msg').textContent = 'Abriendo Google…';
+    FB.auth.signInWithPopup(prov).catch(function(err){
+      var c = err && err.code;
+      if (c === 'auth/popup-blocked' || c === 'auth/operation-not-supported-in-this-environment') { FB.auth.signInWithRedirect(prov); return; }
+      loginPending = false;
+      var m = c === 'auth/popup-closed-by-user' || c === 'auth/cancelled-popup-request' ? 'Se cerró la ventana de Google. Inténtalo otra vez.' : c === 'auth/unauthorized-domain' ? 'Este sitio todavía no está autorizado en Firebase.' : 'No se pudo entrar. Inténtalo otra vez.';
+      var el = $('#login-msg'); if (el) el.textContent = m;
+    });
+  });
+}
+$('#b-staff').addEventListener('click', openLogin);
+$('#b-logout').addEventListener('click', function(){ if (FB.auth) FB.auth.signOut().then(function(){ toast('Sesión cerrada'); go('inicio'); }); });
+function renderPeople(){
+  var ul = $('#people'); if (!ul) return;
+  var me = FB.user ? normEmail(FB.user.email) : '';
+  $('#who-email').textContent = me;
+  var rows = SUPER.map(function(e){ return '<li><span>' + esc(e) + '<br><small>Administrador principal</small></span></li>'; });
+  (store.people || []).filter(function(p){ return SUPER.indexOf(p.email) < 0; }).sort(function(a, b){ return a.email < b.email ? -1 : 1; }).forEach(function(p){
+    rows.push('<li><span>' + esc(p.email) + (p.email === me ? '<br><small>Tú</small>' : '') + '</span><span data-pwrap="' + esc(p.email) + '"><button class="lnk" type="button" data-pask="' + esc(p.email) + '">Quitar</button></span></li>');
+  });
+  ul.innerHTML = rows.join('');
+}
+$('#people').addEventListener('click', function(e){
+  var a = e.target.closest('[data-pask]');
+  if (a) { var em = a.getAttribute('data-pask'); a.parentNode.innerHTML = '<span class="inline-confirm">¿Quitar acceso? <button type="button" class="lnk" data-pdel="' + esc(em) + '">Sí, quitar</button><button type="button" class="lnk" data-pkeep>No</button></span>'; return; }
+  var d = e.target.closest('[data-pdel]');
+  if (d) { FB.db.doc('admins/' + d.getAttribute('data-pdel')).delete().then(function(){ toast('Acceso quitado'); }).catch(function(err){ toast(saveErr(err)); }); return; }
+  if (e.target.closest('[data-pkeep]')) renderPeople();
+});
+$('#f-person').addEventListener('submit', function(e){
+  e.preventDefault();
+  var em = normEmail($('#new-person').value);
+  if (!/^[^\s@\/]+@[^\s@\/]+\.[^\s@\/]+$/.test(em)) { toast('Escribe un correo válido'); return; }
+  if (SUPER.indexOf(em) > -1 || (store.people || []).some(function(p){ return p.email === em; })) { toast('Ese correo ya tiene acceso'); return; }
+  FB.db.doc('admins/' + em).set({ by: FB.user ? normEmail(FB.user.email) : '', t: Date.now() }).then(function(){ $('#new-person').value = ''; toast(em + ' ya puede entrar a Modo tienda'); }).catch(function(err){ toast(saveErr(err)); });
+});
+
+/* ---------- Inicio ---------- */
+renderHome();
+updateCount();
+go('inicio');
+connect();
+})();
+</script>
+
+</body></html>

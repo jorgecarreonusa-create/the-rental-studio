@@ -1,0 +1,50 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null && request.auth.token.email_verified == true;
+    }
+    function myEmail() {
+      return request.auth.token.email.lower();
+    }
+    // Administrador principal + correos agregados desde Modo tienda (colección "admins")
+    function isAdmin() {
+      return signedIn() && (
+        myEmail() == 'jorgecarreonusa@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(myEmail()))
+      );
+    }
+
+    // Estilos y clasificación de productos: todos los ven, solo el equipo edita
+    match /tienda/{doc} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /combos/{id} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Personas con acceso a Modo tienda
+    match /admins/{email} {
+      allow read: if isAdmin() || (signedIn() && email == myEmail());
+      allow write: if isAdmin();
+    }
+
+    // Reservas (próximamente): datos de clientes, solo el equipo
+    match /reservas/{id} {
+      allow read, write: if isAdmin();
+    }
+    // Disponibilidad por fecha (sin datos de clientes): todos la ven, solo el equipo edita
+    match /disponibilidad/{doc} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Todo lo demás, cerrado
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
